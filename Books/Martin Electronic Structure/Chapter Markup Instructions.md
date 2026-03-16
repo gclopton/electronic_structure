@@ -34,7 +34,7 @@ A callout is appropriate when the chapter has a displayed equation (centered, on
 Use the callout type that matches the entry's category in the Study Methodology (§3.1):
 
 | Callout | Color | Use For | Icon |
-|---|---|---|---|
+|---|---|---|---|---|
 | `[!theorem]` | Deep purple (160, 80, 255) | Exact results with proofs and conditions | Scale |
 | `[!equation]` | Blue (66, 135, 245) | Named equations and quantitative results | Sigma |
 | `[!functional]` | Teal (0, 180, 180) | Functional forms emphasizing density dependence | Function |
@@ -103,9 +103,11 @@ Do **not** place a derivation callout on a result that is simply presented as a 
 ### Derivation Callout Syntax
 
 ```markdown
-> [!derivation] Short descriptive title
+> [!derivation] Derivation N: Short descriptive title
 > Prompt text — a question or set of questions that the reader must answer by working through the derivation.
 ```
+
+**Numbering convention:** Every derivation callout must be sequentially numbered within its chapter, starting from 1. The title format is `Derivation N: Descriptive title`. The number makes it easy to reference derivations in exercises, solutions, and cross-chapter discussions (e.g., "see Derivation 6 in Chapter 3").
 
 The callout is placed **immediately before** the paragraph where the derivation begins in the chapter text, so the reader encounters the prompt before reading the worked-out steps.
 
@@ -449,6 +451,7 @@ This file serves as a drafting space and reference copy. It uses `##` headers fo
 - [ ] No triple-equals typos
 - [ ] Verification pass confirms all Index entries and Glossary terms are accounted for
 - [ ] Every derivation or "can be shown" passage has a `[!derivation]` callout placed before it
+- [ ] Derivation callouts are sequentially numbered (Derivation 1, Derivation 2, ...) within each chapter
 - [ ] Derivation prompts do not give away answers, intermediate steps, or methods — written like exam questions
 - [ ] Derivation prompts emphasize physical meaning (every prompt has at least one "why" or "what does this mean" question)
 - [ ] Full derivations in the text have a `---` divider after them; passing mentions do not
@@ -503,7 +506,7 @@ These Equation Index entries describe concepts in prose rather than standalone e
 ### Exercises (6 total, 25 question parts)
 
 | Exercise | Section | Title | Parts | Index Entries Covered |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | 6.2 | §6.2 | The Thomas-Fermi-Dirac Energy Functional and Constrained Minimization | (a)–(e) | 1–4, 16–17 |
 | 6.3 | §6.3 | The Hohenberg-Kohn Theorems and the Energy Functional | (a)–(d) | 5, 8–11 |
 | 6.4 | §6.4 | The Levy-Lieb Constrained Search and the Domain of the Functional | (a)–(d) | 7, 12 |
@@ -521,23 +524,23 @@ The markup of Chapter 3 (Theoretical Background) serves as the reference impleme
 
 ### Derivation Callouts (15 total)
 
-| Title | Section | Full/Mention | `---` Divider |
-|---|---|---|---|
-| Born-Oppenheimer reduction of the full Hamiltonian | §3.1 | Mention | No |
-| Electron density from the density operator | §3.1.1 | Mention | No |
-| Total energy expression — external potential reduces to a density integral | §3.1.1 | Mention | No |
-| Rayleigh-Ritz variational principle → Schrödinger equation | §3.1.1 | Full | Yes |
-| Grouping the total energy into neutral classical Coulomb terms | §3.2 | Mention | No |
-| Force (Hellmann-Feynman) theorem | §3.3.1 | Full | Yes |
-| Stress (generalized virial) theorem from scaling of space | §3.3.2 | Full | Yes |
-| Coupling constant integration (adiabatic connection) | §3.4 | Full | Yes |
-| Equilibrium density matrix from free energy minimization | §3.5 | Mention | No |
-| Fermi-Dirac distribution from the grand canonical ensemble | §3.6.1 | Mention | No |
-| Hartree-Fock energy from the Slater determinant | §3.6.2 | Mention | No |
-| Hartree-Fock equations from constrained variational minimization | §3.6.2 | Mention | No |
-| Koopmans' theorem — eigenvalues as addition/removal energies | §3.6.3 | Mention | No |
-| Pair distribution and exchange hole for noninteracting fermions | §3.7.1 | Mention | No |
-| Correlation hole sum rule | §3.7.2 | Mention | No |
+| # | Title | Section | Full/Mention | `---` Divider |
+|---|---|---|---|---|
+| 1 | Born-Oppenheimer reduction of the full Hamiltonian | §3.1 | Mention | No |
+| 2 | Electron density from the density operator | §3.1.1 | Mention | No |
+| 3 | Total energy expression — external potential reduces to a density integral | §3.1.1 | Mention | No |
+| 4 | Rayleigh-Ritz variational principle → Schrödinger equation | §3.1.1 | Full | Yes |
+| 5 | Grouping the total energy into neutral classical Coulomb terms | §3.2 | Mention | No |
+| 6 | Force (Hellmann-Feynman) theorem | §3.3.1 | Full | Yes |
+| 7 | Stress (generalized virial) theorem from scaling of space | §3.3.2 | Full | Yes |
+| 8 | Coupling constant integration (adiabatic connection) | §3.4 | Full | Yes |
+| 9 | Equilibrium density matrix from free energy minimization | §3.5 | Mention | No |
+| 10 | Fermi-Dirac distribution from the grand canonical ensemble | §3.6.1 | Mention | No |
+| 11 | Hartree-Fock energy from the Slater determinant | §3.6.2 | Mention | No |
+| 12 | Hartree-Fock equations from constrained variational minimization | §3.6.2 | Mention | No |
+| 13 | Koopmans' theorem — eigenvalues as addition/removal energies | §3.6.3 | Mention | No |
+| 14 | Pair distribution and exchange hole for noninteracting fermions | §3.7.1 | Mention | No |
+| 15 | Correlation hole sum rule | §3.7.2 | Mention | No |
 
 ### Prompt Style Notes
 

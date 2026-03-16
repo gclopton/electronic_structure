@@ -25,7 +25,7 @@ where electrons are denoted by lowercase subscripts and nuclei - with charge $Z_
 
 There is only one term in Eq. (3.1) that can be regarded as small, the inverse mass of the nuclei $1 / M_{I}$. A perturbation series can be defined in terms of this parameter, which is expected to have general validity for the full interacting system of electrons and nuclei. If we first set the mass of the nuclei to infinity, then the kinetic energy of the nuclei can be ignored. This is the Born-Oppenheimer or adiabatic approximation [90] defined in Appendix C, which is an excellent approximation for many purposes, e.g., the calculation of nuclear vibration modes in most solids [91, 180]. In other cases, it forms the starting point for perturbation theory in electron-phonon interactions, which is the basis for understanding electrical transport in metals, polaron formation in insulators, certain metalinsulator transitions, and the BCS theory of superconductivity. Thus we shall focus on the hamiltonian for the electrons, in which the positions of the nuclei are parameters.
 
-> [!derivation] Born-Oppenheimer reduction of the full Hamiltonian
+> [!derivation] Derivation 1: Born-Oppenheimer reduction of the full Hamiltonian
 > Derive the electronic Hamiltonian Eq. (3.2) from the full Hamiltonian Eq. (3.1). What is the small parameter that controls the approximation, and why is it physically reasonable? Under what circumstances does this approximation break down, and what phenomena become inaccessible?
 
 Ignoring the nuclear kinetic energy, the fundamental hamiltonian for the theory of electronic structure can be written as
@@ -72,7 +72,7 @@ $$
 \langle\hat{O}\rangle=\frac{\langle\Psi| \hat{O}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
 $$
 
-> [!derivation] Electron density from the density operator
+> [!derivation] Derivation 2: Electron density from the density operator
 > Derive the integral formula Eq. (3.8) for $n(\mathbf{r})$ from the density operator and the expectation value Eq. (3.7). Where does the prefactor $N$ come from, and what property of the wavefunction is responsible for it?
 
 The density of particles $n(\mathbf{r})$, which plays a central role in electronic structure theory, is given by the expectation value of the density operator $\hat{n}(\mathbf{r})=\sum_{i=1, N} \delta\left(\mathbf{r}-\mathbf{r}_{i}\right)$,
@@ -85,7 +85,7 @@ The density of particles $n(\mathbf{r})$, which plays a central role in electron
 
 which has this form because of the symmetry of the wavefunction in all the electron coordinates.
 
-> [!derivation] Total energy expression — external potential reduces to a density integral
+> [!derivation] Derivation 3: Total energy expression — external potential reduces to a density integral
 > Using the result for $n(\mathbf{r})$ from Eq. (3.8), simplify the total energy expectation value into the form of Eq. (3.9). Which terms in the Hamiltonian can be expressed purely in terms of the density, and which cannot? What is it about the structure of a one-body vs. two-body operator that makes the difference?
 
 The total energy is the expectation value of the hamiltonian,
@@ -98,7 +98,7 @@ The total energy is the expectation value of the hamiltonian,
 
 where the expectation value of the external potential has been explicitly written as a simple integral over the density function. The final term $E_{I I}$ is the electrostatic nucleus-nucleus (or ion-ion) interaction, which is essential in the total energy calculation but is only a classical additive term in the theory of electronic structure.
 
-> [!derivation] Rayleigh-Ritz variational principle → Schrödinger equation
+> [!derivation] Derivation 4: Rayleigh-Ritz variational principle → Schrödinger equation
 > Derive the time-independent Schrödinger equation Eq. (3.13) as a stationarity condition of the energy. Why is the variational formulation more fundamental than the eigenvalue equation for practical electronic structure? Compare the Lagrange-multiplier route (Eqs. 3.10–3.12) with direct variation of the ratio Eq. (3.9) (Exercise 3.1) — why must they agree?
 
 The eigenstates of the many-body hamiltonian are stationary points (saddle points or the minimum) of the energy expression (3.9) if $\Psi$ is regarded as a variable trial function. These may be found by varying the ratio in Eq. (3.9) or by varying the numerator subject to the constraint of orthonormality $(\langle\Psi \mid \Psi\rangle=1)$, which can be done using the method of Lagrange multipliers,
@@ -152,7 +152,7 @@ It is helpful to clarify briefly several points that are essential to a proper d
 - Any extended system must be neutral if the energy is to be finite.
 - Terms in the energy must be organized in neutral groups for actual evaluation.
 
-> [!derivation] Grouping the total energy into neutral classical Coulomb terms
+> [!derivation] Derivation 5: Grouping the total energy into neutral classical Coulomb terms
 > The individual terms in Eq. (3.9) are separately divergent in an extended system. Rewrite the total energy so that all long-range Coulomb contributions are collected into a single, well-defined classical energy. What condition on the system is required for this grouping to be finite? What is the physical character of the residual non-classical piece, and why is it short-ranged?
 
 In Eq. (3.9) the most convenient approach is to identify and group together terms representing the classical Coulomb energies,
@@ -190,7 +190,7 @@ where each of the three terms is well defined. The middle term in brackets, $\le
 
 One of the beautiful theorems of physics is the "force theorem" for the force conjugate to any parameter in the hamiltonian. This is a very general idea perhaps formulated first in 1927 by Ehrenfest [263], who recognized that it is crucial for the correspondence principle of quantum and classical mechanics. He established the relevant relation by showing that the expression for force given below equals the expectation value of the operator corresponding to acceleration $\left\langle\mathrm{d}^{2} \hat{x} / \mathrm{d} t^{2}\right\rangle$. The ideas are implicit in the 1928 work of Born and Fock [264], and the explicit formulas used today were given by Güttiger [265] in 1932. The formulas were included in the treatises of Pauli [266] and Hellmann [267], the latter reformulating them as a variational principle in a form convenient for application to molecules. In 1939, when he was an undergraduate, Feynman [268] derived the force theorem and explicitly pointed out that the force on a nucleus is given strictly in terms of the charge density, independent of the electron kinetic energy, exchange, and correlation. Thus as an "electrostatic theorem," it should apparently be attributed to Feynman. The nomenclature "Hellmann-Feynman theorem" has been widely used, apparently originating with Slater [48]; however, we will use the term "force theorem."
 
-> [!derivation] Force (Hellmann-Feynman) theorem
+> [!derivation] Derivation 6: Force (Hellmann-Feynman) theorem
 > Derive the expression Eq. (3.19) for the force on a nucleus. The result is remarkable: despite the electrons having kinetic energy and mutual interactions that both change as nuclei move, the force depends only on the electron density. What principle causes all other contributions to vanish, and under what circumstances can this cancellation fail?
 
 The force conjugate to any parameter describing a system, such as the position of a nucleus $\mathbf{R}_{I}$, can always be written
@@ -231,7 +231,7 @@ Finally, there are drawbacks to the fact that expressions for the force theorem 
 
 A physically different type of variation is a scaling of space, which leads to the "stress theorem" [162, 163] for total stress. This is a generalization of the well-known virial theorem for pressure $P$, which was derived in the early days of quantum mechanics (see references in Appendix G). An elegant derivation was given by Fock [270] in terms of "Streckung des Grundgebietes" ("stretching of the ground state").
 
-> [!derivation] Stress (generalized virial) theorem from scaling of space
+> [!derivation] Derivation 7: Stress (generalized virial) theorem from scaling of space
 > The force theorem treats displacement of a nucleus. What happens if you instead scale all of space uniformly? Derive the stress tensor Eq. (3.23) by considering the energy response to a strain deformation, and show that its trace gives the virial theorem Eq. (3.24). Why does the same variational argument that simplified the force theorem also work here? (Exercise 3.5.)
 
 The stress is a generalized force for which the ideas of the force theorem can be applied. The key point is that for a system in equilibrium, the stress tensor $\sigma_{\alpha \beta}$ is minus the derivative of the energy with respect to strain $\epsilon_{\alpha \beta}$ per unit volume (see also Eq. (2.4))
@@ -270,7 +270,7 @@ where $\Omega$ is the volume of the system. The expression (3.24) is a general r
 
 # 3.4 Generalized Force Theorem and Coupling Constant Integration
 
-> [!derivation] Coupling constant integration (adiabatic connection)
+> [!derivation] Derivation 8: Coupling constant integration (adiabatic connection)
 > The force theorem applies to any parameter in the Hamiltonian, not just nuclear positions. Use this idea to express the energy difference between a noninteracting and a fully interacting system as an integral over a coupling constant that scales the electron-electron interaction. What physical system does each intermediate value of the coupling constant describe, and why is this construction useful for density functional theory even though the intermediate wavefunctions are unphysical?
 
 In the previous section, the force on a nucleus $I$ was shown to be given by the matrix element of the derivative of the hamiltonian with respect to position $\mathbf{R}_{I}$ because $\mathbf{R}_{I}$ can be considered to be a parameter. The same argument applies to any parameter, which we can denote by $\lambda$. Furthermore, finite energy differences between two states with values $\lambda_{1}$ and $\lambda_{2}$ can be calculated as an integral over a continuous variation of the hamiltonian from $\lambda_{1}$ to $\lambda_{2}$. This is also called an "adiabatic connection" following Harris [271] since it is a variation of the hamiltonian connecting the states of the system that is assumed to be in the ground state for each value of $\lambda$, i.e., it is an adiabatic variation. ${ }^{5}$ The general expressions can be written
@@ -310,7 +310,7 @@ From quantum statistical mechanics one can derive expressions for the energy $U$
 
 where $\hat{\rho}$ is the density matrix and $\beta=1 / k_{B} T$. Here Tr means trace over all the states of the system which have a fixed number of particles $N$. The final term is the entropy term, which is the log of the number of possible states of the system.
 
-> [!derivation] Equilibrium density matrix from free energy minimization
+> [!derivation] Derivation 9: Equilibrium density matrix from free energy minimization
 > The free energy Eq. (3.28) is a functional of the density matrix $\hat{\rho}$. Find the $\hat{\rho}$ that minimizes it, subject to the physical constraints on a density matrix. Why does minimizing free energy — rather than energy alone — give the correct thermal equilibrium? What role does the entropy term play?
 
 A general property of the density matrix is that it is positive definite, since its diagonal terms are the density. The correct equilibrium density matrix is the positive-definite matrix that minimizes the free energy,
@@ -373,7 +373,7 @@ where $V_{\text {eff }}^{\sigma}(\mathbf{r})$ is an effective potential that act
 
 The solution of equations having the form of Eq. (3.36) is at the heart of the methods described in this volume. The basic justification of the use of such independent-particle equations for electrons in materials is density functional theory, which is the subject of Chapters 6-9. Most of the rest of the book is devoted to methods for solving the equations and applications to the properties of matter, such as predictions of structures, phase transitions, magnetism, elastic constants, phonons, piezoelectric and ferroelectric moments, topology of the band structure, and many other quantities.
 
-> [!derivation] Fermi-Dirac distribution from the grand canonical ensemble
+> [!derivation] Derivation 10: Fermi-Dirac distribution from the grand canonical ensemble
 > For noninteracting fermions, derive the occupation function Eq. (3.38) from the general statistical mechanics of §3.5. What constraint on the single-particle occupation numbers is imposed by the Pauli principle, and how does it determine the functional form? Show that the general many-body expectation value Eq. (3.35) collapses to the single-particle weighted sum Eq. (3.37). (Exercises 3.7, 3.8.)
 
 At finite temperature it is straightforward to apply the general formulas of statistical mechanics given in the previous section to show that the equilibrium distribution of electrons is given by the Fermi-Dirac (or Bose-Einstein) expression (1.3) for occupation numbers of states as a function of energy (Exercise 3.7). The expectation value Eq. (3.35) is a sum over many-body states $\Psi_{j}$, each of which is specified by the set of occupation numbers $\left\{n_{i}^{\sigma}\right\}$ for each of the independent-particle states with energy $\varepsilon_{i}^{\sigma}$. Given that each $n_{i}^{\sigma}$ can be either 0 or 1 , with $\sum_{i} n_{i}^{\sigma}=N^{\sigma}$, it is straightforward (see Exercise 3.8) to show that Eq. (3.35) simplifies to
@@ -433,7 +433,7 @@ A standard method of many-particle theory is the Hartree-Fock method, which was 
 > \end{array}\right|,
 > $$
 
-> [!derivation] Hartree-Fock energy from the Slater determinant
+> [!derivation] Derivation 11: Hartree-Fock energy from the Slater determinant
 > Evaluate $\langle\Phi|\hat{H}|\Phi\rangle$ for the Slater determinant Eq. (3.43) to obtain the Hartree-Fock energy expression Eq. (3.44). Why does an antisymmetrized wavefunction produce two distinct two-body terms (direct and exchange) rather than just one? What happens to the unphysical self-interaction, and why is this significant for one-electron systems like hydrogen? (Exercise 3.11.)
 
 [^7]where the $\phi_{i}\left(\mathbf{r}_{j}, \sigma_{j}\right)$ are single-particle "spin-orbitals." If there is no spin-orbit interaction $\phi_{i}\left(\mathbf{r}_{j}, \sigma_{j}\right)$ can be written as a product of a function of the position $\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right)$ and a function of the spin variable $\alpha_{i}\left(\sigma_{j}\right)$. (Note that $\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right)$ is independent of spin $\sigma$ in closed-shell cases. In open-shell systems, this assumption corresponds to the "spin-restricted Hartree-Fock approximation.") The spin-orbitals must be linearly independent and if in addition they are orthonormal the equations simplify greatly; it is straightforward to show (Exercise 3.10) that $\Phi$ is normalized to 1 . Furthermore, if the hamiltonian is independent of spin or is diagonal in the basis $\sigma=|\uparrow\rangle$; $|\downarrow\rangle$, the expectation value of the hamiltonian Eq. (3.2), using Hartree atomic units, with the wavefunction Eq. (3.43) is given by (Exercise 3.11)
@@ -449,7 +449,7 @@ A standard method of many-particle theory is the Hartree-Fock method, which was 
 
 The first term groups together the single-body expectation values that involve a sum over orbitals, whereas the third and fourth terms are the direct and exchange interactions among electrons, which are double sums. We have followed the usual practice of including the $i=j$ "self-interaction," which is spurious but which cancels in the sum of direct and exchange terms. When this term is included, the sum over all orbitals gives the density and the direct term is simply the Hartree energy defined in Eq. (3.15). The "exchange" term, which acts only between same-spin electrons since the spin parts of the orbitals are orthogonal for opposite spins, is discussed below in Section 3.7 and in the chapters on density functional theory.
 
-> [!derivation] Hartree-Fock equations from constrained variational minimization
+> [!derivation] Derivation 12: Hartree-Fock equations from constrained variational minimization
 > Derive the Hartree-Fock eigenvalue equations Eq. (3.45) by minimizing the energy Eq. (3.44) with respect to the orbitals. In what sense are these equations "self-consistent"? Why is the resulting effective Hamiltonian different for each orbital — what physical effect makes it state-dependent — and why does this make the equations fundamentally harder to solve than ordinary eigenvalue problems?
 
 The Hartree-Fock approach is to minimize the total energy with respect to all degrees of freedom in the wavefunction with the restriction that it has the form Eq. (3.43). Since orthonormality was used to simplify the equations, it must be maintained in the minimization, which can be done by Lagrange multipliers as in Eqs. (3.10) to (3.13). If the spin functions are quantized along an axis, variation of $\psi_{i}^{\sigma *}(\mathbf{r})$ for each spin $\sigma$ leads to the Hartree-Fock equations
@@ -490,7 +490,7 @@ However, there are ways to reduce the amount of computation. The nonlocal exchan
 
 ## 3.6.3 Koopmans' Theorem
 
-> [!derivation] Koopmans' theorem — eigenvalues as addition/removal energies
+> [!derivation] Derivation 13: Koopmans' theorem — eigenvalues as addition/removal energies
 > What is the physical meaning of the Hartree-Fock eigenvalues $\varepsilon_i^\sigma$? Prove Koopmans' theorem by relating them to total energy differences, and identify the key assumption that makes the theorem exact within Hartree-Fock. Why do the resulting band gaps systematically overestimate experiment, and what does this tell you about what Hartree-Fock neglects? (Exercise 3.18.)
 
 What is the meaning of the eigenvalues of the Hartree-Fock equation (3.45)? Of course, Hartree-Fock is only an approximation to the energies for addition and removal of
@@ -538,7 +538,7 @@ which is unity for uncorrelated particles so that correlation is reflected in $g
 
 ## 3.7.1 Exchange in the Hartree-Fock Approximation
 
-> [!derivation] Pair distribution and exchange hole for noninteracting fermions
+> [!derivation] Derivation 14: Pair distribution and exchange hole for noninteracting fermions
 > Derive the pair distribution function Eq. (3.53) and the exchange hole Eq. (3.54) for a Slater-determinant wavefunction. What are the physical constraints that any exchange hole must satisfy, and can you prove them directly from your result? Why does exchange only affect electrons of the same spin? What does the exchange hole look like for the simplest cases — hydrogen and helium? (Exercises 3.12–3.14, 3.16.)
 
 The Hartree-Fock approximation (HFA) consists of neglecting all correlations except those required by the Pauli exclusion principle; however, the exchange term in Eq. (3.44) represents two effects: Pauli exclusion and the self-term that must be subtracted to cancel the spurious self-term included in the direct Coulomb Hartree energy. The effect is always to lower the energy, which may be interpreted as the interaction of each electron with a positive "exchange hole" surrounding it. The exchange hole $\Delta n_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ is given by $\Delta n\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ in the HFA, where $\Psi$ in Eq. (3.50) is approximated by the single determinant wavefunction $\Phi$ of Eq. (3.43). If the single-particle spin-orbitals $\phi_{i}^{\sigma}=\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right) \times \alpha_{i}\left(\sigma_{j}\right)$ are orthonormal, it is straightforward (Exercise 3.13) to show that the pair distribution function can be written
@@ -598,7 +598,7 @@ The energy of a state of many electrons in the Hartree-Fock approximation Eq. (3
 
 This is not the only possible definition of $E_{c}$, which could also be defined as the difference from some other reference state. The definition in terms of the difference from Hartree-Fock is a well-defined choice in the sense that it leads to the smallest possible magnitude of $E_{c}$, since $E_{\mathrm{HFA}}$ is the lowest possible energy neglecting correlation. Another well-defined choice arises naturally in density functional theory, where $E_{c}$ is also defined as the difference between the exact energy and the energy of an uncorrelated state as Eq. (3.44), but with the difference that the orbitals are required to give the exact density (see Section 3.2 and Chapter 7). In many practical cases this distinction appears not to be of great importance; nevertheless, it is essential to define the energies properly, especially as electronic structure methods become more and more powerful in their ability to calculate effects of correlation.
 
-> [!derivation] Correlation hole sum rule
+> [!derivation] Derivation 15: Correlation hole sum rule
 > Decompose the full exchange-correlation hole into its exchange and correlation parts (Eq. 3.58). What sum rule does the correlation hole satisfy, and can you prove it from conservation laws alone without computing any wavefunctions beyond Hartree-Fock? Physically, what does this sum rule tell you about what correlation does to the charge distribution around an electron? (Exercise 3.22.)
 
 The effects of correlation can be cast in terms of the remaining part of the pair correlation function beyond exchange $n_{c}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ defined in terms of Eqs. (3.50) and (3.51) by
