@@ -1,0 +1,5 @@
+/* Derivation callout — purple */
+.callout[data-callout="derivation"] {
+    --callout-color: 142, 68, 173;
+    --callout-icon: lucide-pen-line;
+}

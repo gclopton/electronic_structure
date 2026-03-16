@@ -1,0 +1,212 @@
+{
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/01.0_pp_i_iv_Frontmatter.pdf": {
+    "completed_at": "2026-03-15T01:36:45.421678",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/1 Title Page and Copyright",
+    "pdf_id": "fbc8ce11-dc3c-4e64-bf96-4554f6ff2650",
+    "submitted_at": "2026-03-15T01:36:42.849565",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/02.0_pp_v_vi_Dedication.pdf": {
+    "completed_at": "2026-03-15T01:36:48.109118",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/2 Dedication",
+    "pdf_id": "eedcc1cc-acf9-4abb-9634-85d11fafd556",
+    "submitted_at": "2026-03-15T01:36:45.605967",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/03.0_pp_vii_xviii_Contents.pdf": {
+    "completed_at": "2026-03-15T01:36:55.255373",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/3 Contents",
+    "pdf_id": "f27aa14d-7a4b-4f2c-b280-2aded32eca14",
+    "submitted_at": "2026-03-15T01:36:48.376969",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/04.0_pp_xxiv_xxv_Acknowledgements.pdf": {
+    "completed_at": "2026-03-15T01:36:58.067792",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/4 Acknowledgments",
+    "pdf_id": "27302db5-2ae9-4b73-85d7-3cc380d17e5c",
+    "submitted_at": "2026-03-15T01:36:55.493593",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/05.0_pp_xix_xxiii_Preface.pdf": {
+    "completed_at": "2026-03-15T01:37:03.071014",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/5 Preface",
+    "pdf_id": "05f0b3c1-c287-4c8f-810e-4e2e60e62dcc",
+    "submitted_at": "2026-03-15T01:36:58.322360",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/06.0_pp_xxvi_xxviii_Notation.pdf": {
+    "completed_at": "2026-03-15T01:37:08.034344",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Front Matter/6 List of Notation",
+    "pdf_id": "eab6f870-ca4d-40ec-975a-3d4b0edddcbd",
+    "submitted_at": "2026-03-15T01:37:03.280679",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/07.0_pp_1_14_Introduction.pdf": {
+    "completed_at": "2026-03-15T01:37:15.746991",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/1 Introduction",
+    "pdf_id": "d9e32ab9-d5c8-4b47-88ef-3ba73797525e",
+    "submitted_at": "2026-03-15T01:37:08.308257",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/08.0_pp_15_59_Overview.pdf": {
+    "completed_at": "2026-03-15T01:37:26.484252",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/2 Overview",
+    "pdf_id": "8628e172-a95c-456d-ab10-4afc4752de90",
+    "submitted_at": "2026-03-15T01:37:16.189327",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/09.0_pp_60_80_Theoretical_Background.pdf": {
+    "completed_at": "2026-03-15T01:37:34.182642",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/3 Theoretical Background",
+    "pdf_id": "627ac774-4457-4422-a799-4a48623cb186",
+    "submitted_at": "2026-03-15T01:37:26.707577",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/10.0_pp_81_108_Periodic_Solids_and_Electron_Bands.pdf": {
+    "completed_at": "2026-03-15T01:37:42.549476",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands",
+    "pdf_id": "604962a4-39cc-466b-a46d-0247dee4be0e",
+    "submitted_at": "2026-03-15T01:37:34.582068",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/11.0_pp_109_128_Uniform_Electron_Gas_and_sp-Bonded_Metals.pdf": {
+    "completed_at": "2026-03-15T01:37:50.821263",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/5 Uniform Electron Gas and sp-Bonded Metals",
+    "pdf_id": "edfc7205-eb1a-4ee9-8c2c-c63493e70c07",
+    "submitted_at": "2026-03-15T01:37:42.839509",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/12.0_pp_129_144_Density_Functional_Theory_Foundations.pdf": {
+    "completed_at": "2026-03-15T01:37:58.445964",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/6 Density Functional Theory: Foundations",
+    "pdf_id": "1c0364fd-5946-44bc-86c9-16d5c52eedb4",
+    "submitted_at": "2026-03-15T01:37:51.033893",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/13.0_pp_145_170_The_KohnSham_Auxiliary_System.pdf": {
+    "completed_at": "2026-03-15T01:38:06.811414",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/7 The Kohn-Sham Auxiliary System",
+    "pdf_id": "ecdfac9b-f71a-4800-ae8a-cdcb14a9b5d9",
+    "submitted_at": "2026-03-15T01:37:58.777197",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/14.0_pp_171_187_Functionals_for_Exchange_and_Correlation_I.pdf": {
+    "completed_at": "2026-03-15T01:38:14.716461",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/8 Functionals for Exchange and Correlation I",
+    "pdf_id": "853c4fa8-25c6-41ad-bc77-b946fbe1050f",
+    "submitted_at": "2026-03-15T01:38:07.098662",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/15.0_pp_188_214_Functionals_for_Exchange_and_Correlation_II.pdf": {
+    "completed_at": "2026-03-15T01:38:22.783577",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/9 Functionals for Exchange and Correlation II",
+    "pdf_id": "e6377f92-b320-4847-b808-c9b917cdf25a",
+    "submitted_at": "2026-03-15T01:38:14.995626",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/16.0_pp_215_229_Electronic_Structure_of_Atoms.pdf": {
+    "completed_at": "2026-03-15T01:38:30.876115",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/10 Electronic Structure of Atoms",
+    "pdf_id": "d943c1b0-9a00-4c9f-b99b-e35c3d73a115",
+    "submitted_at": "2026-03-15T01:38:23.153376",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/17.0_pp_230_258_Pseudopotentials.pdf": {
+    "completed_at": "2026-03-15T01:38:39.356187",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/11 Pseudopotentials",
+    "pdf_id": "3e32c0d9-2b78-44da-8922-93197d718df9",
+    "submitted_at": "2026-03-15T01:38:31.143974",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.0_pp_259_261_Overview_of_Chapters_1218.pdf": {
+    "completed_at": "2026-03-15T01:38:44.309258",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/Part IV Overview of Chapters 12-18",
+    "pdf_id": "d2352a64-deaa-4008-98c7-4d3acea6a3d9",
+    "submitted_at": "2026-03-15T01:38:39.562593",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.1_pp_262_282_Plane_Waves_and_Grids_Basics.pdf": {
+    "completed_at": "2026-03-15T01:38:52.456356",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/12 Plane Waves and Grids: Basics",
+    "pdf_id": "e88f6ffa-8158-4c1a-ae12-d43de6d69762",
+    "submitted_at": "2026-03-15T01:38:44.713039",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.2_pp_283_294_Plane_Waves_and_Real-Space_Methods_Full_Calculations.pdf": {
+    "completed_at": "2026-03-15T01:38:58.134009",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/13 Plane Waves and Real-Space Methods: Full Calculations",
+    "pdf_id": "4a8b4856-9f9c-4a62-b7e5-b3c506869dec",
+    "submitted_at": "2026-03-15T01:38:52.677760",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.3_pp_295_319_Localized_Orbitals_Tight-Binding.pdf": {
+    "completed_at": "2026-03-15T01:39:06.478998",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/14 Localized Orbitals: Tight-Binding",
+    "pdf_id": "2b1b0404-43ef-4abd-b9b0-d1fe2640a89c",
+    "submitted_at": "2026-03-15T01:38:58.528026",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.4_pp_320_331_Localized_Orbitals_Full_Calculations.pdf": {
+    "completed_at": "2026-03-15T01:39:14.138297",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/15 Localized Orbitals: Full Calculations",
+    "pdf_id": "b31646da-e15b-41b5-b861-f3be4ee12ce2",
+    "submitted_at": "2026-03-15T01:39:06.724971",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.5_pp_332_364_Augmented_Functions_APW_KKR_MTO.pdf": {
+    "completed_at": "2026-03-15T01:39:23.400829",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/16 Augmented Functions: APW, KKR, MTO",
+    "pdf_id": "44df8361-7bb5-4476-a31d-0ea57f06b9e2",
+    "submitted_at": "2026-03-15T01:39:15.025573",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.6_pp_365_385_Augmented_Functions_Linear_Methods.pdf": {
+    "completed_at": "2026-03-15T01:39:31.611629",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/17 Augmented Functions: Linear Methods",
+    "pdf_id": "be59b1be-6c8c-43fe-8edc-e448a53f1121",
+    "submitted_at": "2026-03-15T01:39:23.717103",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/18.7_pp_386_410_Locality_and_Linear-Scaling_ON_Methods.pdf": {
+    "completed_at": "2026-03-15T01:39:39.912626",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/18 Locality and Linear-Scaling O(N) Methods",
+    "pdf_id": "68d5ca19-a6bf-4c4e-b913-3e8dacbabca3",
+    "submitted_at": "2026-03-15T01:39:31.901502",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/19.0_pp_411_426_Quantum_Molecular_Dynamics_QMD.pdf": {
+    "completed_at": "2026-03-15T01:39:47.708774",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/19 Quantum Molecular Dynamics (QMD)",
+    "pdf_id": "a98fc207-a32f-4028-93ee-5d194b2c4edd",
+    "submitted_at": "2026-03-15T01:39:40.190664",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/20.0_pp_427_445_Response_Functions_Phonons_and_Magnons.pdf": {
+    "completed_at": "2026-03-15T01:39:55.962846",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/20 Response Functions: Phonons and Magnons",
+    "pdf_id": "ff0e914c-2d9f-4ed2-948b-28a636134739",
+    "submitted_at": "2026-03-15T01:39:48.037412",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/21.0_pp_446_464_Excitation_Spectra_and_Optical_Properties.pdf": {
+    "completed_at": "2026-03-15T01:40:04.139001",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/21 Excitation Spectra and Optical Properties",
+    "pdf_id": "fbc163f0-ec06-4711-8c4a-be599cfcee15",
+    "submitted_at": "2026-03-15T01:39:56.278202",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/22.0_pp_465_480_Surfaces_Interfaces_and_Lower-Dimensional_Systems.pdf": {
+    "completed_at": "2026-03-15T01:40:12.123843",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems",
+    "pdf_id": "7485915c-8a21-45be-b9b2-0d503ce58b28",
+    "submitted_at": "2026-03-15T01:40:04.546593",
+    "zip_kind": "md.zip"
+  },
+  "/Users/gradyclopton/Downloads/cambridge-core_electronic-structure_15Mar2026/23.0_pp_481_498_Wannier_Functions.pdf": {
+    "completed_at": "2026-03-15T01:40:20.246398",
+    "out_dir": "/Users/gradyclopton/ObsidianVaults/electronic_structure/Books/Martin Electronic Structure/23 Wannier Functions",
+    "pdf_id": "d472abd0-bf34-4779-bb07-74d61d000093",
+    "submitted_at": "2026-03-15T01:40:12.439642",
+    "zip_kind": "md.zip"
+  }
+}

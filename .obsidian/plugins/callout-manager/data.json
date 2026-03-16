@@ -29,7 +29,15 @@
       "fb",
       "ms",
       "pr",
-      "code"
+      "code",
+      "theorem",
+      "approximation",
+      "assumption",
+      "functional",
+      "method",
+      "parameter",
+      "identity",
+      "relation"
     ],
     "settings": {
       "expansion": [
@@ -91,10 +99,19 @@
           }
         }
       ],
+      "equation": [
+        {
+          "changes": {
+            "icon": "lucide-sigma",
+            "color": "66, 135, 245"
+          }
+        }
+      ],
       "exercise": [
         {
           "changes": {
-            "color": "0, 255, 204"
+            "icon": "lucide-pencil-line",
+            "color": "0, 200, 83"
           }
         }
       ],
@@ -340,6 +357,70 @@
           "changes": {
             "icon": "codeBlock",
             "color": "0, 255, 4"
+          }
+        }
+      ],
+      "theorem": [
+        {
+          "changes": {
+            "icon": "lucide-scale",
+            "color": "160, 80, 255"
+          }
+        }
+      ],
+      "approximation": [
+        {
+          "changes": {
+            "icon": "lucide-alert-circle",
+            "color": "255, 120, 50"
+          }
+        }
+      ],
+      "assumption": [
+        {
+          "changes": {
+            "icon": "lucide-shield",
+            "color": "255, 170, 50"
+          }
+        }
+      ],
+      "functional": [
+        {
+          "changes": {
+            "icon": "lucide-function-square",
+            "color": "0, 180, 180"
+          }
+        }
+      ],
+      "method": [
+        {
+          "changes": {
+            "icon": "lucide-cog",
+            "color": "100, 160, 220"
+          }
+        }
+      ],
+      "parameter": [
+        {
+          "changes": {
+            "icon": "lucide-sliders-horizontal",
+            "color": "140, 160, 185"
+          }
+        }
+      ],
+      "identity": [
+        {
+          "changes": {
+            "icon": "lucide-equal",
+            "color": "180, 140, 255"
+          }
+        }
+      ],
+      "relation": [
+        {
+          "changes": {
+            "icon": "lucide-link",
+            "color": "255, 130, 150"
           }
         }
       ]

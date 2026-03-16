@@ -5,7 +5,8 @@
   "enabledCssSnippets": [
     "S - Images Adjustments",
     "pub-Image Flags",
-    "S - Callouts"
+    "S - Callouts",
+    "custom-callouts"
   ],
   "theme": "obsidian"
 }

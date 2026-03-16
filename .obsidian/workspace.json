@@ -4,24 +4,94 @@
     "type": "split",
     "children": [
       {
-        "id": "192e5ac62bd5200b",
-        "type": "tabs",
+        "id": "f7f336470fdea4e9",
+        "type": "split",
         "children": [
           {
-            "id": "2246d4666d8e6ed8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Group Theory/Untitled.md",
-                "mode": "source",
-                "source": false
+            "id": "0192ba1fd892418b",
+            "type": "tabs",
+            "dimension": 71.89542483660131,
+            "children": [
+              {
+                "id": "917e7df8eb0ba7e5",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Chapter Markup Instructions"
+                }
               },
-              "icon": "lucide-file",
-              "title": "Untitled"
-            }
+              {
+                "id": "1ba78871ceee70a0",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Chapter Markup Instructions"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "05dc7a5f75ad3e5a",
+            "type": "tabs",
+            "dimension": 28.104575163398692,
+            "children": [
+              {
+                "id": "7d97b07caa2ea0f4",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/Users/gradyclopton/ObsidianVaults/electronic_structure/",
+                      "focus": false,
+                      "profile": {
+                        "args": [],
+                        "executable": "/bin/zsh",
+                        "name": "",
+                        "platforms": {
+                          "darwin": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": true,
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {},
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": {
+                        "columns": 137,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mpss\u001b[0m bridges pw\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mpss\u001b[0m cc pw\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/ObsidianVaults/\u001b[38;5;255;1melectronic_structure\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !16 ?3 \u001b[33;49m\u001b[38;5;244m─────────────────────────────────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 01:28:12 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[0m                \u001b[106C\u001b[38;5;244m─╯\u001b[124D\u001b[0m",
+                        "rows": 11
+                      }
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "Terminal: gradyclopton@vpnduopool-10-251-161-197:~/ObsidianVaults/electronic_structure"
+                }
+              }
+            ]
           }
-        ]
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -187,12 +257,192 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "74e418d236fea930",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "fe9118f7398252fd",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "28034ec21e76189a",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "0f5b85dc7124bca6",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "06caf08f8b6a96df",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "c1b53668affad030",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "c33ce2e5a3710b81",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "958d869a2171bd29",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "785eb5c51bf45800",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "b822408571783fb1",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "fa3fabfbfd4d86d7",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "54f1aa8f6a4f9d36",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "4c7382dca8e915cc",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "20496ef3f6b720d7",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "fc432805c3c93e9c",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "b2f35b9c27e2f27c",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "248c191b9cfa1700",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Smart Connections Files"
+            }
+          },
+          {
+            "id": "ed3dd3b84335f930",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
               "icon": "smart-connections",
               "title": "Smart Connections Files"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -200,6 +450,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -218,18 +469,92 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "a236d7b468609af0",
+  "floating": {
+    "id": "10bae05003ede245",
+    "type": "floating",
+    "children": [
+      {
+        "id": "df170bbc67a1525a",
+        "type": "window",
+        "children": [
+          {
+            "id": "457b6b1aff1a40d2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "49542b517ab4eefa",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Chapter Markup Instructions"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 244,
+        "y": 38,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "7d97b07caa2ea0f4",
   "lastOpenFiles": [
-    "Screenshot 2025-06-06 at 5.18.40 PM.png",
-    "Screenshot 2025-06-06 at 5.17.46 PM.png",
-    "Screenshot 2025-06-06 at 5.07.46 PM.png",
-    "Pasted image 20250606170304.png",
-    "Screenshot 2025-06-06 at 5.02.22 PM.png",
-    "Screenshot 2025-06-06 at 4.53.23 PM.png",
-    "Screenshot 2025-06-06 at 4.45.27 PM.png",
-    "Screenshot 2025-06-06 at 4.36.30 PM.png",
-    "Screenshot 2025-06-06 at 4.31.33 PM.png",
-    "Group Theory/Untitled.md",
-    "Group Theory"
+    "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/3 Theoretical Background.md",
+    "Chapter_Markup_Instructions_RECOVERED.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
+    "Books/Martin Electronic Structure/Study Methodology — Electronic Structure Chapters.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/3 Theoretical Background.md.tmp.5.1773624357312",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Equation Index — Martin, Chapter 6.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background 1.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original 1.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/6 Density Functional Theory: Foundations.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/Glossary — Martin, Chapter 3.md",
+    "Books/Martin Electronic Structure/5 Uniform Electron Gas and sp-Bonded Metals/5 Uniform Electron Gas and sp-Bonded Metals.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Exercises — Martin, Chapter 6.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Solution — Eigenfunction Expansion Example.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Solution — Exercise 6.2.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Glossary — Martin, Chapter 6.md",
+    "Books/Martin Electronic Structure/7 The Kohn-Sham Auxiliary System/7 The Kohn-Sham Auxiliary System.md",
+    "Converting PDFs to Markdown.md",
+    "Books/Martin Electronic Structure/Part IV Overview of Chapters 12-18/original/Part IV Overview of Chapters 12-18.md",
+    "Books/Martin Electronic Structure/Part IV Overview of Chapters 12-18/original",
+    "Books/Martin Electronic Structure/9 Functionals for Exchange and Correlation II/original/9 Functionals for Exchange and Correlation II.md",
+    "Books/Martin Electronic Structure/9 Functionals for Exchange and Correlation II/original",
+    "Books/Martin Electronic Structure/8 Functionals for Exchange and Correlation I/original/8 Functionals for Exchange and Correlation I.md",
+    "Books/Martin Electronic Structure/8 Functionals for Exchange and Correlation I/original",
+    "Books/Martin Electronic Structure/7 The Kohn-Sham Auxiliary System/original/7 The Kohn-Sham Auxiliary System.md",
+    "Books/Martin Electronic Structure/7 The Kohn-Sham Auxiliary System/original",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/original/6 Density Functional Theory: Foundations.md",
+    "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/original",
+    "Books/Martin Electronic Structure/5 Uniform Electron Gas and sp-Bonded Metals/original/5 Uniform Electron Gas and sp-Bonded Metals.md",
+    "Books/Martin Electronic Structure/5 Uniform Electron Gas and sp-Bonded Metals/original",
+    "Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands/original/4 Periodic Solids and Electron Bands.md",
+    "Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands/original",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original",
+    "Books/Martin Electronic Structure/23 Wannier Functions/original/23 Wannier Functions.md",
+    "Books/Martin Electronic Structure/23 Wannier Functions/original",
+    "Books/Martin Electronic Structure/23 Wannier Functions/images/d472abd0-bf34-4779-bb07-74d61d000093-14_860_886_242_392.jpg",
+    "Books/Martin Electronic Structure/23 Wannier Functions/images/d472abd0-bf34-4779-bb07-74d61d000093-13_352_768_243_454.jpg",
+    "Books/Martin Electronic Structure/23 Wannier Functions/images/d472abd0-bf34-4779-bb07-74d61d000093-10_457_932_243_369.jpg",
+    "Books/Martin Electronic Structure/23 Wannier Functions/images/d472abd0-bf34-4779-bb07-74d61d000093-06_992_884_247_394.jpg",
+    "Books/Martin Electronic Structure/23 Wannier Functions/images/d472abd0-bf34-4779-bb07-74d61d000093-03_679_1010_247_330.jpg",
+    "Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems/images/7485915c-8a21-45be-b9b2-0d503ce58b28-15_500_946_247_362.jpg",
+    "Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems/images/7485915c-8a21-45be-b9b2-0d503ce58b28-14_538_1010_245_330.jpg",
+    "Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems/images/7485915c-8a21-45be-b9b2-0d503ce58b28-12_532_1256_247_210.jpg",
+    "Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems/images/7485915c-8a21-45be-b9b2-0d503ce58b28-11_608_1132_243_270.jpg",
+    "Books/Martin Electronic Structure/22 Surfaces, Interfaces, and Lower-Dimensional Systems/images/7485915c-8a21-45be-b9b2-0d503ce58b28-09_473_1261_242_213.jpg"
   ]
 }
