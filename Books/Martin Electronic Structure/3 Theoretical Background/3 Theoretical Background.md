@@ -28,6 +28,79 @@ There is only one term in Eq. (3.1) that can be regarded as small, the inverse m
 > [!derivation] Derivation 1: Born-Oppenheimer reduction of the full Hamiltonian
 > Derive the electronic Hamiltonian Eq. (3.2) from the full Hamiltonian Eq. (3.1). What is the small parameter that controls the approximation, and why is it physically reasonable? Under what circumstances does this approximation break down, and what phenomena become inaccessible?
 
+Starting from Eq. (3.1), separate the terms into electronic kinetic energy, electron-nucleus attraction, electron-electron interaction, nuclear kinetic energy, and nucleus-nucleus interaction:
+
+$$
+\begin{aligned}
+\hat{H}
+&= \left(-\frac{\hbar^{2}}{2 m_{e}} \sum_{i} \nabla_{i}^{2}\right)
+ + \left(-\sum_{i, I} \frac{Z_{I} e^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|}\right)
+ + \left(\frac{1}{2} \sum_{i \neq j} \frac{e^{2}}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}\right) \\
+&\quad + \left(-\sum_{I} \frac{\hbar^{2}}{2 M_{I}} \nabla_{I}^{2}\right)
+ + \left(\frac{1}{2} \sum_{I \neq J} \frac{Z_{I} Z_{J} e^{2}}{\left|\mathbf{R}_{I}-\mathbf{R}_{J}\right|}\right).
+\end{aligned}
+$$
+
+Group the first three terms into an electronic operator at fixed nuclear positions:
+
+$$
+\hat{H}
+= \hat{H}_{e}(\{\mathbf{R}_{I}\})
+-\sum_{I} \frac{\hbar^{2}}{2 M_{I}} \nabla_{I}^{2}
++\frac{1}{2} \sum_{I \neq J} \frac{Z_{I} Z_{J} e^{2}}{\left|\mathbf{R}_{I}-\mathbf{R}_{J}\right|},
+$$
+
+with
+
+$$
+\hat{H}_{e}(\{\mathbf{R}_{I}\})
+= -\frac{\hbar^{2}}{2 m_{e}} \sum_{i} \nabla_{i}^{2}
+-\sum_{i, I} \frac{Z_{I} e^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|}
++\frac{1}{2} \sum_{i \neq j} \frac{e^{2}}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}.
+$$
+
+In the Born-Oppenheimer approximation, the nuclei are taken to be infinitely heavy to leading order, so
+
+$$
+\frac{1}{M_{I}} \to 0
+\qquad \Longrightarrow \qquad
+-\sum_{I} \frac{\hbar^{2}}{2 M_{I}} \nabla_{I}^{2} \to 0.
+$$
+
+Therefore
+
+$$
+\hat{H}
+\approx \hat{H}_{e}(\{\mathbf{R}_{I}\})
++\frac{1}{2} \sum_{I \neq J} \frac{Z_{I} Z_{J} e^{2}}{\left|\mathbf{R}_{I}-\mathbf{R}_{J}\right|}.
+$$
+
+Identifying
+
+$$
+\hat{T}=-\frac{\hbar^{2}}{2 m_{e}} \sum_{i} \nabla_{i}^{2},
+\qquad
+\hat{V}_{\mathrm{ext}}=-\sum_{i, I} \frac{Z_{I} e^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|},
+\qquad
+\hat{V}_{\mathrm{int}}=\frac{1}{2} \sum_{i \neq j} \frac{e^{2}}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|},
+$$
+
+and
+
+$$
+E_{I I}=\frac{1}{2} \sum_{I \neq J} \frac{Z_{I} Z_{J} e^{2}}{\left|\mathbf{R}_{I}-\mathbf{R}_{J}\right|},
+$$
+
+one obtains Eq. (3.2),
+
+$$
+\hat{H}=\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}}+E_{I I}.
+$$
+
+The small parameter is the inverse nuclear mass, equivalently the electron-to-nuclear mass ratio $m_{e}/M_{I}$ (or, in vibrational estimates, $\sqrt{m_{e}/M_{I}}$). It is physically reasonable because nuclei are much heavier than electrons, so their motion is much slower and the electrons can usually adjust adiabatically to a nearly fixed nuclear configuration.
+
+The approximation breaks down when nonadiabatic coupling between electronic and nuclear motion is not small, for example near degeneracies or avoided crossings of electronic surfaces, in light-atom systems, or when proton/nuclear quantum effects are important. In such cases one loses access to effects that require explicit coupled electron-nuclear dynamics, such as vibronic mixing, phonon-assisted transitions beyond adiabatic perturbation theory, nonradiative transitions at conical intersections, and other electron-phonon nonadiabatic phenomena.
+
 Ignoring the nuclear kinetic energy, the fundamental hamiltonian for the theory of electronic structure can be written as
 
 > [!definition] Electronic Hamiltonian (Eq. 3.2)
@@ -42,16 +115,43 @@ $$
 \hat{T}=\sum_{i}-\frac{1}{2} \nabla_{i}^{2}
 $$
 
+since
+
+$$
+\hat{T}
+=-\frac{\hbar^{2}}{2 m_{e}} \sum_{i} \nabla_{i}^{2}
+=-\frac{1^{2}}{2 \cdot 1} \sum_{i} \nabla_{i}^{2}
+=-\frac{1}{2} \sum_{i} \nabla_{i}^{2}.
+$$
+
 $\hat{V}_{\text {ext }}$ is the potential acting on the electrons due to the nuclei,
 
 $$
 \hat{V}_{\mathrm{ext}}=\sum_{i, I} V_{I}\left(\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|\right) ;
 $$
 
+for the bare Coulomb form,
+
+$$
+\hat{V}_{\mathrm{ext}}
+=-\sum_{i, I} \frac{Z_{I} e^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|}
+=-\sum_{i, I} \frac{Z_{I} \cdot 1^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|}
+=-\sum_{i, I} \frac{Z_{I}}{\left|\mathbf{r}_{i}-\mathbf{R}_{I}\right|}.
+$$
+
 $\hat{V}_{\text {int }}$ is the electron-electron interaction,
 
 $$
 \hat{V}_{\mathrm{int}}=\frac{1}{2} \sum_{i \neq j} \frac{1}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}
+$$
+
+since
+
+$$
+\hat{V}_{\mathrm{int}}
+=\frac{1}{2} \sum_{i \neq j} \frac{e^{2}}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}
+=\frac{1}{2} \sum_{i \neq j} \frac{1^{2}}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}
+=\frac{1}{2} \sum_{i \neq j} \frac{1}{\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}.
 $$
 
 and the final term $E_{I I}$ is the classical interaction of nuclei with one another and any other terms that contribute to the total energy of the system but are not germane to the problem of describing the electrons. Here the effect of the nuclei upon the electrons is included in a fixed potential "external" to the electrons. This general form is still valid if the bare nuclear Coulomb interaction is replaced by a pseudopotential that takes into account effects of core electrons (except that the potentials are "nonlocal"; see Chapter 11). Also, other "external potentials," such as electric fields and Zeeman terms, can readily be included. Thus, for electrons, the hamiltonian, Eq. (3.2), is central to the theory of electronic structure.
@@ -83,31 +183,46 @@ The density of particles $n(\mathbf{r})$, which plays a central role in electron
 > n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}=N \frac{\int \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N} \sum_{\sigma_{1}}\left|\Psi\left(\mathbf{r}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}}{\int \mathrm{~d}^{3} r_{1} \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N}\left|\Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}},
 > $$
 
-To see this, insert the density operator into the expectation value (assuming $\langle\Psi|\Psi\rangle = 1$ for clarity):
+To see this, insert the density operator into the expectation value without yet assuming normalization:
 
 $$
 \begin{aligned}
 n(\mathbf{r})
-&= \langle\Psi| \hat{n}(\mathbf{r}) |\Psi\rangle \\
-&= \sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; \Psi^{*}(\mathbf{r}_{1},\ldots,\mathbf{r}_{N})\,\delta(\mathbf{r}-\mathbf{r}_{i})\,\Psi(\mathbf{r}_{1},\ldots,\mathbf{r}_{N}).
+&= \frac{\langle\Psi| \hat{n}(\mathbf{r}) |\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \\
+&= \frac{1}{\langle\Psi \mid \Psi\rangle}
+\sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; \Psi^{*}(\mathbf{r}_{1},\ldots,\mathbf{r}_{N})\,\delta(\mathbf{r}-\mathbf{r}_{i})\,\Psi(\mathbf{r}_{1},\ldots,\mathbf{r}_{N}).
 \end{aligned}
 $$
 
 For the $i$-th term in the sum, the delta function $\delta(\mathbf{r}-\mathbf{r}_{i})$ collapses the $\mathbf{r}_{i}$ integration, setting $\mathbf{r}_{i} = \mathbf{r}$. The $i = 1$ contribution, for instance, gives
 
 $$
-\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}.
+\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}.
 $$
 
 Because the electrons are identical fermions, $|\Psi|^{2}$ is symmetric under exchange of any two electron coordinates (the antisymmetry of $\Psi$ squares away). Therefore every term in the sum over $i$ gives exactly the same integral — only the label of the "surviving" coordinate differs. Summing all $N$ identical terms produces the factor of $N$ in Eq. (3.8).
 
+Thus
+
+$$
+\begin{aligned}
+n(\mathbf{r})
+&= \frac{N \int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}}{\langle\Psi \mid \Psi\rangle} \\
+&= N \frac{\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}}{\int \mathrm{d}^{3}r_{1} \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}},
+\end{aligned}
+$$
+
+which is Eq. (3.8). Here the sum over $\sigma_{1}$ appears because once the spatial coordinate of one electron is fixed at $\mathbf{r}$, one must still sum over that electron's spin.
+
 > [!derivation] Derivation 3: Total energy expression — external potential reduces to a density integral
 > Using the result for $n(\mathbf{r})$ from Eq. (3.8), simplify the total energy expectation value into the form of Eq. (3.9). Which terms in the Hamiltonian can be expressed purely in terms of the density, and which cannot? What is it about the structure of a one-body vs. two-body operator that makes the difference?
+
 
 The total energy is the expectation value of the hamiltonian. Using $\hat{H} = \hat{T} + \hat{V}_{\text{ext}} + \hat{V}_{\text{int}} + E_{II}$, the linearity of the expectation value gives
 
 $$
-E = \langle\hat{H}\rangle = \langle\hat{T}\rangle + \langle\hat{V}_{\text{ext}}\rangle + \langle\hat{V}_{\text{int}}\rangle + E_{II}.
+E=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
+=\langle\hat{T}\rangle + \langle\hat{V}_{\text{ext}}\rangle + \langle\hat{V}_{\text{int}}\rangle + E_{II},
 $$
 
 The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} V_{\text{ext}}(\mathbf{r}_{i})$. Its expectation value therefore reduces by the same logic used for the density operator (Derivation 2): each term in the sum over $i$ gives the same integral after exploiting the exchange symmetry of $|\Psi|^{2}$, so
@@ -115,8 +230,12 @@ The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} 
 $$
 \begin{aligned}
 \langle\hat{V}_{\text{ext}}\rangle
-&= \sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; |\Psi|^{2}\, V_{\text{ext}}(\mathbf{r}_{i}) \\
-&= N \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r}) \int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2} \\
+&= \frac{\langle\Psi| \hat{V}_{\text{ext}}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \\
+&= \frac{1}{\langle\Psi \mid \Psi\rangle}
+\sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; |\Psi|^{2}\, V_{\text{ext}}(\mathbf{r}_{i}) \\
+&= \frac{N}{\langle\Psi \mid \Psi\rangle}
+\int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})
+\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2} \\
 &= \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}).
 \end{aligned}
 $$
@@ -148,13 +267,41 @@ This is equivalent to the well-known Rayleigh-Ritz principle ${ }^{2}$
 > \Omega_{\mathrm{RR}}=\langle\Psi| \hat{H}-E|\Psi\rangle,
 > $$
 
-which is stationary at any eigensolution $\left|\Psi_{m}\right\rangle .{ }^{3}$ Variation of the bra $\langle\Psi|$ leads to
+which is stationary at any eigensolution $\left|\Psi_{m}\right\rangle .{ }^{3}$ More explicitly,
 
 $$
-\langle\delta \Psi| \hat{H}-E|\Psi\rangle=0
+\begin{aligned}
+\delta \Omega_{\mathrm{RR}}
+&= \delta \langle\Psi|(\hat{H}-E)|\Psi\rangle \\
+&= \langle\delta \Psi|(\hat{H}-E)|\Psi\rangle + \langle\Psi|(\hat{H}-E)|\delta \Psi\rangle - \delta E (\langle\Psi \mid \Psi\rangle-1).
+\end{aligned}
 $$
 
-Since this must hold true for all possible $\langle\delta \Psi|$, this can be satisfied only if the ket $|\Psi\rangle$ satisfies the time-independent Schrödinger equation
+Variation with respect to the multiplier $E$ gives the normalization condition
+
+$$
+\langle\Psi \mid \Psi\rangle=1.
+$$
+
+Variation of the bra $\langle\Psi|$ gives
+
+$$
+\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle=0,
+$$
+
+and variation of the ket $|\Psi\rangle$ gives the Hermitian-conjugate condition
+
+$$
+\langle\Psi|(\hat{H}-E)|\delta \Psi\rangle=0.
+$$
+
+Since $\langle\delta \Psi|$ is arbitrary, the first of these can hold for all variations only if
+
+$$
+(\hat{H}-E)|\Psi\rangle=0,
+$$
+
+that is,
 
 > [!theorem] Time-independent Schrödinger equation (Eq. 3.13)
 >
@@ -162,7 +309,28 @@ Since this must hold true for all possible $\langle\delta \Psi|$, this can be sa
 > \hat{H}|\Psi\rangle=E|\Psi\rangle .
 > $$
 
-In Exercise 3.1 it is shown that the same equations result from explicit variation of $\Psi$ in Eq. (3.9) without Lagrange multipliers.
+The direct variation of the ratio Eq. (3.9) gives the same result. Writing
+
+$$
+E[\Psi]=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle},
+$$
+
+one finds
+
+$$
+\begin{aligned}
+\delta E
+&= \delta \left(\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}\right) \\
+&= \frac{\delta \langle\Psi| \hat{H}|\Psi\rangle \, \langle\Psi \mid \Psi\rangle - \langle\Psi| \hat{H}|\Psi\rangle \, \delta \langle\Psi \mid \Psi\rangle}{\langle\Psi \mid \Psi\rangle^{2}} \\
+&= \frac{\bigl(\langle\delta\Psi| \hat{H}|\Psi\rangle + \langle\Psi| \hat{H}|\delta\Psi\rangle\bigr)\langle\Psi \mid \Psi\rangle - E\langle\Psi \mid \Psi\rangle \bigl(\langle\delta\Psi \mid \Psi\rangle + \langle\Psi \mid \delta\Psi\rangle\bigr)}{\langle\Psi \mid \Psi\rangle^{2}} \\
+&= \frac{\langle\delta\Psi|(\hat{H}-E)|\Psi\rangle + \langle\Psi|(\hat{H}-E)|\delta\Psi\rangle}{\langle\Psi \mid \Psi\rangle}.
+\end{aligned}
+$$
+
+Therefore the stationarity condition $\delta E=0$ for arbitrary independent variations of bra and ket again implies $(\hat{H}-E)|\Psi\rangle=0$. The two approaches must agree because they are the same variational problem written in two equivalent forms: extremizing the Rayleigh quotient directly, or extremizing the numerator subject to fixed norm.
+
+For practical electronic structure, the variational formulation is more fundamental because in realistic many-electron problems one usually cannot solve the exact eigenvalue equation directly. Instead one restricts $\Psi$ to a tractable class of trial states and minimizes or makes stationary the energy within that space, which is precisely the framework used in Hartree-Fock, density functional theory, quantum Monte Carlo, and other approximate methods.
+
 
 ---
 
@@ -204,7 +372,64 @@ where $E_{\text {Hartree }}$ is the self-interaction energy of the density $n(\m
 > E_{\text {Hartree }}=\frac{1}{2} \int \mathrm{~d}^{3} r \mathrm{~d}^{3} r^{\prime} \frac{n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} .
 > $$
 
+To see why Eq. (3.14) is the classical Coulomb energy, define the nuclear and electronic charge densities
+
+$$
+\rho_{I}(\mathbf{r})=\sum_{I} Z_{I}\,\delta(\mathbf{r}-\mathbf{R}_{I}),
+\qquad
+\rho_{e}(\mathbf{r})=-n(\mathbf{r}),
+$$
+
+so that the total charge density is
+
+$$
+\rho_{\mathrm{tot}}(\mathbf{r})=\rho_{I}(\mathbf{r})+\rho_{e}(\mathbf{r})=\sum_{I} Z_{I}\,\delta(\mathbf{r}-\mathbf{R}_{I})-n(\mathbf{r}).
+$$
+
+Then the classical Coulomb energy of the total charge distribution is
+
+$$
+\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
+\frac{\rho_{\mathrm{tot}}(\mathbf{r})\rho_{\mathrm{tot}}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|},
+$$
+
+which expands as
+
+$$
+\begin{aligned}
+\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
+\frac{\rho_{\mathrm{tot}}(\mathbf{r})\rho_{\mathrm{tot}}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}
+&=
+\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
+\frac{n(\mathbf{r})n(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|} \\
+&\quad
+-\sum_{I}\int \mathrm{d}^{3}r\, \frac{Z_{I}n(\mathbf{r})}{|\mathbf{r}-\mathbf{R}_{I}|}
++\frac{1}{2}\sum_{I\neq J}\frac{Z_{I}Z_{J}}{|\mathbf{R}_{I}-\mathbf{R}_{J}|},
+\end{aligned}
+$$
+
+where the divergent $I=J$ nuclear self-terms are excluded because they do not belong to the physical interaction energy of distinct nuclei. Using
+
+$$
+V_{\mathrm{ext}}(\mathbf{r})=-\sum_{I}\frac{Z_{I}}{|\mathbf{r}-\mathbf{R}_{I}|},
+$$
+
+this becomes
+
+$$
+E_{\mathrm{Hartree}}+\int \mathrm{d}^{3}r\,V_{\mathrm{ext}}(\mathbf{r})\,n(\mathbf{r})+E_{II}=E^{\mathrm{CC}}.
+$$
+
 Since $E_{I I}$ is the interaction among the positive nuclei and $\int \mathrm{d}^{3} r V_{\text {ext }}(\mathbf{r}) n(\mathbf{r})$ is the interaction of the electrons with the nuclei, Eq. (3.14) is a neutral grouping of terms so long as the system is neutral. The evaluation of classical Coulomb energies is an intrinsic part of quantitative electronic structure calculations; methods for dealing with long-range Coulomb interaction are described in Appendix F.
+
+The neutrality condition is
+
+$$
+\int \mathrm{d}^{3}r\,\rho_{\mathrm{tot}}(\mathbf{r})
+=\sum_{I} Z_{I}-\int \mathrm{d}^{3}r\,n(\mathbf{r})=0.
+$$
+
+Only under this condition can the long-range Coulomb contributions be grouped into a finite macroscopic classical energy.
 
 It then follows that the total energy expression, (3.9), can be rearranged by adding and subtracting $E_{\text{Hartree}}$:
 
@@ -226,6 +451,24 @@ That is,
 
 where each of the three terms is well defined. The middle term in brackets, $\left\langle\hat{V}_{\text {int }}\right\rangle-E_{\text {Hartree }}$, is the difference between the Coulomb energies of interacting, correlated electrons with density $n(\mathbf{r})$ and that of a continuous classical charge distribution having the same density, which is defined to be the potential part of the exchange-correlation energy $E_{\mathrm{xc}}$ in density functional theory (see Sections 6.4 and 8.2, especially the discussion related to Eq. (8.3)). ${ }^{4}$ Thus all long-range interactions cancel in the difference so that effects of exchange and correlation are short ranged. This is a point to which we will return in Chapter 7 and Appendix H.
 
+More explicitly, if $n^{(2)}(\mathbf{r},\mathbf{r}')$ denotes the pair density, then
+
+$$
+\left\langle\hat{V}_{\mathrm{int}}\right\rangle
+=\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
+\frac{n^{(2)}(\mathbf{r},\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|},
+$$
+
+so
+
+$$
+\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_{\mathrm{Hartree}}
+=\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
+\frac{n^{(2)}(\mathbf{r},\mathbf{r}')-n(\mathbf{r})n(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}.
+$$
+
+This is the non-classical piece: it measures how the true correlated two-particle distribution differs from the Coulomb energy of a smooth charge cloud with the same one-particle density. Because the classical long-range part has already been removed, the remaining exchange-correlation contribution is associated with the local depletion and rearrangement of charge around each electron, and is therefore short-ranged.
+
 [^2]
 # 3.3 Force and Stress Theorems
 
@@ -242,13 +485,79 @@ $$
 \mathbf{F}_{I}=-\frac{\partial E}{\partial \mathbf{R}_{I}}
 $$
 
-From the general expression for the total energy Eq. (3.9), the derivative can be written using first-order perturbation theory (the normalization does not change and we assume $\langle\Psi \mid \Psi\rangle=1$ for convenience),
+Starting from Eq. (3.9) and assuming $\langle\Psi \mid \Psi\rangle=1$ for convenience,
 
 $$
--\frac{\partial E}{\partial \mathbf{R}_{I}}=-\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_{I}}|\Psi\rangle-\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right| \hat{H}|\Psi\rangle-\langle\Psi| \hat{H}\left|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle-\frac{\partial E_{I I}}{\partial \mathbf{R}_{I}} .
+E=\langle\Psi|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})|\Psi\rangle+E_{II}.
 $$
 
-Using the fact that at the exact ground-state solution the energy is extremal with respect to all possible variations of the wavefunction, it follows that the middle two terms in Eq. (3.18) vanish and the only nonzero terms come from the explicit dependence of the nuclear position. Furthermore, using the form of the energy in Eq. (3.9), it follows that the force depends only on the density $n$ of the electrons and the other nuclei,
+Differentiating with respect to $\mathbf{R}_{I}$ gives
+
+$$
+\begin{aligned}
+\frac{\partial E}{\partial \mathbf{R}_{I}}
+&=
+\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\Psi\right\rangle
++\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle \\
+&\quad
++\left\langle\Psi\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
++\frac{\partial E_{II}}{\partial \mathbf{R}_{I}},
+\end{aligned}
+$$
+
+because $\hat{T}$ and $\hat{V}_{\mathrm{int}}$ have no explicit dependence on nuclear positions. For an exact stationary state,
+
+$$
+(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})|\Psi\rangle=E_{\mathrm{el}}|\Psi\rangle,
+$$
+
+so the first and third terms become
+
+$$
+\begin{aligned}
+\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\Psi\right\rangle
++\left\langle\Psi\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
+&=
+E_{\mathrm{el}}
+\left(
+\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
++\left\langle\Psi\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
+\right) \\
+&=
+E_{\mathrm{el}} \frac{\partial}{\partial \mathbf{R}_{I}}\langle\Psi \mid \Psi\rangle \\
+&= 0.
+\end{aligned}
+$$
+
+Thus
+
+$$
+-\frac{\partial E}{\partial \mathbf{R}_{I}}
+=-\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
+-\frac{\partial E_{II}}{\partial \mathbf{R}_{I}}.
+$$
+
+Now $\partial \hat{V}_{\mathrm{ext}}/\partial \mathbf{R}_{I}$ is still a one-body operator. Since
+
+$$
+\hat{V}_{\mathrm{ext}}=\sum_{j} V_{\mathrm{ext}}(\mathbf{r}_{j}),
+$$
+
+it follows that
+
+$$
+\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}
+=\sum_{j}\frac{\partial V_{\mathrm{ext}}(\mathbf{r}_{j})}{\partial \mathbf{R}_{I}}.
+$$
+
+Therefore, by the same reduction used in Derivations 2 and 3,
+
+$$
+\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
+=\int \mathrm{d}^{3}r\,n(\mathbf{r})\frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_{I}}.
+$$
+
+Hence the force depends only on the density $n$ of the electrons and the other nuclei,
 
 > [!theorem] Force (Hellmann-Feynman) theorem (Eq. 3.19)
 >
@@ -256,7 +565,7 @@ Using the fact that at the exact ground-state solution the energy is extremal wi
 > \mathbf{F}_{I}=-\frac{\partial E}{\partial \mathbf{R}_{I}}=-\int \mathrm{d}^{3} r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_{I}}-\frac{\partial E_{I I}}{\partial \mathbf{R}_{I}} .
 > $$
 
-Here $n(\mathbf{r})$ is the unperturbed density and the other nuclei are held fixed, as shown schematically in the left-hand side of Fig. I.1. Since each nucleus interacts with the electrons and other nuclei via Coulomb interactions, the right-hand side of Eq. (3.19) can be shown (Exercise 3.3) to equal the nuclear charge times the total electric field, which is the electrostatic theorem of Feynman. Thus even though the kinetic energy and internal interactions change as the nuclei move, all such terms cancel in the force theorem.
+Here $n(\mathbf{r})$ is the unperturbed density and the other nuclei are held fixed, as shown schematically in the left-hand side of Fig. I.1. Since each nucleus interacts with the electrons and other nuclei via Coulomb interactions, the right-hand side of Eq. (3.19) can be shown (Exercise 3.3) to equal the nuclear charge times the total electric field, which is the electrostatic theorem of Feynman. The cancellation of the kinetic-energy and electron-electron terms occurs because the exact electronic state is stationary with respect to variations of the wavefunction at fixed nuclear positions. This cancellation can fail if the electronic state is not exact or not fully variational with respect to the chosen representation, for example in an incomplete basis (Pulay terms), or if the ionic potential is nonlocal, in which case the force cannot be written solely in terms of the density.
 
 ---
 
@@ -289,9 +598,117 @@ $$
 \Psi_{\epsilon}\left(\left\{\mathbf{r}_{i}\right\}\right)=\operatorname{det}\left(\delta_{\alpha \beta}+\epsilon_{\alpha \beta}\right)^{-1 / 2} \Psi\left(\left\{\left(\delta_{\alpha \beta}+\epsilon_{\alpha \beta}\right)^{-1} \mathbf{r}_{i \beta}\right\}\right),
 $$
 
-where the prefactor preserves the normalization. Since the wavefunction also depends on the nuclear positions (either explicitly, treating the nuclei as quantum particles, or implicitly, as parameters in the Born-Oppenheimer approximation discussed after Eq. (3.1)), so also must the nuclear positions be scaled. Of course, the wavefunction and the nuclear positions actually change in other ways if the system is compressed or expanded; however, this has no effect on the energy to first order because the wavefunction and the nuclear positions are at variational minima.
+where the prefactor preserves the normalization. Writing
 
-Substituting $\Psi_{\epsilon}\left(\left\{\mathbf{r}_{i}\right\}\right)$ into expression (3.9) for the energy, changing variables in the integrations, and using Eq. (3.21) leads directly to the expression [162]
+$$
+S_{\alpha\beta}=\delta_{\alpha\beta}+\epsilon_{\alpha\beta},
+\qquad
+\mathbf{r}'=S\mathbf{r},
+$$
+
+one has
+
+$$
+\mathrm{d}^{3}r'=\det(S)\,\mathrm{d}^{3}r,
+$$
+
+so for $N$ particles
+
+$$
+\int \mathrm{d}^{3}r_{1}'\cdots \mathrm{d}^{3}r_{N}'\,|\Psi_{\epsilon}|^{2}
+=
+\det(S)^{-N}\det(S)^{N}
+\int \mathrm{d}^{3}r_{1}\cdots \mathrm{d}^{3}r_{N}\,|\Psi|^{2}
+=
+\int \mathrm{d}^{3}r_{1}\cdots \mathrm{d}^{3}r_{N}\,|\Psi|^{2}.
+$$
+
+Since the wavefunction also depends on the nuclear positions (either explicitly, treating the nuclei as quantum particles, or implicitly, as parameters in the Born-Oppenheimer approximation discussed after Eq. (3.1)), so also must the nuclear positions be scaled. Of course, the wavefunction and the nuclear positions actually change in other ways if the system is compressed or expanded; however, this has no effect on the energy to first order because the wavefunction and the nuclear positions are at variational minima. This is the same variational simplification as in the force theorem: at first order, only the explicit dependence of the hamiltonian on the strain need be kept.
+
+After changing variables back to the unstrained coordinates, the strained energy can be written as
+
+$$
+E(\epsilon)=\langle\Psi|\hat{H}_{\epsilon}|\Psi\rangle,
+$$
+
+where the explicit strain dependence has been transferred to the operators. For the kinetic part,
+
+$$
+\nabla'_{k\gamma}=(S^{-1})_{\alpha\gamma}\nabla_{k\alpha},
+$$
+
+so
+
+$$
+\hat{T}_{\epsilon}
+=-\sum_{k}\frac{\hbar^{2}}{2m_{k}}(S^{-1})_{\alpha\gamma}(S^{-1})_{\beta\gamma}\nabla_{k\alpha}\nabla_{k\beta}.
+$$
+
+To first order in the strain,
+
+$$
+S^{-1}=\delta-\epsilon+O(\epsilon^{2}),
+\qquad
+(S^{-1})_{\alpha\gamma}(S^{-1})_{\beta\gamma}
+=\delta_{\alpha\beta}-\epsilon_{\alpha\beta}-\epsilon_{\beta\alpha}+O(\epsilon^{2}),
+$$
+
+so for symmetric strain $\epsilon_{\alpha\beta}=\epsilon_{\beta\alpha}$ one obtains directly
+
+$$
+\left.\frac{\partial \hat{T}_{\epsilon}}{\partial \epsilon_{\alpha\beta}}\right|_{\epsilon=0}
+=\sum_{k}\frac{\hbar^{2}}{2m_{k}}\nabla_{k\alpha}\nabla_{k\beta},
+$$
+
+which is the kinetic contribution appearing in Eq. (3.23).
+
+For any pair interaction depending only on the separation $x_{kk'}=|\mathbf{x}_{kk'}|$,
+
+$$
+\hat{V}_{\epsilon}
+=\frac{1}{2}\sum_{k\neq k'} \hat{V}\!\left(|S\mathbf{x}_{kk'}|\right).
+$$
+
+Now
+
+$$
+|S\mathbf{x}|^{2}
+=x_{\gamma}(\delta_{\gamma\alpha}+\epsilon_{\gamma\alpha})(\delta_{\alpha\delta}+\epsilon_{\alpha\delta})x_{\delta}
+=x^{2}+2\epsilon_{\alpha\beta}x_{\alpha}x_{\beta}+O(\epsilon^{2}),
+$$
+
+so
+
+$$
+|S\mathbf{x}|
+=x+\epsilon_{\alpha\beta}\frac{x_{\alpha}x_{\beta}}{x}+O(\epsilon^{2}),
+$$
+
+and therefore
+
+$$
+\hat{V}_{\epsilon}
+=\hat{V}
++\frac{1}{2}\epsilon_{\alpha\beta}\sum_{k\neq k'}
+\frac{(\mathbf{x}_{kk'})_{\alpha}(\mathbf{x}_{kk'})_{\beta}}{x_{kk'}}
+\left(\frac{\mathrm{d}}{\mathrm{d}x_{kk'}}\hat{V}\right)
++O(\epsilon^{2}).
+$$
+
+Thus
+
+$$
+\frac{\partial E}{\partial \epsilon_{\alpha\beta}}
+=
+\left\langle\Psi\middle|
+\sum_{k}\frac{\hbar^{2}}{2m_{k}}\nabla_{k\alpha}\nabla_{k\beta}
+-\frac{1}{2}\sum_{k\neq k'}
+\frac{(\mathbf{x}_{kk'})_{\alpha}(\mathbf{x}_{kk'})_{\beta}}{x_{kk'}}
+\left(\frac{\mathrm{d}}{\mathrm{d}x_{kk'}}\hat{V}\right)
+\middle|\Psi\right\rangle,
+$$
+
+and using Eq. (3.21) leads to the expression [162]
 
 > [!theorem] Stress tensor (Eq. 3.23)
 >
@@ -300,6 +717,45 @@ Substituting $\Psi_{\epsilon}\left(\left\{\mathbf{r}_{i}\right\}\right)$ into ex
 > $$
 
 where the sum over $k$ and $k^{\prime}$ denotes a double sum over all particles, nuclei, and electrons, where the interaction is a function of the distance $x_{k k^{\prime}}=\left|\mathbf{x}_{k k^{\prime}}\right|$. The virial theorem for pressure $P=-\sum_{\alpha} \sigma_{\alpha \alpha}$ is the trace of Eq. (3.23), which follows from isotropic scaling of space, $\epsilon_{\alpha \beta}=\epsilon \delta_{\alpha \beta}$. If all interactions are Coulombic and the potential energy includes all terms due to nuclei and electrons, the virial theorem leads to
+
+For isotropic strain,
+
+$$
+\epsilon_{\alpha\beta}=\epsilon\,\delta_{\alpha\beta},
+\qquad
+\frac{\delta\Omega}{\Omega}=3\epsilon,
+$$
+
+so the scalar pressure relation follows from the trace of the stress tensor. Taking the trace of Eq. (3.23) gives
+
+$$
+\sum_{\alpha}\sigma_{\alpha\alpha}
+=-\left\langle\Psi\middle|
+\sum_{k}\frac{\hbar^{2}}{2m_{k}}\nabla_{k}^{2}
+-\frac{1}{2}\sum_{k\neq k'}x_{kk'}\left(\frac{\mathrm{d}}{\mathrm{d}x_{kk'}}\hat{V}\right)
+\middle|\Psi\right\rangle.
+$$
+
+Since
+
+$$
+E_{\mathrm{kinetic}}
+=\left\langle\Psi\middle|-\sum_{k}\frac{\hbar^{2}}{2m_{k}}\nabla_{k}^{2}\middle|\Psi\right\rangle,
+$$
+
+the kinetic part contributes $2E_{\mathrm{kinetic}}$ after the isotropic scaling derivative is converted to a pressure derivative. For Coulomb interactions, $\hat{V}(x)\propto 1/x$, so
+
+$$
+x\frac{\mathrm{d}\hat{V}}{\mathrm{d}x}=-\hat{V},
+$$
+
+and therefore the potential contribution becomes the total potential energy. Hence
+
+$$
+3P\Omega=2E_{\mathrm{kinetic}}+E_{\mathrm{potential}},
+$$
+
+which is Eq. (3.24).
 
 > [!theorem] Virial theorem for pressure (Eq. 3.24)
 >
@@ -318,6 +774,43 @@ where $\Omega$ is the volume of the system. The expression (3.24) is a general r
 
 In the previous section, the force on a nucleus $I$ was shown to be given by the matrix element of the derivative of the hamiltonian with respect to position $\mathbf{R}_{I}$ because $\mathbf{R}_{I}$ can be considered to be a parameter. The same argument applies to any parameter, which we can denote by $\lambda$. Furthermore, finite energy differences between two states with values $\lambda_{1}$ and $\lambda_{2}$ can be calculated as an integral over a continuous variation of the hamiltonian from $\lambda_{1}$ to $\lambda_{2}$. This is also called an "adiabatic connection" following Harris [271] since it is a variation of the hamiltonian connecting the states of the system that is assumed to be in the ground state for each value of $\lambda$, i.e., it is an adiabatic variation. ${ }^{5}$ The general expressions can be written
 
+If the hamiltonian depends smoothly on $\lambda$ and $\Psi_{\lambda}$ is the corresponding normalized stationary state, then
+
+$$
+E(\lambda)=\langle \Psi_{\lambda}|\hat{H}(\lambda)|\Psi_{\lambda}\rangle.
+$$
+
+Differentiating gives
+
+$$
+\begin{aligned}
+\frac{\partial E}{\partial \lambda}
+&=
+\left\langle\frac{\partial \Psi_{\lambda}}{\partial \lambda}\middle|\hat{H}(\lambda)\middle|\Psi_{\lambda}\right\rangle
++\left\langle\Psi_{\lambda}\middle|\frac{\partial \hat{H}}{\partial \lambda}\middle|\Psi_{\lambda}\right\rangle
++\left\langle\Psi_{\lambda}\middle|\hat{H}(\lambda)\middle|\frac{\partial \Psi_{\lambda}}{\partial \lambda}\right\rangle.
+\end{aligned}
+$$
+
+Using $\hat{H}(\lambda)|\Psi_{\lambda}\rangle=E(\lambda)|\Psi_{\lambda}\rangle$, the first and third terms become
+
+$$
+\begin{aligned}
+\left\langle\frac{\partial \Psi_{\lambda}}{\partial \lambda}\middle|\hat{H}(\lambda)\middle|\Psi_{\lambda}\right\rangle
++\left\langle\Psi_{\lambda}\middle|\hat{H}(\lambda)\middle|\frac{\partial \Psi_{\lambda}}{\partial \lambda}\right\rangle
+&=
+E(\lambda)\left(
+\left\langle\frac{\partial \Psi_{\lambda}}{\partial \lambda}\middle|\Psi_{\lambda}\right\rangle
++\left\langle\Psi_{\lambda}\middle|\frac{\partial \Psi_{\lambda}}{\partial \lambda}\right\rangle
+\right) \\
+&=
+E(\lambda)\frac{\partial}{\partial \lambda}\langle\Psi_{\lambda}\mid\Psi_{\lambda}\rangle \\
+&= 0,
+\end{aligned}
+$$
+
+so only the explicit $\lambda$-dependence of the hamiltonian survives.
+
 > [!theorem] Generalized force theorem (Eq. 3.25)
 >
 > $$
@@ -329,7 +822,37 @@ $$
 \Delta E=\int_{\lambda_{1}}^{\lambda_{2}} \mathrm{~d} \lambda \frac{\partial E}{\partial \lambda}=\int_{\lambda_{1}}^{\lambda_{2}} \mathrm{~d} \lambda\left\langle\Psi_{\lambda}\right| \frac{\partial \hat{H}}{\partial \lambda}\left|\Psi_{\lambda}\right\rangle
 $$
 
-For example, if a parameter such as the charge squared of the electron $e^{2}$ in the interaction energy in the hamiltonian is scaled by $e^{2} \rightarrow e^{2} \lambda$, then $\lambda$ can be varied from 0 to 1 to vary the hamiltonian from the noninteracting limit to the fully interacting problem. Since the hamiltonian involves the charge only in the interaction term, and Eq. (3.5) is linear in $e^{2}$ (the nuclear term is treated separately as the "external potential"), it follows that the change in energy can be written
+For example, let the electron-electron interaction be scaled by a coupling constant,
+
+$$
+\hat{H}_{\lambda}=\hat{T}+\lambda \hat{V}_{\mathrm{int}}+\hat{V}_{\mathrm{ext}},
+\qquad 0\le \lambda \le 1.
+$$
+
+Then
+
+$$
+\frac{\partial \hat{H}_{\lambda}}{\partial \lambda}=\hat{V}_{\mathrm{int}},
+$$
+
+so the generalized force theorem gives
+
+$$
+\frac{\partial E_{\lambda}}{\partial \lambda}
+=\left\langle\Psi_{\lambda}\right| \hat{V}_{\mathrm{int}}\left|\Psi_{\lambda}\right\rangle.
+$$
+
+Integrating from $\lambda=0$ to $\lambda=1$ yields
+
+$$
+\begin{aligned}
+E_{\lambda=1}-E_{\lambda=0}
+&=\int_{0}^{1}\mathrm{d}\lambda\,\frac{\partial E_{\lambda}}{\partial \lambda} \\
+&=\int_{0}^{1}\mathrm{d}\lambda\,\left\langle\Psi_{\lambda}\right| \hat{V}_{\mathrm{int}}\left|\Psi_{\lambda}\right\rangle.
+\end{aligned}
+$$
+
+That is, $\lambda$ can be varied from 0 to 1 to connect the noninteracting limit to the fully interacting problem. Since the hamiltonian involves the charge only in the interaction term, and Eq. (3.5) is linear in $e^{2}$ (the nuclear term is treated separately as the "external potential"), it follows that the change in energy can be written
 
 > [!theorem] Coupling constant integration (Eq. 3.27)
 >
@@ -337,7 +860,9 @@ For example, if a parameter such as the charge squared of the electron $e^{2}$ i
 > \Delta E=\int_{0}^{1} \mathrm{~d} \lambda\left\langle\Psi_{\lambda}\right| V_{\mathrm{int}}\left|\Psi_{\lambda}\right\rangle
 > $$
 
-where $V_{\text {int }}$ is the full interaction term Eq. (3.5) and $\Psi_{\lambda}$ is the wavefunction for intermediate values of the interaction ${ }^{6}$ given by $e^{2} \rightarrow e^{2} \lambda$. The disadvantage of this approach is that it requires the wavefunction at intermediate (unphysical) values of $e$; nevertheless, it can be very useful, e.g., in the construction of density functionals in Section 9.7.
+where $V_{\text {int }}$ is the full interaction term Eq. (3.5) and $\Psi_{\lambda}$ is the wavefunction for intermediate values of the interaction ${ }^{6}$ given by $e^{2} \rightarrow e^{2} \lambda$. For fixed external potential, each intermediate $\lambda$ describes a system in which the electrons interact with a fraction $\lambda$ of the full Coulomb repulsion: $\lambda=0$ is noninteracting and $\lambda=1$ is the physical system.
+
+In density functional theory one usually refines this construction by allowing the external potential itself to depend on $\lambda$, chosen so that the ground-state density remains equal to the physical density for all $\lambda$. The resulting intermediate systems are then auxiliary rather than directly physical, because their electron-electron interaction strength is artificial. Nevertheless, the construction is useful because it converts the exchange-correlation energy into an integral over the interaction strength, making clear how exchange and correlation accumulate as the interaction is turned on.
 
 ---
 
@@ -359,6 +884,69 @@ where $\hat{\rho}$ is the density matrix and $\beta=1 / k_{B} T$. Here Tr means 
 A general property of the density matrix is that it is positive definite, since its diagonal terms are the density. The correct equilibrium density matrix is the positive-definite matrix that minimizes the free energy,
 
 $$
+F[\hat{\rho}]=\operatorname{Tr}\hat{\rho}\left(\hat{H}+\frac{1}{\beta}\ln\hat{\rho}\right),
+$$
+
+subject to the physical constraints
+
+$$
+\hat{\rho}^{\dagger}=\hat{\rho},
+\qquad
+\hat{\rho}\ge 0,
+\qquad
+\operatorname{Tr}\hat{\rho}=1.
+$$
+
+Impose the trace constraint with a Lagrange multiplier $\lambda$:
+
+$$
+\Phi[\hat{\rho}]
+=\operatorname{Tr}\hat{\rho}\left(\hat{H}+\frac{1}{\beta}\ln\hat{\rho}\right)
+-\lambda(\operatorname{Tr}\hat{\rho}-1).
+$$
+
+Varying gives
+
+$$
+\delta \Phi
+=\operatorname{Tr}\left[\delta\hat{\rho}\left(\hat{H}+\frac{1}{\beta}(\ln\hat{\rho}+1)-\lambda\right)\right].
+$$
+
+Since $\delta\hat{\rho}$ is arbitrary within the allowed Hermitian variations, stationarity requires
+
+$$
+\hat{H}+\frac{1}{\beta}(\ln\hat{\rho}+1)-\lambda=0,
+$$
+
+so
+
+$$
+\ln\hat{\rho}=\beta(\lambda-1)-\beta\hat{H}.
+$$
+
+Exponentiating,
+
+$$
+\hat{\rho}=\mathrm{e}^{\beta(\lambda-1)}\mathrm{e}^{-\beta\hat{H}}.
+$$
+
+The constant is fixed by normalization:
+
+$$
+\operatorname{Tr}\hat{\rho}
+=\mathrm{e}^{\beta(\lambda-1)}\operatorname{Tr}\mathrm{e}^{-\beta\hat{H}}
+=1.
+$$
+
+Therefore, defining
+
+$$
+Z=\operatorname{Tr}\mathrm{e}^{-\beta\hat{H}},
+$$
+
+one obtains
+
+$$
 \hat{\rho}=\frac{1}{Z} \mathrm{e}^{-\beta \hat{H}}
 $$
 
@@ -368,13 +956,15 @@ $$
 Z=\mathrm{Tre}^{-\beta \hat{H}}=\mathrm{e}^{-\beta F}
 $$
 
-In a basis of eigenstates $\Psi_{i}$ of $\hat{H}, \hat{\rho}$ has only diagonal matrix elements,
+Because $\hat{\rho}$ is a function of $\hat{H}$, it commutes with $\hat{H}$ and is diagonal in any eigenbasis of $\hat{H}$. In a basis of eigenstates $\Psi_{i}$ of $\hat{H}, \hat{\rho}$ has only diagonal matrix elements,
 
 $$
 \rho_{i i} \equiv\left\langle\Psi_{i}\right| \hat{\rho}\left|\Psi_{i}\right\rangle=\frac{1}{Z} \mathrm{e}^{-\beta E_{i}} ; Z=\sum_{j} \mathrm{e}^{-\beta E_{j}}
 $$
 
-[^4]where $\rho_{i i}$ is the probability of state $i$. Since the $\Psi_{i}$ form a complete set, the operator $\hat{\rho}$ in Eq. (3.29) can be written
+[^4]where $\rho_{i i}$ is the probability of state $i$. Minimizing free energy rather than energy alone is essential at finite temperature because equilibrium must balance low energy against the multiplicity of accessible states. The entropy term $(1/\beta)\operatorname{Tr}(\hat{\rho}\ln\hat{\rho})=-TS$ favors spreading probability over many states, whereas the energy term $\operatorname{Tr}(\hat{\rho}\hat{H})$ favors occupation of low-energy states. Their competition produces the Gibbs distribution.
+
+Since the $\Psi_{i}$ form a complete set, the operator $\hat{\rho}$ in Eq. (3.29) can be written
 $$
 \hat{\rho}=\sum_{i}\left|\Psi_{i}\right\rangle \rho_{i i}\left\langle\Psi_{i}\right|
 $$
@@ -421,6 +1011,83 @@ The solution of equations having the form of Eq. (3.36) is at the heart of the m
 
 At finite temperature it is straightforward to apply the general formulas of statistical mechanics given in the previous section to show that the equilibrium distribution of electrons is given by the Fermi-Dirac (or Bose-Einstein) expression (1.3) for occupation numbers of states as a function of energy (Exercise 3.7). The expectation value Eq. (3.35) is a sum over many-body states $\Psi_{j}$, each of which is specified by the set of occupation numbers $\left\{n_{i}^{\sigma}\right\}$ for each of the independent-particle states with energy $\varepsilon_{i}^{\sigma}$. Given that each $n_{i}^{\sigma}$ can be either 0 or 1 , with $\sum_{i} n_{i}^{\sigma}=N^{\sigma}$, it is straightforward (see Exercise 3.8) to show that Eq. (3.35) simplifies to
 
+For noninteracting particles, the many-body hamiltonian and number operator are
+
+$$
+\hat{H}=\sum_{i,\sigma}\varepsilon_{i}^{\sigma}\hat{n}_{i}^{\sigma},
+\qquad
+\hat{N}=\sum_{i,\sigma}\hat{n}_{i}^{\sigma},
+$$
+
+so a many-body occupation-number state $\left|\{n_{i}^{\sigma}\}\right\rangle$ has
+
+$$
+E_{\{n\}}=\sum_{i,\sigma} n_{i}^{\sigma}\varepsilon_{i}^{\sigma},
+\qquad
+N_{\{n\}}=\sum_{i,\sigma} n_{i}^{\sigma}.
+$$
+
+The Pauli principle for fermions requires
+
+$$
+n_{i}^{\sigma}=0 \text{ or } 1,
+$$
+
+so each single-particle state is either empty or singly occupied. In the grand canonical ensemble, the probability of a many-body configuration is
+
+$$
+P(\{n_{i}^{\sigma}\})
+=\frac{1}{Z}\exp\left[-\beta\sum_{i,\sigma}n_{i}^{\sigma}(\varepsilon_{i}^{\sigma}-\mu)\right].
+$$
+
+Because the exponent is a sum over independent single-particle states, the grand partition function factorizes:
+
+$$
+\begin{aligned}
+Z
+&=\sum_{\{n_{i}^{\sigma}\}} \exp\left[-\beta\sum_{i,\sigma}n_{i}^{\sigma}(\varepsilon_{i}^{\sigma}-\mu)\right] \\
+&=\prod_{i,\sigma}\sum_{n_{i}^{\sigma}=0}^{1}\exp\left[-\beta n_{i}^{\sigma}(\varepsilon_{i}^{\sigma}-\mu)\right] \\
+&=\prod_{i,\sigma}\left(1+e^{-\beta(\varepsilon_{i}^{\sigma}-\mu)}\right).
+\end{aligned}
+$$
+
+The average occupation of one state is therefore
+
+$$
+\begin{aligned}
+f_{i}^{\sigma}
+&=\langle n_{i}^{\sigma}\rangle \\
+&=\frac{\sum_{n_{i}^{\sigma}=0}^{1} n_{i}^{\sigma} e^{-\beta n_{i}^{\sigma}(\varepsilon_{i}^{\sigma}-\mu)}}{\sum_{n_{i}^{\sigma}=0}^{1} e^{-\beta n_{i}^{\sigma}(\varepsilon_{i}^{\sigma}-\mu)}} \\
+&=\frac{0\cdot e^{0}+1\cdot e^{-\beta(\varepsilon_{i}^{\sigma}-\mu)}}{e^{0}+e^{-\beta(\varepsilon_{i}^{\sigma}-\mu)}} \\
+&=\frac{e^{-\beta(\varepsilon_{i}^{\sigma}-\mu)}}{1+e^{-\beta(\varepsilon_{i}^{\sigma}-\mu)}} \\
+&=\frac{1}{e^{\beta(\varepsilon_{i}^{\sigma}-\mu)}+1},
+\end{aligned}
+$$
+
+which is the Fermi-Dirac form. The `+1` in the denominator is a direct consequence of the Pauli restriction $n_{i}^{\sigma}=0,1$; for bosons the allowed occupations are $0,1,2,\ldots$, and the geometric sum instead gives the Bose-Einstein denominator with `-1`.
+
+For any one-body operator
+
+$$
+\hat{O}=\sum_{i,\sigma} \hat{n}_{i}^{\sigma} O_{i}^{\sigma},
+\qquad
+O_{i}^{\sigma}=\left\langle\psi_{i}^{\sigma}\right|\hat{O}\left|\psi_{i}^{\sigma}\right\rangle,
+$$
+
+the general many-body expectation value becomes
+
+$$
+\begin{aligned}
+\langle\hat{O}\rangle
+&=\sum_{\{n_{i}^{\sigma}\}} P(\{n_{i}^{\sigma}\}) \sum_{i,\sigma} n_{i}^{\sigma} O_{i}^{\sigma} \\
+&=\sum_{i,\sigma} O_{i}^{\sigma} \sum_{\{n_{i}^{\sigma}\}} P(\{n_{i}^{\sigma}\}) n_{i}^{\sigma} \\
+&=\sum_{i,\sigma} O_{i}^{\sigma} \langle n_{i}^{\sigma}\rangle \\
+&=\sum_{i,\sigma} f_{i}^{\sigma}\left\langle\psi_{i}^{\sigma}\right| \hat{O}\left|\psi_{i}^{\sigma}\right\rangle,
+\end{aligned}
+$$
+
+which is Eq. (3.37).
+
 > [!equation] Independent-particle expectation value (Eq. 3.37)
 >
 > $$
@@ -434,7 +1101,9 @@ At finite temperature it is straightforward to apply the general formulas of sta
 > f_{i}^{\sigma}=\frac{1}{e^{\beta\left(\varepsilon_{i}^{\sigma}-\mu\right)}+1},
 > $$
 where $\mu$ is the Fermi energy (or chemical potential) of the electrons. For example, the energy is the weighted sum of noninteracting particle energies $\varepsilon_{i}^{\sigma}$
-> [!equation] Independent-particle energy at finite temperature (Eq. 3.39)
+
+
+>[!equation] Independent-particle energy at finite temperature (Eq. 3.39)
 >
 > $$
 > E(T)=\langle\hat{H}\rangle=\sum_{i}^{\sigma} f_{i}^{\sigma} \varepsilon_{i}^{\sigma} .
@@ -480,6 +1149,84 @@ A standard method of many-particle theory is the Hartree-Fock method, which was 
 > Evaluate $\langle\Phi|\hat{H}|\Phi\rangle$ for the Slater determinant Eq. (3.43) to obtain the Hartree-Fock energy expression Eq. (3.44). Why does an antisymmetrized wavefunction produce two distinct two-body terms (direct and exchange) rather than just one? What happens to the unphysical self-interaction, and why is this significant for one-electron systems like hydrogen? (Exercise 3.11.)
 
 [^7]where the $\phi_{i}\left(\mathbf{r}_{j}, \sigma_{j}\right)$ are single-particle "spin-orbitals." If there is no spin-orbit interaction $\phi_{i}\left(\mathbf{r}_{j}, \sigma_{j}\right)$ can be written as a product of a function of the position $\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right)$ and a function of the spin variable $\alpha_{i}\left(\sigma_{j}\right)$. (Note that $\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right)$ is independent of spin $\sigma$ in closed-shell cases. In open-shell systems, this assumption corresponds to the "spin-restricted Hartree-Fock approximation.") The spin-orbitals must be linearly independent and if in addition they are orthonormal the equations simplify greatly; it is straightforward to show (Exercise 3.10) that $\Phi$ is normalized to 1 . Furthermore, if the hamiltonian is independent of spin or is diagonal in the basis $\sigma=|\uparrow\rangle$; $|\downarrow\rangle$, the expectation value of the hamiltonian Eq. (3.2), using Hartree atomic units, with the wavefunction Eq. (3.43) is given by (Exercise 3.11)
+
+Write the electronic Hamiltonian as a sum of one-body and two-body operators,
+
+$$
+\hat{H}=\sum_{k}\hat{h}(k)+\frac{1}{2}\sum_{k\neq l}\hat{v}(k,l)+E_{II},
+$$
+
+with
+
+$$
+\hat{h}(k)=-\frac{1}{2}\nabla_{k}^{2}+V_{\mathrm{ext}}(\mathbf{r}_{k}),
+\qquad
+\hat{v}(k,l)=\frac{1}{|\mathbf{r}_{k}-\mathbf{r}_{l}|}.
+$$
+
+For orthonormal spin-orbitals, the one-body part is
+
+$$
+\begin{aligned}
+\langle\Phi|\sum_{k}\hat{h}(k)|\Phi\rangle
+&=\sum_{i}\langle\phi_{i}|\hat{h}|\phi_{i}\rangle \\
+&=\sum_{i,\sigma}\int \mathrm{d}\mathbf{r}\,
+\psi_{i}^{\sigma *}(\mathbf{r})
+\left[-\frac{1}{2}\nabla^{2}+V_{\mathrm{ext}}(\mathbf{r})\right]
+\psi_{i}^{\sigma}(\mathbf{r}),
+\end{aligned}
+$$
+
+because all cross terms vanish by orthonormality of the occupied spin-orbitals.
+
+For the two-body part, antisymmetry of the determinant implies that the two-particle matrix element contains both the identity permutation and the exchanged permutation:
+
+$$
+\langle\Phi|\frac{1}{2}\sum_{k\neq l}\hat{v}(k,l)|\Phi\rangle
+=\frac{1}{2}\sum_{i,j}
+\left[
+\langle\phi_{i}\phi_{j}|\hat{v}|\phi_{i}\phi_{j}\rangle
+-\langle\phi_{i}\phi_{j}|\hat{v}|\phi_{j}\phi_{i}\rangle
+\right].
+$$
+
+The first term is the direct Coulomb term,
+
+$$
+\begin{aligned}
+\langle\phi_{i}\phi_{j}|\hat{v}|\phi_{i}\phi_{j}\rangle
+&=
+\sum_{\sigma_{i},\sigma_{j}}
+\int \mathrm{d}\mathbf{r}\,\mathrm{d}\mathbf{r}'
+\psi_{i}^{\sigma_{i}*}(\mathbf{r})
+\psi_{j}^{\sigma_{j}*}(\mathbf{r}')
+\frac{1}{|\mathbf{r}-\mathbf{r}'|}
+\psi_{i}^{\sigma_{i}}(\mathbf{r})
+\psi_{j}^{\sigma_{j}}(\mathbf{r}'),
+\end{aligned}
+$$
+
+and the second is the exchange term,
+
+$$
+\begin{aligned}
+\langle\phi_{i}\phi_{j}|\hat{v}|\phi_{j}\phi_{i}\rangle
+&=
+\sum_{\sigma_{i},\sigma_{j}}
+\int \mathrm{d}\mathbf{r}\,\mathrm{d}\mathbf{r}'
+\psi_{i}^{\sigma_{i}*}(\mathbf{r})
+\psi_{j}^{\sigma_{j}*}(\mathbf{r}')
+\frac{1}{|\mathbf{r}-\mathbf{r}'|}
+\psi_{j}^{\sigma_{j}}(\mathbf{r})
+\psi_{i}^{\sigma_{i}}(\mathbf{r}').
+\end{aligned}
+$$
+
+Because the spin functions are orthonormal, the exchange term vanishes unless $\sigma_{i}=\sigma_{j}$, which is why exchange acts only between same-spin electrons. Collecting the one-body, two-body, and $E_{II}$ pieces gives Eq. (3.44).
+
+The direct and exchange terms both arise because the Slater determinant is antisymmetrized: one contribution comes from pairing bra and ket orbitals without exchange, and the other comes from pairing them after exchanging two particles. If the wavefunction were not antisymmetric, only the direct Coulomb term would remain.
+
+The $i=j$ part of the direct term is an unphysical self-interaction, but for same spin the corresponding $i=j$ exchange term is equal in magnitude and opposite in sign, so the self-interaction cancels exactly. This is especially important for one-electron systems such as hydrogen: with only one occupied orbital, the direct and exchange contributions cancel completely, leaving only the one-electron kinetic energy plus external potential, as they must.
 > [!equation] Hartree-Fock total energy (Eq. 3.44)
 >
 > $$
@@ -536,14 +1283,108 @@ However, there are ways to reduce the amount of computation. The nonlocal exchan
 > [!derivation] Derivation 13: Koopmans' theorem — eigenvalues as addition/removal energies
 > What is the physical meaning of the Hartree-Fock eigenvalues $\varepsilon_i^\sigma$? Prove Koopmans' theorem by relating them to total energy differences, and identify the key assumption that makes the theorem exact within Hartree-Fock. Why do the resulting band gaps systematically overestimate experiment, and what does this tell you about what Hartree-Fock neglects? (Exercise 3.18.)
 
-What is the meaning of the eigenvalues of the Hartree-Fock equation (3.45)? Of course, Hartree-Fock is only an approximation to the energies for addition and removal of
-electrons, since all effects of correlation are omitted. Nevertheless, it is very valuable to have a rigorous understanding of the eigenvalues, which is provided by Koopmans' theorem ${ }^{10}$ [277]:
+What is the meaning of the eigenvalues of the Hartree-Fock equation (3.45)? Of course, Hartree-Fock is only an approximation to the energies for addition and removal of electrons, since all effects of correlation are omitted. Nevertheless, it is very valuable to have a rigorous understanding of the eigenvalues, which is provided by Koopmans' theorem ${ }^{10}$ [277]:
 
 > [!theorem] Koopmans' theorem (§3.6.3)
 >
 > The eigenvalue of a filled (empty) orbital is equal to the change in the total energy Eq. (3.44) if an electron is subtracted from (added to) the system, i.e., decreasing (increasing) the size of the determinant by omitting (adding) a row and column involving a particular orbital $\phi_{j}\left(\mathbf{r}_{i}, \sigma_{i}\right)$, keeping all the other orbitals the same.
 
-Koopmans' theorem can be derived by taking matrix elements of Eq. (3.45) with the normalized orbital $\psi_{i}^{\sigma *}(\mathbf{r})$ (see Exercise 3.18). For occupied states, the eigenvalues are lowered by the exchange term, which cancels the spurious repulsive self-interaction in the Hartree term. To find the energies for addition of electrons, one must compute empty orbitals of the Hartree-Fock equation (3.45). For these states there also is no spurious selfinteraction since both the direct and the exchange potential terms in Eq. (3.45) involve only the occupied states. In general, the gaps between addition and removal energies for electrons are greatly overestimated in the Hartree-Fock approximation because of the neglect of relaxation of the orbitals and other effects of correlation.
+For an occupied orbital $i,\sigma$, take the matrix element of Eq. (3.45) with the normalized orbital $\psi_{i}^{\sigma *}(\mathbf{r})$. One obtains
+
+$$
+\varepsilon_{i}^{\sigma}
+=h_{ii}^{\sigma}
++\sum_{j,\sigma_{j}} J_{ij}^{\sigma\sigma_{j}}
+-\sum_{j} K_{ij}^{\sigma},
+$$
+
+where
+
+$$
+h_{ii}^{\sigma}
+=\int \mathrm{d}\mathbf{r}\,\psi_{i}^{\sigma *}(\mathbf{r})
+\left[-\frac{1}{2}\nabla^{2}+V_{\mathrm{ext}}(\mathbf{r})\right]
+\psi_{i}^{\sigma}(\mathbf{r}),
+$$
+
+$$
+J_{ij}^{\sigma\sigma_{j}}
+=\int \mathrm{d}\mathbf{r}\,\mathrm{d}\mathbf{r}'
+\psi_{i}^{\sigma *}(\mathbf{r})\psi_{j}^{\sigma_{j} *}(\mathbf{r}')
+\frac{1}{|\mathbf{r}-\mathbf{r}'|}
+\psi_{i}^{\sigma}(\mathbf{r})\psi_{j}^{\sigma_{j}}(\mathbf{r}'),
+$$
+
+and
+
+$$
+K_{ij}^{\sigma}
+=\int \mathrm{d}\mathbf{r}\,\mathrm{d}\mathbf{r}'
+\psi_{i}^{\sigma *}(\mathbf{r})\psi_{j}^{\sigma *}(\mathbf{r}')
+\frac{1}{|\mathbf{r}-\mathbf{r}'|}
+\psi_{j}^{\sigma}(\mathbf{r})\psi_{i}^{\sigma}(\mathbf{r}').
+$$
+
+Now write the Hartree-Fock total energy Eq. (3.44) in the compact form
+
+$$
+E_{N}
+=\sum_{k,\sigma} h_{kk}^{\sigma}
++\frac{1}{2}\sum_{k,l,\sigma_{k},\sigma_{l}} J_{kl}^{\sigma_{k}\sigma_{l}}
+-\frac{1}{2}\sum_{k,l,\sigma} K_{kl}^{\sigma}
++E_{II}.
+$$
+
+If one removes the occupied orbital $i,\sigma$ and keeps all other orbitals fixed, the frozen-orbital $(N-1)$-electron energy is
+
+$$
+\begin{aligned}
+E_{N-1}^{(i)}
+&=
+E_{N}
+-h_{ii}^{\sigma}
+-\sum_{j,\sigma_{j}} J_{ij}^{\sigma\sigma_{j}}
++\sum_{j} K_{ij}^{\sigma},
+\end{aligned}
+$$
+
+because the removed orbital contributes once to the one-body sum and twice to the symmetrized two-body sums, cancelling the factor of $1/2$. Therefore
+
+$$
+\begin{aligned}
+E_{N}-E_{N-1}^{(i)}
+&=
+h_{ii}^{\sigma}
++\sum_{j,\sigma_{j}} J_{ij}^{\sigma\sigma_{j}}
+-\sum_{j} K_{ij}^{\sigma} \\
+&=\varepsilon_{i}^{\sigma}.
+\end{aligned}
+$$
+
+Thus the occupied Hartree-Fock eigenvalue equals the frozen-orbital removal energy. Equivalently, if one defines the ionization energy as $I_{i}=E_{N-1}^{(i)}-E_{N}$, then $I_{i}=-\varepsilon_{i}^{\sigma}$.
+
+For an empty orbital $a,\sigma$, adding one electron while keeping all other orbitals fixed gives
+
+$$
+\begin{aligned}
+E_{N+1}^{(a)}
+&=
+E_{N}
++h_{aa}^{\sigma}
++\sum_{j,\sigma_{j}} J_{aj}^{\sigma\sigma_{j}}
+-\sum_{j} K_{aj}^{\sigma},
+\end{aligned}
+$$
+
+where the apparent self-interaction of the added orbital cancels between the direct and exchange pieces. Hence
+
+$$
+E_{N+1}^{(a)}-E_{N}=\varepsilon_{a}^{\sigma}.
+$$
+
+This is Koopmans' theorem. Its key assumption is the frozen-orbital approximation: when an electron is added or removed, all remaining orbitals are held fixed. Within that assumption the theorem is exact in Hartree-Fock; if the orbitals are allowed to relax, extra terms appear and the equality is lost.
+
+For occupied states, the eigenvalues are lowered by the exchange term, which cancels the spurious repulsive self-interaction in the Hartree term. To find the energies for addition of electrons, one must compute empty orbitals of the Hartree-Fock equation (3.45). For these states there also is no spurious selfinteraction since both the direct and the exchange potential terms in Eq. (3.45) involve only the occupied states. In general, the gaps between addition and removal energies for electrons are greatly overestimated in the Hartree-Fock approximation because of the neglect of orbital relaxation and dynamical correlation. This overestimate shows that Hartree-Fock includes exchange exactly within a single determinant, but neglects the correlation screening that reduces the true cost of adding or removing an electron.
 
 ## 3.6.4 △SCF Methods
 
@@ -586,11 +1427,80 @@ which is unity for uncorrelated particles so that correlation is reflected in $g
 
 The Hartree-Fock approximation (HFA) consists of neglecting all correlations except those required by the Pauli exclusion principle; however, the exchange term in Eq. (3.44) represents two effects: Pauli exclusion and the self-term that must be subtracted to cancel the spurious self-term included in the direct Coulomb Hartree energy. The effect is always to lower the energy, which may be interpreted as the interaction of each electron with a positive "exchange hole" surrounding it. The exchange hole $\Delta n_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ is given by $\Delta n\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ in the HFA, where $\Psi$ in Eq. (3.50) is approximated by the single determinant wavefunction $\Phi$ of Eq. (3.43). If the single-particle spin-orbitals $\phi_{i}^{\sigma}=\psi_{i}^{\sigma}\left(\mathbf{r}_{j}\right) \times \alpha_{i}\left(\sigma_{j}\right)$ are orthonormal, it is straightforward (Exercise 3.13) to show that the pair distribution function can be written
 
-$$
+$$	
 n_{\mathrm{HFA}}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)=\frac{1}{2!} \sum_{i j}\left|\begin{array}{ll}
 \phi_{i}(\mathbf{r}, \sigma) & \phi_{i}\left(\mathbf{r}^{\prime}, \sigma^{\prime}\right) \\
 \phi_{j}(\mathbf{r}, \sigma) & \phi_{j}\left(\mathbf{r}^{\prime}, \sigma^{\prime}\right)
 \end{array}\right|^{2},
+$$
+
+Expanding the determinant,
+
+$$
+\begin{aligned}
+\left|\begin{array}{ll}
+\phi_{i}(\mathbf{r}, \sigma) & \phi_{i}\left(\mathbf{r}^{\prime}, \sigma^{\prime}\right) \\
+\phi_{j}(\mathbf{r}, \sigma) & \phi_{j}\left(\mathbf{r}^{\prime}, \sigma^{\prime}\right)
+\end{array}\right|
+=
+\phi_{i}(\mathbf{r}, \sigma)\phi_{j}(\mathbf{r}', \sigma')
+-\phi_{i}(\mathbf{r}', \sigma')\phi_{j}(\mathbf{r}, \sigma),
+\end{aligned}
+$$
+
+so
+
+$$
+\begin{aligned}
+n_{\mathrm{HFA}}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+&=
+\frac{1}{2}\sum_{ij}
+\Bigl[
+|\phi_i(\mathbf{r},\sigma)|^2 |\phi_j(\mathbf{r}',\sigma')|^2
++|\phi_i(\mathbf{r}',\sigma')|^2 |\phi_j(\mathbf{r},\sigma)|^2 \\
+&\qquad
+-\phi_i^*(\mathbf{r},\sigma)\phi_j^*(\mathbf{r}',\sigma')\phi_i(\mathbf{r}',\sigma')\phi_j(\mathbf{r},\sigma) \\
+&\qquad
+-\phi_i^*(\mathbf{r}',\sigma')\phi_j^*(\mathbf{r},\sigma)\phi_i(\mathbf{r},\sigma)\phi_j(\mathbf{r}',\sigma')
+\Bigr].
+\end{aligned}
+$$
+
+The first two terms are equal after interchanging $i$ and $j$, and the last two terms are complex conjugates of one another, so
+
+$$
+\begin{aligned}
+n_{\mathrm{HFA}}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+&=
+\sum_{ij} |\phi_i(\mathbf{r},\sigma)|^2 |\phi_j(\mathbf{r}',\sigma')|^2
+-\left|\sum_i \phi_i^*(\mathbf{r},\sigma)\phi_i(\mathbf{r}',\sigma')\right|^2 \\
+&=
+n(\mathbf{r},\sigma)n(\mathbf{r}',\sigma')
+-\left|\sum_i \phi_i^*(\mathbf{r},\sigma)\phi_i(\mathbf{r}',\sigma')\right|^2 .
+\end{aligned}
+$$
+
+Using $\phi_i(\mathbf{r},\sigma)=\psi_i^\sigma(\mathbf{r})\alpha_i(\sigma)$ and orthonormal spin functions,
+
+$$
+\sum_i \phi_i^*(\mathbf{r},\sigma)\phi_i(\mathbf{r}',\sigma')
+=\delta_{\sigma\sigma'}\sum_i \psi_i^{\sigma *}(\mathbf{r})\psi_i^\sigma(\mathbf{r}'),
+$$
+
+so Eq. (3.51) gives
+
+$$
+\Delta n_{\mathrm{HFA}}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=n_{\mathrm{HFA}}(\mathbf{r},\sigma;\mathbf{r}',\sigma')-n(\mathbf{r},\sigma)n(\mathbf{r}',\sigma')
+=-\delta_{\sigma\sigma'}\left|\sum_i \psi_i^{\sigma *}(\mathbf{r})\psi_i^\sigma(\mathbf{r}')\right|^2,
+$$
+
+which is Eq. (3.54). Therefore
+
+$$
+g_{\mathrm{HFA}}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=1-\delta_{\sigma\sigma'}
+\frac{\left|\sum_i \psi_i^{\sigma *}(\mathbf{r})\psi_i^\sigma(\mathbf{r}')\right|^2}{n(\mathbf{r},\sigma)n(\mathbf{r}',\sigma')}.
 $$
 
 and the exchange hole takes the simple form
@@ -621,6 +1531,27 @@ where the plus (minus) sign applies for bosons (fermions) and $\mathbf{x}$ incor
 
 There are stringent conditions on the exchange hole: (1) it can never be positive, $\Delta n_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right) \leq 0$ (which means that $g_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right) \leq 1$ ), and (2) the integral of the exchange hole density $\Delta n_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ over all $\mathbf{r}^{\prime}$ is exactly one missing electron per electron at any point $\mathbf{r}$. This is a consequence of the fact that if one electron is at $\mathbf{r}$, then that same electron cannot also be at $\mathbf{r}^{\prime}$. It also follows directly from Eq. (3.54), as shown in Exercise 3.12. The exchange energy, the last term in Eq. (3.44), can be interpreted as the lowering of the energy due to each electron interacting with its positive exchange hole,
 
+The nonpositivity follows immediately because Eq. (3.54) is minus the modulus squared of a quantity. The sum rule follows from orthonormality:
+
+$$
+\begin{aligned}
+\int \mathrm{d}^{3}r'\,\Delta n_x(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+&=
+-\delta_{\sigma\sigma'}\int \mathrm{d}^{3}r'\,
+\sum_{ij}\psi_i^{\sigma *}(\mathbf{r})\psi_i^\sigma(\mathbf{r}')
+\psi_j^\sigma(\mathbf{r})\psi_j^{\sigma *}(\mathbf{r}') \\
+&=
+-\delta_{\sigma\sigma'}\sum_{ij}\psi_i^{\sigma *}(\mathbf{r})\psi_j^\sigma(\mathbf{r})
+\int \mathrm{d}^{3}r'\,\psi_i^\sigma(\mathbf{r}')\psi_j^{\sigma *}(\mathbf{r}') \\
+&=
+-\delta_{\sigma\sigma'}\sum_i |\psi_i^\sigma(\mathbf{r})|^2 \\
+&=
+-\delta_{\sigma\sigma'}\,n(\mathbf{r},\sigma).
+\end{aligned}
+$$
+
+Thus, conditional on an electron of spin $\sigma$ being at $\mathbf{r}$, the integrated hole contains exactly one missing same-spin electron.
+
 > [!equation] Exchange energy from the exchange hole (Eq. 3.57)
 >
 > $$
@@ -629,9 +1560,38 @@ There are stringent conditions on the exchange hole: (1) it can never be positiv
 
 In this form it is clear that the exchange energy cancels the unphysical self-interaction term in the Hartree energy.
 
-The simplest example of an exchange hole is a one-electron problem, such as the hydrogen atom. There is, of course, no real "exchange" nor any issue of the Pauli exclusion principle, and it is easy to see that the "exchange hole" is exactly the electron density. Its integral is unity, as required by the sum rule, and the exchange energy cancels the spurious Hartree term. Because of this cancellation, the Hartree-Fock equation (3.45) correctly reduces to the usual Schrödinger equation for one electron in an external potential.
+The simplest example of an exchange hole is a one-electron problem, such as the hydrogen atom. There is, of course, no real "exchange" nor any issue of the Pauli exclusion principle, and it is easy to see that the exchange hole is just minus the one-electron density. Its integral is minus unity, so the conditional missing charge is exactly one electron, as required by the sum rule, and the exchange energy cancels the spurious Hartree term. Because of this cancellation, the Hartree-Fock equation (3.45) correctly reduces to the usual Schrödinger equation for one electron in an external potential.
+
+Indeed, for one occupied orbital $\psi(\mathbf{r})$,
+
+$$
+\Delta n_x(\mathbf{r};\mathbf{r}')
+=-|\psi(\mathbf{r})|^2|\psi(\mathbf{r}')|^2
+=-n(\mathbf{r})n(\mathbf{r}'),
+$$
+
+so the conditional hole is just minus the full one-electron density.
 
 The next more complex case is a two-electron singlet such as the ground state of He. In this case (see Exercise 3.16) the two spins have identical spatial orbitals and the exchange term is minus one-half the Hartree term in the Hartree-Fock equation (3.44), so that the Hartree-Fock equation (3.45) simplifies to a Hartree-like equation of the form of Eq. (3.36) with $V_{\text {eff }}$ a sum of the external (nuclear) potential plus one-half the Hartree potential. ${ }^{11}$
+
+If the two electrons occupy the same spatial orbital $\psi(\mathbf{r})$ with opposite spins, then
+
+$$
+n(\mathbf{r},\uparrow)=|\psi(\mathbf{r})|^2,
+\qquad
+n(\mathbf{r},\downarrow)=|\psi(\mathbf{r})|^2,
+$$
+
+and
+
+$$
+\Delta n_x(\mathbf{r},\uparrow;\mathbf{r}',\uparrow)
+=-|\psi(\mathbf{r})|^2|\psi(\mathbf{r}')|^2,
+\qquad
+\Delta n_x(\mathbf{r},\uparrow;\mathbf{r}',\downarrow)=0,
+$$
+
+with analogous expressions for a reference down-spin electron. Thus each electron sees an exchange hole only in its own spin channel; the opposite-spin electron is unaffected by exchange, which is why in helium the exchange contribution removes half of the Hartree self-repulsion but does not cancel the true Coulomb repulsion between the opposite-spin electrons.
 
 [^9]For systems with many electrons the exchange hole must be calculated numerically, except for special cases. The most relevant for us is the homogeneous gas considered in the following section.
 
@@ -648,11 +1608,91 @@ The effects of correlation can be cast in terms of the remaining part of the pai
 
 > [!definition] Exchange-correlation hole (Eq. 3.58)
 >
-> $
+> $$
 > \Delta n\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right) \equiv n_{\mathrm{xc}}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)=n_{x}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)+n_{c}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right) .
-> $
+> $$
 
-Since the entire exchange-correlation hole obeys the sum rule that it integrates to one, the correlation hole $n_{c}\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ must integrate to zero, i.e., it merely redistributes the density of the hole. In general, correlation is most important for electrons of opposite spin, since electrons of the same spin are automatically kept apart by the exclusion principle. For the ground state the correlation energy is always negative and any approximation should be negative. Excited states involve energy differences from the ground state, e.g., an exciton energy. Depending on the effects of correlation in the two states, the difference can be positive or negative.
+The sum rule for the full exchange-correlation hole follows from particle conservation alone. Starting from Eq. (3.50), integrate over the second electron coordinate and spin:
+
+$$
+\begin{aligned}
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,
+n(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+&=
+\left\langle
+\sum_{i\neq j}
+\delta(\mathbf{r}-\mathbf{r}_{i})\delta(\sigma-\sigma_{i})
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,
+\delta(\mathbf{r}'-\mathbf{r}_{j})\delta(\sigma'-\sigma_{j})
+\right\rangle \\
+&=
+\left\langle
+\sum_{i\neq j}
+\delta(\mathbf{r}-\mathbf{r}_{i})\delta(\sigma-\sigma_{i})
+\right\rangle \\
+&=
+(N-1)\,n(\mathbf{r},\sigma).
+\end{aligned}
+$$
+
+Using Eq. (3.51),
+
+$$
+n(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=
+n(\mathbf{r},\sigma)n(\mathbf{r}',\sigma')
++
+\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma'),
+$$
+
+and integrating gives
+
+$$
+\begin{aligned}
+(N-1)n(\mathbf{r},\sigma)
+&=
+n(\mathbf{r},\sigma)\sum_{\sigma'}\int \mathrm{d}^{3}r'\,n(\mathbf{r}',\sigma')
++
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma') \\
+&=
+N\,n(\mathbf{r},\sigma)
++
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma').
+\end{aligned}
+$$
+
+Therefore
+
+$$
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=-\,n(\mathbf{r},\sigma).
+$$
+
+That is, the full exchange-correlation hole contains one missing electron when normalized by the reference density:
+
+$$
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,
+\frac{\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma')}{n(\mathbf{r},\sigma)}
+=-1.
+$$
+
+From Derivation 14, the exchange hole by itself obeys the same sum rule,
+
+$$
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,
+n_{x}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=-\,n(\mathbf{r},\sigma).
+$$
+
+Subtracting this from Eq. (3.58) gives the correlation-hole sum rule
+
+$$
+\sum_{\sigma'}\int \mathrm{d}^{3}r'\,
+n_{c}(\mathbf{r},\sigma;\mathbf{r}',\sigma')
+=0.
+$$
+
+Thus correlation does not change the total missing charge around a reference electron; it only redistributes it in space. In other words, exchange already accounts for the fact that one electron excludes exactly one electron's worth of same-spin probability, while correlation reshapes that hole by shifting charge from some regions to others. In general, correlation is most important for electrons of opposite spin, since electrons of the same spin are already kept apart by the exclusion principle. For the ground state the correlation energy is always negative and any approximation should be negative. Excited states involve energy differences from the ground state, e.g., an exciton energy. Depending on the effects of correlation in the two states, the difference can be positive or negative.
 
 The correlation energy is more complicated to calculate than the exchange energy because correlation affects both kinetic and potential energies. Both effects can be taken into account by a "coupling constant integration" using the methods of Section 3.4. The theory of interacting systems is beyond the scope of this book and the reader is referred to the companion volume [1] for an in-depth presentation. Nevertheless, it is essential to take correlation into account in realistic calculations, and the goal here is to show how to understand and use aspects that have an important role in present-day electronic structure
 theory and practical calculations. Coupling constant integration is discussed for the model system, the homogeneous gas in Chapter 5, and is a key aspect of ongoing developments of functionals for density functional theory (see especially Sections 8.2, 9.3, and 9.7).
@@ -718,4 +1758,3 @@ where $n(\mathbf{r}, \sigma)$ is the density, and (b) derive the formula Eq. (3.
 [^8]:    ${ }^{10}$ Tjalling Koopmans is famous in chemistry and physics for his theorem [277], but his major work was in economics, for which he was awarded a Nobel prize in 1975.
 
 [^9]:    ${ }^{11}$ This is exactly what D. R. Hartree did in his pioneering work [50]; however, his approach of subtracting a self-term for each electron is not the same as the more proper Hartree-Fock theory for more than two electrons.
-
