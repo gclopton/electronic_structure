@@ -83,12 +83,45 @@ The density of particles $n(\mathbf{r})$, which plays a central role in electron
 > n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}=N \frac{\int \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N} \sum_{\sigma_{1}}\left|\Psi\left(\mathbf{r}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}}{\int \mathrm{~d}^{3} r_{1} \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N}\left|\Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}},
 > $$
 
-which has this form because of the symmetry of the wavefunction in all the electron coordinates.
+To see this, insert the density operator into the expectation value (assuming $\langle\Psi|\Psi\rangle = 1$ for clarity):
+
+$$
+\begin{aligned}
+n(\mathbf{r})
+&= \langle\Psi| \hat{n}(\mathbf{r}) |\Psi\rangle \\
+&= \sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; \Psi^{*}(\mathbf{r}_{1},\ldots,\mathbf{r}_{N})\,\delta(\mathbf{r}-\mathbf{r}_{i})\,\Psi(\mathbf{r}_{1},\ldots,\mathbf{r}_{N}).
+\end{aligned}
+$$
+
+For the $i$-th term in the sum, the delta function $\delta(\mathbf{r}-\mathbf{r}_{i})$ collapses the $\mathbf{r}_{i}$ integration, setting $\mathbf{r}_{i} = \mathbf{r}$. The $i = 1$ contribution, for instance, gives
+
+$$
+\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}.
+$$
+
+Because the electrons are identical fermions, $|\Psi|^{2}$ is symmetric under exchange of any two electron coordinates (the antisymmetry of $\Psi$ squares away). Therefore every term in the sum over $i$ gives exactly the same integral — only the label of the "surviving" coordinate differs. Summing all $N$ identical terms produces the factor of $N$ in Eq. (3.8).
 
 > [!derivation] Derivation 3: Total energy expression — external potential reduces to a density integral
 > Using the result for $n(\mathbf{r})$ from Eq. (3.8), simplify the total energy expectation value into the form of Eq. (3.9). Which terms in the Hamiltonian can be expressed purely in terms of the density, and which cannot? What is it about the structure of a one-body vs. two-body operator that makes the difference?
 
-The total energy is the expectation value of the hamiltonian,
+The total energy is the expectation value of the hamiltonian. Using $\hat{H} = \hat{T} + \hat{V}_{\text{ext}} + \hat{V}_{\text{int}} + E_{II}$, the linearity of the expectation value gives
+
+$$
+E = \langle\hat{H}\rangle = \langle\hat{T}\rangle + \langle\hat{V}_{\text{ext}}\rangle + \langle\hat{V}_{\text{int}}\rangle + E_{II}.
+$$
+
+The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} V_{\text{ext}}(\mathbf{r}_{i})$. Its expectation value therefore reduces by the same logic used for the density operator (Derivation 2): each term in the sum over $i$ gives the same integral after exploiting the exchange symmetry of $|\Psi|^{2}$, so
+
+$$
+\begin{aligned}
+\langle\hat{V}_{\text{ext}}\rangle
+&= \sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; |\Psi|^{2}\, V_{\text{ext}}(\mathbf{r}_{i}) \\
+&= N \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r}) \int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2} \\
+&= \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}).
+\end{aligned}
+$$
+
+In the last step we recognized the definition of $n(\mathbf{r})$ from Eq. (3.8). This reduction works for any one-body operator — only one electron coordinate appears in the operator, so the remaining $N-1$ integrations produce the density. The kinetic energy $\langle\hat{T}\rangle$ and the electron-electron interaction $\langle\hat{V}_{\text{int}}\rangle$ cannot be similarly simplified: $\hat{T}$ involves derivatives (not just multiplication), and $\hat{V}_{\text{int}}$ is a two-body operator coupling pairs of coordinates. Thus the total energy takes the form
 
 > [!theorem] Total energy as expectation value (Eq. 3.9)
 >
@@ -173,7 +206,17 @@ where $E_{\text {Hartree }}$ is the self-interaction energy of the density $n(\m
 
 Since $E_{I I}$ is the interaction among the positive nuclei and $\int \mathrm{d}^{3} r V_{\text {ext }}(\mathbf{r}) n(\mathbf{r})$ is the interaction of the electrons with the nuclei, Eq. (3.14) is a neutral grouping of terms so long as the system is neutral. The evaluation of classical Coulomb energies is an intrinsic part of quantitative electronic structure calculations; methods for dealing with long-range Coulomb interaction are described in Appendix F.
 
-It then follows that the total energy expression, (3.9), can be written as
+It then follows that the total energy expression, (3.9), can be rearranged by adding and subtracting $E_{\text{Hartree}}$:
+
+$$
+\begin{aligned}
+E &= \langle\hat{T}\rangle + \langle\hat{V}_{\text{int}}\rangle + \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}) + E_{II} \\
+&= \langle\hat{T}\rangle + \langle\hat{V}_{\text{int}}\rangle + \bigl(\underbrace{E_{\text{Hartree}} + \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}) + E_{II}}_{E^{\text{CC}}}\bigr) - E_{\text{Hartree}} \\
+&= \langle\hat{T}\rangle + \bigl(\langle\hat{V}_{\text{int}}\rangle - E_{\text{Hartree}}\bigr) + E^{\text{CC}}.
+\end{aligned}
+$$
+
+That is,
 
 > [!equation] Total energy decomposition with exchange-correlation (Eq. 3.16)
 >
