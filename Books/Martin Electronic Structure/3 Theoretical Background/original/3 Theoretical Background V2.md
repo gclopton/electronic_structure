@@ -222,6 +222,8 @@ $$
 
 The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} V_{\text{ext}}(\mathbf{r}_{i})$. Its expectation value therefore reduces by the same logic used for the density operator (Derivation 2): each term in the sum over $i$ gives the same integral after exploiting the exchange symmetry of $|\Psi|^{2}$, so
 
+[intermediate steps and substitutions missing in this chain]
+
 $$
 \begin{aligned}
 \langle\hat{V}_{\text{ext}}\rangle

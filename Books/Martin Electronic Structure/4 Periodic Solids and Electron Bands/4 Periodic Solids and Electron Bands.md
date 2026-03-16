@@ -144,6 +144,9 @@ $$
 
 so that $\mathbf{q}$ is restricted to the set of vectors satisfying $\mathbf{q} \cdot \mathbf{a}_{i}=2 \pi \frac{\text { integer }}{N_{i}}$ for each of the primitive vectors $\mathbf{a}_{i}$. In the limit of large volumes $\Omega_{\text {crystal }}$ the final results must be independent of the particular choice of boundary conditions. ${ }^{5}$
 
+> [!derivation] Derivation 1: Fourier components of a periodic function and the reciprocal lattice
+> Starting from the Fourier transform of a function $f(\mathbf{r})$ that has the periodicity of the crystal, show that only wavevectors equal to reciprocal lattice vectors $\mathbf{G}$ have nonzero Fourier components. What role does the sum over lattice translations play in the derivation, and why does it vanish for most wavevectors?
+
 The Fourier transform is defined to be
 
 $$
@@ -160,6 +163,8 @@ f(\mathbf{q}) & =\frac{1}{\Omega_{\text {crystal }}} \sum_{n_{1}, n_{2}, \ldots}
 $$
 
 The sum over all lattice points in the middle line vanishes for all $\mathbf{q}$ except those for which $\mathbf{q} \cdot \mathbf{T}\left(n_{1}, n_{2}, \ldots\right)=2 \pi \times$ integer for all translations $\mathbf{T}$. Since $\mathbf{T}\left(n_{1}, n_{2}, \ldots\right)$ is a sum of integer multiples of the primitive translations $\mathbf{a}_{i}$, it follows that $\mathbf{q} \cdot \mathbf{a}_{i}=2 \pi \times$ integer.
+
+---
 
 [^3]The set of Fourier components $\mathbf{q}$ that satisfy this condition is the "reciprocal lattice." If we define the vectors $\mathbf{b}_{i}, i=1, d$ that are reciprocal to the primitive translations $\mathbf{a}_{i}$, i.e.,
 
@@ -179,11 +184,19 @@ $$
 f(\mathbf{G})=\frac{1}{\Omega_{\mathrm{cell}}} \int_{\Omega_{\mathrm{cell}}} \mathrm{~d} \mathbf{r} f(\mathbf{r}) \exp (\mathrm{i} \mathbf{G} \cdot \mathbf{r})
 $$
 
+> [!derivation] Derivation 2: Matrix relation between real and reciprocal lattice vectors
+> Starting from the defining condition $\mathbf{b}_i \cdot \mathbf{a}_j = 2\pi\delta_{ij}$, derive the matrix relation Eq. (4.12) connecting the primitive vectors of the reciprocal lattice to those of the real-space lattice. Why does the transpose appear?
+
 The mutually reciprocal relation of the Bravais lattice in real space and the reciprocal lattice becomes apparent using matrix notation that is valid in any dimension. If we define square matrix $b_{i j}=\left(\mathbf{b}_{i}\right)_{j}$, exactly as was done for the $a_{i j}$ matrix, then primitive vectors are related by
 
 $$
 \mathbf{b}^{T} \mathbf{a}=2 \pi \mathbf{1} \rightarrow \mathbf{b}=2 \pi\left(\mathbf{a}^{T}\right)^{-1} \text { or } \mathbf{a}=2 \pi\left(\mathbf{b}^{T}\right)^{-1} .
 $$
+
+---
+
+> [!derivation] Derivation 3: Cross-product formula for reciprocal lattice vectors
+> Derive the explicit expression Eq. (4.13) for the reciprocal lattice vector $\mathbf{b}_1$ in three dimensions. What geometric property of the cross product guarantees that the orthogonality condition $\mathbf{b}_1 \cdot \mathbf{a}_2 = \mathbf{b}_1 \cdot \mathbf{a}_3 = 0$ is satisfied?
 
 It is also straightforward to derive explicit expressions for the relation of the $\mathbf{a}_{i}$ and $\mathbf{b}_{i}$ vectors; for example, in three dimensions, one can show by geometric arguments that
 
@@ -192,6 +205,9 @@ $$
 $$
 
 and cyclical permutations. The geometric construction of the reciprocal lattice in two dimensions is shown in Fig. 4.1.
+
+> [!derivation] Derivation 4: Reciprocal lattices of common Bravais lattices
+> Verify that the reciprocal of a simple cubic lattice is also simple cubic with lattice constant $2\pi/a$, and that the bcc and fcc lattices are reciprocal to each other (see also Exercise 4.9). What physical insight does the bcc↔fcc duality give about the relationship between real-space and reciprocal-space structures?
 
 It is easy to show that the reciprocal of a square (simple cubic) lattice is also a square (simple cubic) lattice, with dimension $\frac{2 \pi}{a}$. The reciprocal of the triangular (hexagonal) lattice is also triangular (hexagonal) but rotated with respect to the crystal lattice. The bcc and fcc lattices are reciprocal to each other (Exercise 4.9). The primitive vectors of the reciprocal lattice for each of the three-dimensional lattices in Eq. (4.3) in units of $\frac{2 \pi}{a}$ are given by
 
@@ -204,6 +220,9 @@ $$
 \end{array}
 $$
 
+> [!derivation] Derivation 5: Volume of the Brillouin zone
+> Derive the relation Eq. (4.15) between the volume of the Brillouin zone $\Omega_{\mathrm{BZ}}$ and the real-space cell volume $\Omega_{\mathrm{cell}}$. Why must the product $\Omega_{\mathrm{BZ}} \cdot \Omega_{\mathrm{cell}}$ depend only on the dimension $d$ and not on the specific lattice?
+
 The volume of any primitive cell of the reciprocal lattice can be found from the same reasoning as used for the Bravais in real space. This is the volume of the first Brillouin
 zone $\Omega_{\mathrm{BZ}}$ (see Section 4.2), which can be written for any dimension $d$ in analogy to Eq. (4.4) as
 
@@ -213,6 +232,8 @@ $$
 
 This shows the mutual reciprocal relation of $\Omega_{\mathrm{BZ}}$ and $\Omega_{\text {cell }}$. The formulas can also be expressed in the geometric forms $\Omega_{\mathrm{BZ}}=\left|b_{1}\right|(d=1) ;\left|\mathbf{b}_{1} \times \mathbf{b}_{2}\right|,(d=2)$; and $\mid \mathbf{b}_{1} \cdot\left(\mathbf{b}_{2} \times\right. \left.\mathbf{b}_{3}\right) \mid,(d=3)$.
 
+---
+
 ## 4.2.1 The Brillouin Zone
 
 In this book, the term "Brillouin zone" or "BZ" is used in two ways. In some cases, especially for Fourier transforms and the proofs in the chapters on topology, it is most convenient to use a parallelepiped defined by the reciprocal lattice vectors. In general, however, it is most useful to use the customary convention that it means the WignerSeitz cell of the reciprocal lattice, which is defined by the planes that are the perpendicular bisectors of the vectors from the origin to the reciprocal lattice points. It is on these planes that the Bragg condition is satisfied for elastic scattering [280, 285]. For incident particles with wavevectors inside the BZ there can be no Bragg scattering. Construction of the BZ is illustrated in Figs. 4.1-4.4, and widely used notations for points in the BZ of several crystals are given in Fig. 4.10.
@@ -220,6 +241,9 @@ In this book, the term "Brillouin zone" or "BZ" is used in two ways. In some cas
 ## 4.2.2 Useful Relations
 
 Expressions for crystals often involve the lengths of vectors in real and reciprocal space, $|\tau+\mathbf{T}|$ and $|\mathbf{k}+\mathbf{G}|$ and the scalar products $(\mathbf{k}+\mathbf{G}) \cdot(\tau+\mathbf{T})$. If the vectors are expressed in a cartesian coordinate system, the expressions simply involve sums over each cartesian component. However, it is often more convenient to represent $\mathbf{T}$ and $\mathbf{G}$ by the integer multiples of the basis vectors, and positions $\tau$ and wave vectors $\mathbf{k}$ as fractional multiples of the basis vectors. It is useful to define lengths and scalar products in this representation, i.e., to define the "metric."
+
+> [!derivation] Derivation 6: Coordinate representations and scalar products in lattice vectors
+> Starting from the representations of position and wavevectors in lattice coordinates (Eqs. 4.16–4.17), derive the expression Eq. (4.18) for the scalar product $(\mathbf{k}+\mathbf{G})\cdot(\boldsymbol{\tau}+\mathbf{T})$ in terms of fractional coordinates. Why does this expression take such a simple form?
 
 The matrix formulation makes it easy to derive the desired expressions. Any position vector $\tau$ with elements $\tau_{1}, \tau_{2}, \ldots$, in cartesian coordinates can be written in terms of the primitive vectors by $\tau=\sum_{i=1}^{d} \tau_{i}^{L} \mathbf{a}_{i}$, where the superscript $L$ denotes the representation in lattice vectors and $\tau^{L}$ has elements $\tau_{1}^{L}, \tau_{2}^{L}, \ldots$, that are fractions of primitive translation vectors. In matrix form this becomes (here superscript $T$ denotes transpose)
 
@@ -242,6 +266,11 @@ $$
 (\mathbf{k}+\mathbf{G}) \cdot(\tau+\mathbf{T})=2 \pi \sum_{i=1}^{d}\left(k_{i}^{L}+m_{i}\right)\left(\tau_{i}^{L}+n_{i}\right) \equiv 2 \pi\left(\mathbf{k}^{L}+\mathbf{m}\right) \cdot\left(\tau^{L}+\mathbf{n}\right) .
 $$
 
+---
+
+> [!derivation] Derivation 7: Metric tensors for vector lengths in lattice coordinates
+> Show that the squared lengths of vectors in real and reciprocal space, expressed in lattice coordinates, are given by Eq. (4.19). What are the metric tensors $\mathbf{a}\mathbf{a}^T$ and $\mathbf{b}\mathbf{b}^T$, and why do they appear naturally when computing distances in a non-orthogonal coordinate system?
+
 The relation in terms of the cartesian vectors is readily derived using Eqs. (4.16) and (4.17). On the other hand, the lengths are most easily written in the cartesian system. Using Eqs. (4.16) and (4.17) and the same vector notation as in Eq. (4.18), it is straightforward to show that lengths are given by
 
 $$
@@ -249,6 +278,9 @@ $$
 $$
 
 - i.e., $\mathbf{a a}^{T}$ and $\mathbf{b b}^{T}$ are the metric tensors for the vectors in real and reciprocal spaces expressed in their natural forms as multiples of the primitive translation vectors.
+
+> [!derivation] Derivation 8: Parallelepiped bounding a sphere in real and reciprocal space
+> Derive the expressions Eqs. (4.20) and (4.21) for the dimensions of a parallelepiped in integer lattice coordinates that bounds a sphere of given radius. Why do the real-space bounds involve reciprocal lattice vectors and vice versa?
 
 Finally, one often needs to find all the lattice vectors within some cutoff radius, e.g., in order to find the lowest Fourier components in reciprocal space or the nearest neighbors in real space. Consider the parallelepiped defined by all lattice points in real space $\mathbf{T}\left(n_{1}, n_{2}, n_{3}\right) ;-N_{1} \leq n_{1} \leq N_{1} ;-N_{2} \leq n_{2} \leq N_{2} ;-N_{3} \leq n_{3} \leq N_{3}$. Since the vectors $\mathbf{a}_{2}$ and $\mathbf{a}_{3}$ form a plane, the distance in space perpendicular to this plane is the projection of $\mathbf{T}$ onto the unit vector perpendicular to the plane. This unit vector is $\hat{\mathbf{b}_{1}}=\mathbf{b}_{1} /\left|\mathbf{b}_{1}\right|$ and, using Eq. (4.19), it is then simple to show that the maximum distance in this direction is $R_{\max }=2 \pi \frac{N_{1}}{\left|\mathbf{b}_{1}\right|}$. Similar equations hold for the other directions. The result is a simple expression (Exercise 4.15) for the boundaries of the parallelepiped that bounds a sphere of radius $R_{\text {max }}$,
 
@@ -269,6 +301,9 @@ where the vectors range from $-M_{i} \mathbf{b}_{i}$ to $+M_{i} \mathbf{b}_{i}$ 
 The previous sections were devoted to properties of periodic functions in a crystal, such as the nuclear positions and electron density, that obey the relation Eq. (4.5), i.e., $f(\mathbf{r}+ \left.\mathbf{T}\left(n_{1}, n_{2}, \ldots\right)\right)=f(\mathbf{r})$ for any translation of the Bravais lattice $\mathbf{T}(\mathbf{n}) \equiv \mathbf{T}\left(n_{1}, n_{2}, \ldots\right)= n_{1} \mathbf{a}_{1}+n_{2} \mathbf{a}_{2}+\ldots$, as defined in Eq. (4.1). Such periodic functions have nonzero Fourier components only for reciprocal space at the reciprocal lattice vectors defined by Eq. (4.10).
 
 Excitations of the crystal do not, in general, have the periodicity of the crystal. ${ }^{6}$ The subject of this section is the classification of excitations according to their behavior under the translation operations of the crystal. This leads to a Bloch theorem proved, in a general way, and applicable to all types of excitations: electrons, phonons, and other excitations of the crystal. ${ }^{7}$ We will give explicit demonstrations for independent-particle excitations; however, since the general relations apply to any system, the theorems can be generalized to correlated many-body systems.
+
+> [!derivation] Derivation 9: Bloch theorem from translation operator algebra
+> The Bloch theorem is one of the most important results in solid-state physics. Starting from the fact that the Hamiltonian commutes with all lattice translation operators, and that the translation operators form a group satisfying $\hat{T}_{\mathbf{n}_1}\hat{T}_{\mathbf{n}_2} = \hat{T}_{\mathbf{n}_1+\mathbf{n}_2}$, derive the Bloch theorem Eq. (4.32) and the equivalent form Eq. (4.33). What property of the translation group forces the eigenvalues to be pure phase factors? Why can $\mathbf{k}$ be restricted to a single Brillouin zone?
 
 Consider the eigenstates of any operator $\hat{O}$ defined for the periodic crystal. Any such operator must be invariant to any lattice translation $\mathbf{T}(\mathbf{n})$. For example, $\hat{O}$ could be the hamiltonian $\hat{H}$ for the Schrödinger equation for independent particles,
 
@@ -349,6 +384,9 @@ $$
 $$
 
 where $u_{\mathbf{k}}(\mathbf{r})$ is periodic ( $u_{\mathbf{k}}\left(\mathbf{r}+\mathbf{T}_{\mathbf{n}}\right)=u_{\mathbf{k}}(\mathbf{r})$ ). Examples of Bloch states are shown in Fig. 4.11 and the Bloch theorem for independent-particle electron states in many different representations are given in Chapters 12-17.
+
+---
+
 2. Bands of eigenvalues. In the limit of a large (macroscopic) crystal, the spacing of the $\mathbf{k}$ points goes to zero and $\mathbf{k}$ can be considered a continuous variable. The eigenstates of the hamiltonian may be found separately for each $\mathbf{k}$ in one primitive cell of the reciprocal lattice. For each $\mathbf{k}$ there is a discrete set of eigenstates that can be labeled by an index $i$. This leads to bands of eigenvalues $\varepsilon_{i, \mathbf{k}}$ and energy gaps where there can be no eigenstates for any $\mathbf{k}$.
 3. Conservation of crystal momentum. It follows from the analysis above that in a perfect crystal the wavevector $\mathbf{k}$ is conserved modulo any reciprocal lattice vector $\mathbf{G}$. Thus it is analogous to ordinary momentum in free space, but it has the additional feature that it is only conserved within one primitive cell, usually chosen to be the Brillouin zone. Thus two excitations at vectors $\mathbf{k}_{1}$ and $\mathbf{k}_{2}$ may have total momentum $\mathbf{k}_{1}+\mathbf{k}_{2}$ outside the Brillouin zone at origin and their true crystal momentum should be reduced to the Brillouin zone around the origin by adding a reciprocal lattice vector. The physical process of scattering of two excitations by some perturbation is called "Umklapp scattering" [280].
 4. The role of the Brillouin zone (BZ). All possible eigenstates are specified by $\mathbf{k}$ within any primitive cell of the periodic lattice in reciprocal space. However, the BZ is the cell of choice in which to represent excitations; its boundaries are the bisecting planes where Bragg scattering occurs and inside the Brillouin zone there are no such boundaries. Thus
@@ -359,6 +397,9 @@ Figure 4.11. Schematic illustration of a periodic potential in a crystal extendi
 bands $\varepsilon_{i, \mathbf{k}}$ are analytic functions of $\mathbf{k}$ inside the BZ and nonanalytic dependence on $\mathbf{k}$ can occur only at the boundaries.
 
 Examples of Brillouin zones for important cases are shown in Fig. 4.10 with labels for high-symmetry points and lines using the notation of Bouckaret, Smoluchowski, and Wigner (see also Slater [284]). The labels define the directions and points used in many figures given in the present work for electron bands and phonon dispersion curves.
+> [!derivation] Derivation 10: Converting k-space sums to Brillouin zone integrals
+> Show that for a crystal with Born–von Karman boundary conditions, the average of a band quantity per unit cell can be written as the integral Eq. (4.35) over the Brillouin zone. What determines the density of $\mathbf{k}$-points, and why does the prefactor involve the real-space cell volume?
+
 5. Integrals in k space. For many properties, such as the counting of electrons in bands, total energies, etc., it is essential to sum over the states labeled by $\mathbf{k}$. The crucial point is that if one chooses the eigenfunctions that obey periodic boundary conditions in a large crystal of volume $\Omega_{\text {crystal }}$ composed of $N_{\text {cell }}=N_{1} \times N_{2} \times \cdots$ cells, as was done in the analysis of Eq. (4.6), then there is exactly one value of $\mathbf{k}$ for each cell. Thus in a sum over states to find an intrinsic property of a crystal expressed as "per unit cell" one simply has a sum over values of $\mathbf{k}$ divided by the number of values $N_{k}$. For a general function $f_{i}(\mathbf{k})$, where $i$ denotes any of the discrete set of states at each $\mathbf{k}$, the average value per cell becomes
 
 $$
@@ -372,6 +413,12 @@ $$
 $$
 
 where $\Omega_{\text {cell }}$ is the volume of a primitive cell in real space.
+
+---
+
+> [!derivation] Derivation 11: Schrödinger equation for the periodic part of Bloch functions
+> By substituting the Bloch form $\psi_{i,\mathbf{k}}(\mathbf{r}) = \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot\mathbf{r}} u_{i,\mathbf{k}}(\mathbf{r})$ into the Schrödinger equation, derive the eigenvalue equation Eq. (4.37) for the periodic function $u_{i,\mathbf{k}}(\mathbf{r})$. What is the physical significance of the operator $(\nabla + \mathrm{i}\mathbf{k})^2$, and why does $\mathbf{k}$ enter the Hamiltonian as a parameter rather than a quantum number to be solved for?
+
 6. Equation for the periodic part of Bloch functions. The Bloch functions $\psi_{i, \mathbf{k}}(\mathbf{r})= \mathrm{e}^{\mathrm{i} \mathbf{k} \cdot \mathbf{r}} u_{i, \mathbf{k}}(\mathbf{r})$ are eigenfunctions of the hamiltonian operator $\hat{H}$. By inserting the expression for $\psi_{i, \mathbf{k}}(\mathbf{r})$ in terms of $u_{i, \mathbf{k}}(\mathbf{r})$, the equation becomes
 
 $$
@@ -384,10 +431,15 @@ $$
 \hat{H}(\mathbf{k}) u_{i, \mathbf{k}}(\mathbf{r})=\left[-\frac{\hbar^{2}}{2 m_{e}}(\nabla+i \mathbf{k})^{2}+V(\mathbf{r})\right] u_{i, \mathbf{k}}(\mathbf{r})=\varepsilon_{i, \mathbf{k}} u_{i, \mathbf{k}}(\mathbf{r})
 $$
 
+---
+
 7. Magnetic fields, spin, and spin-orbit interaction. The generalization to spin-orbitals is treated briefly in the next section and described in various places in this book.
 8. Topology of the Bloch functions. All of the points above were understood in the 1920s, but it was only starting in the 1980s that the topology of the Bloch functions was recognized by Thouless, Haldane, and others. Topology is a global property of the eigenfunctions as a function of $\mathbf{k}$ in the Brillouin zone that is discussed in Chapters 2528). The new discoveries are in terms of the phases of the periodic part of Bloch functions, which lead to physically meaningful Berry phases. At this point it is important to emphasize that the Bloch theorem is still valid and the equations at any point $\mathbf{k}$ are exactly the same. Even though fabulous consequences are still being discovered, Eq. (4.37) is still valid and the methods for solution developed over the years still apply.
 
 # 4.4 Time-Reversal and Inversion Symmetries
+
+> [!derivation] Derivation 12: Time-reversal and inversion symmetry of energy bands
+> Starting from the fact that the Hamiltonian can be chosen to be real (time-reversal invariance), show that $\varepsilon_{i,-\mathbf{k}} = \varepsilon_{i,\mathbf{k}}$ for all bands. If the crystal additionally has inversion symmetry, what further constraint does this place on the periodic part $u_{i,\mathbf{k}}(\mathbf{r})$? How does the inclusion of spin-orbit interaction modify these results, and what is the role of Kramers' theorem at time-reversal invariant momenta (TRIM points)?
 
 There is an additional symmetry that is present in all systems with no magnetic field. Since the hamiltonian is invariant to time reversal in the original time-dependent Schrödinger equation, it follows that the hamiltonian can always be chosen to be real. In a timeindependent equation, such as Eq. (12.1), this means that if $\psi$ is an eigenfunction, then $\psi^{*}$ must also be an eigenfunction with the same real eigenvalue $\varepsilon$. According to the Bloch theorem, the solutions $\psi_{i,-\mathbf{k}}(\mathbf{r})$ can be classified by their wavevector $\mathbf{k}$ and a discrete band index $i$. If $\psi_{i,-\mathbf{k}}(\mathbf{r})$ satisfies the Bloch condition Eq. (4.32), then it follows that $\psi_{i, \mathbf{k}}^{*}(\mathbf{r})$ satisfies the same equation except with a phase factor corresponding to $-\mathbf{k}$. Thus there is never a need to calculate states at both $\mathbf{k}$ and $-\mathbf{k}$ in any crystal, $\psi_{i,-\mathbf{k}}(\mathbf{r})$ can always be chosen to be $\psi_{i, \mathbf{k}}^{*}(\mathbf{r})$, and the eigenvalues are equal $\varepsilon_{i,-\mathbf{k}}=\varepsilon_{i, \mathbf{k}}$. If in addition the crystal has inversion symmetry, then Eq. (4.37) is invariant under inversion since $V(-\mathbf{r})=V(\mathbf{r})$ and $(\nabla+i \mathbf{k})^{2}$ is the same if we replace $\mathbf{k}$ and $\mathbf{r}$ by $-\mathbf{k}$ and $-\mathbf{r}$. Thus the periodic part of the Bloch function can be chosen to satisfy $u_{i, \mathbf{k}}(\mathbf{r})=u_{i,-\mathbf{k}}(-\mathbf{r})=u_{i, \mathbf{k}}^{*}(-\mathbf{r})$.
 
@@ -395,6 +447,8 @@ There is an additional symmetry that is present in all systems with no magnetic 
 
 So far we have ignored spin, considering only solutions for a single electron in a nonrelativistic hamiltonian. However, relativistic effects introduce a coupling of spin and spatial
 motion, i.e., the spin-orbit interaction derived in Appendix O. There it is shown that the equations can be written in terms of $2 \times 2$ matrices in terms of $\psi_{\uparrow, i, \mathbf{k}}(\mathbf{r})$ and $\psi_{\downarrow, i, \mathbf{k}}(\mathbf{r})$ where spin-orbit interaction leads to a diagonal term opposite for ↑ and ↓ and an offdiagonal spin-flip term. Time reversal leads to reversal of both spin and momentum so that a state $\psi_{i, \mathbf{k}}(\sigma, \mathbf{r})$ is transformed to $\psi_{i,-\mathbf{k}}(-\sigma, \mathbf{r})$, where $\sigma$ is the spin variable. If there is time-reversal symmetry, Kramers theorem guarantees that states with reversed momentum and spin functions are degenerate and $\psi_{i, \mathbf{k}}(\sigma, \mathbf{r})=\psi_{i,-\mathbf{k}}^{*}(-\sigma, \mathbf{r})$.
+
+---
 
 This leads to a conclusion that is a key to understanding topological insulators in Chapters 27 and 28. At certain $\mathbf{k}$ points in a crystal $\mathbf{k}$ and $-\mathbf{k}$ are the same ( $\mathbf{k}=0$ ) or related by a reciprocal lattice vector, and the Kramers theorem guarantees that the two spin states are degenerate. These are called TRIM (time-reversal invariant momentum) and their role is explained in Section 27.4. See especially Figs. 27.4 and 28.1, which show the TRIM points in two and three dimensions. Another example is the linear dispersion in the Rashba effect at a surface shown in Figs. O. 1 and O.2. The states are degenerate at $\mathbf{k}=0$ with linear dispersion that would not occur if there were no spin-orbit interaction. The effect can be viewed as if each spin state is in a magnetic field, opposite for the two spins so that overall there is time-reversal symmetry.
 
@@ -419,6 +473,9 @@ $$
 
 where $R_{n} \mathbf{r}$ denotes the rotation, inversions, or reflections of the position $\mathbf{r}$ and $\mathbf{t}_{n}$ is the nonsymmorphic translation associated with operation $n$.
 
+> [!derivation] Derivation 13: Point symmetry and eigenstates at related k-points
+> By applying a point symmetry operation $R_n$ to the Schrödinger equation, derive the relation Eq. (4.39) between eigenstates at $\mathbf{k}$ and at $R_n^{-1}\mathbf{k}$, and show that their eigenvalues must be equal (Eq. 4.40). What are the two main computational consequences — one for high-symmetry $\mathbf{k}$-points and one for reducing the Brillouin zone to the irreducible wedge?
+
 The two most important consequences of the symmetry operations for excitations can be demonstrated by applying the symmetry operations to the Schrödinger equation (4.22), with $i$ replaced by the quantum numbers for a crystal, $i \rightarrow i, \mathbf{k}$. Since the hamiltonian is invariant under any symmetry operation $R_{n}$, the operation of $R_{n}$ leads to a new equation with $\mathbf{r} \rightarrow R_{i} \mathbf{r}+\mathbf{t}_{i}$ and $\mathbf{k} \rightarrow R_{i} \mathbf{k}$ (the fractional translation has no effect on reciprocal space). It follows that the new function,
 
 $$
@@ -435,6 +492,8 @@ $$
 $$
 
 If there is time-reversal symmetry, the BZ can be reduced by at least a factor of 2 using relation of states at $\mathbf{k}$ and $-\mathbf{k}$; in a square lattice, the IBZ is $1 / 8$ the BZ, as illustrated in Fig. 4.12; in the highest-symmetry crystals (cubic), the IBZ is only $1 / 48$ the BZ.
+
+---
 
 ## 4.5.1 Spin-Orbit Interaction
 
@@ -478,6 +537,9 @@ $$
 - The $N_{i}=2$ set is the Baldereschi point for a simple cubic crystal (taking into account symmetry - see below). The sets for all cubic lattices are also the same as the offset Gilat-Raubenheimer mesh (see [291]).
 - An informative tabulation of grids and their efficiency, together with an illuminating description is given by Moreno and Soler [286], who emphasized the generation of different sets of regular grids using a combination of offsets and symmetry.
 
+> [!derivation] Derivation 14: One-dimensional special points and exact integration
+> Verify that the integral of $\sin(k)$ over one period is given exactly by evaluating at the single midpoint $k = \pi$. Then show that the two-point Monkhorst-Pack grid gives the exact integral of any function $f_2(k) = A_1 \sin(k) + A_2 \sin(2k)$. Why does a grid of $N$ evenly spaced points exactly integrate all Fourier components up to order $N$?
+
 The logic behind the Monkhorst-Pack choice of points can be understood in one dimension, where it is easy to see that the exact value of the integral,
 
 $$
@@ -492,7 +554,12 @@ $$
 
 The advantage of the special point grids that do not contain the $\mathbf{k}=0$ point is much greater in higher dimensions. As illustrated in Fig. 4.12 for a square lattice, an integration with a grid $4 \times 4=16$ times as dense as the reciprocal lattice can be done with only three inequivalent $\mathbf{k}$ points in the irreducible BZ (defined in the following subsection). This set is sufficient to integrate exactly any periodic function with Fourier components up to $\mathbf{T}=(4,4) \times a$, where $a$ is the square edge. The advantages are greater in higher dimensions.
 
+---
+
 ## 4.6.2 Irreducible BZ
+
+> [!derivation] Derivation 15: Integration over the irreducible Brillouin zone
+> Show that the full BZ integral of a scalar quantity can be reduced to a weighted sum over the irreducible Brillouin zone, as in Eq. (4.44). For quantities that are not scalars, such as the electron density $n(\mathbf{r})$, derive the symmetrized expression Eq. (4.45). Why does the density require an explicit sum over symmetry operations while the energy does not?
 
 Integrals over the BZ can be replaced by integrals only over the IBZ. For example, the sums needed in the total energy (general expressions in Section 7.3 or specific ones for crystals, such as Eq. (13.1)) have the form of Eq. (4.34). Since the summand is a scalar, it must be invariant under each operation, $f_{i}\left(R_{n} \mathbf{k}\right)=f_{i}(\mathbf{k})$. It is convenient to define $w_{\mathbf{k}}$ to be the total number of distinguishable $\mathbf{k}$ points related by symmetry to the given $\mathbf{k}$ point in the IBZ
 (including the point in the IBZ) divided by the total number of points $N_{k}$. (Note that points on the BZ boundary related by $\mathbf{G}$ vectors are not distinguishable.) Then the sum Eq. (4.34) is equivalent to
@@ -508,6 +575,8 @@ n(\mathbf{r})=\frac{1}{N_{k}} \sum_{\mathbf{k}} n_{\mathbf{k}}(\mathbf{r})=\frac
 $$
 
 Here points are weighted according to $w_{\mathbf{k}}$, just as in Eq. (4.44), and in addition the variable $\mathbf{r}$ is transformed in each term $n_{\mathbf{k}}(\mathbf{r})$. Corresponding expressions for Fourier components are given in Section 12.7.
+
+---
 
 Symmetry operations can be used to reduce the calculations greatly. Excellent examples are the Monkhorst-Pack meshes applied to cubic crystals, where there are 48 symmetry operations so that the IBZ is $1 / 48$ the total BZ. The set defined by $N_{i}=2$ has $2^{3}=8$ points in the BZ , which reduces to 1 point in the IBZ. Similarly, $N_{i}=4 \rightarrow 4^{3}=64$ points in the BZ reduces to 2 points; $N_{i}=6 \rightarrow 6^{3}=216$ points in the BZ reduces to 10 points. As an example, for fcc the 2 -point set is $(2 \pi / a)(1 / 4,1 / 4,1 / 4)$ and $(2 \pi / a)(1 / 4,1 / 4,3 / 4)$, which has been found to yield remarkably accurate results for energies of semiconductors, a fact that was very important in early calculations [171]. The 10-point set is sufficient for almost all modern calculations for such materials.
 
@@ -531,6 +600,9 @@ $$
 $$
 
 In the case of independent-particle states, where $\varepsilon_{i, \mathbf{k}}$ denotes the energy of an electron (or phonon), Eq. (4.46) is the number of independent-particle states per unit energy. Quantities like the specific heat involve excitations of electrons that do not change the number, i.e., an excitation from a filled to an empty state. Similarly, for independent-particle susceptibilities, such as general forms of $\chi^{0}$ in Appendix D and the dielectric function given in Eq. (21.9), the imaginary part is given by matrix elements times a joint DOS, i.e., a double sum over bands $i$ and $j$ but a single sum over $\mathbf{k}$ due to momentum conservation, as a function of the energy difference $E=\varepsilon_{j}-\varepsilon_{i}$.
+
+> [!derivation] Derivation 16: Van Hove singularities in the density of states
+> Show that the density of states $\rho(E)$ defined by Eq. (4.46) must have "critical points" (van Hove singularities) at energies where $\nabla_{\mathbf{k}} \varepsilon_{i,\mathbf{k}} = 0$. In three dimensions, what are the possible forms of these singularities at band minima, maxima, and saddle points, and why does the dimensionality of space determine their analytic structure?
 
 It is straightforward to show that the DOS has "critical points," or van Hove singularities [296], where $\rho(E)$ has analytic forms that depend only on the space dimension. In three dimensions, each band must have square root singularities at the maxima and minima and at saddle points in the bands. A simple example is illustrated later in Fig. 14.4 for a tightbinding model in one, two, and three dimensions, and a characteristic example for many bands in a crystal is shown in Fig. 16.12; an example for phonons is shown in Fig. 2.11.
 
