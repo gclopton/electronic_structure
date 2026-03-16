@@ -534,7 +534,7 @@ In the case of independent-particle states, where $\varepsilon_{i, \mathbf{k}}$ 
 
 It is straightforward to show that the DOS has "critical points," or van Hove singularities [296], where $\rho(E)$ has analytic forms that depend only on the space dimension. In three dimensions, each band must have square root singularities at the maxima and minima and at saddle points in the bands. A simple example is illustrated later in Fig. 14.4 for a tightbinding model in one, two, and three dimensions, and a characteristic example for many bands in a crystal is shown in Fig. 16.12; an example for phonons is shown in Fig. 2.11.
 
-**SELECT FURTHER READING**
+# SELECT FURTHER READING
 
 Physically motivated discussion for many crystals with symmetry labels:
 Ashcroft, N. and Mermin, N., Solid State Physics (W. B. Saunders Company, New York, 1976).
@@ -549,7 +549,7 @@ Tinkham, M., Group Theory and Quantum Mechanics (McGraw-HIll, New York, 1964).
 Book with insightful problems with solutions:
 Mihaly, L. and Martin, M. C., Solid State Physics: Problems and Solutions, 2nd ed. (Wiley-VCH, Berlin, 2009).
 
-**Exercises**
+# Exercises
 
 4.1 Derive the expression for primitive reciprocal lattice in three dimensions given in Eq. (4.13).
 4.2 For a two-dimensional lattice give an expression for primitive reciprocal lattice vectors that is equivalent to the one for three dimensions given in Eq. (4.13).

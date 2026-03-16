@@ -65,7 +65,9 @@ Wrap the equation in an Obsidian callout block. The label should include the ent
 
 **Rules for callout content:**
 
-- Include only the equation itself inside the callout — no description paragraphs, symbol tables, or interpretive text. That material lives in the Equation Index.
+- Include only the primary defining equation inside the callout — no description paragraphs, symbol tables, or interpretive text. That material lives in the Equation Index.
+- Do not include alternate forms, decompositions, or rewritings of the equation inside the callout. If an equation can be expressed in a different but equivalent way (e.g., substituting a definition to obtain a rearranged form), place the alternate form in a `### Alternate Forms` section below the description in the Equation Index entry.
+- Do not include simplifications or special cases inside the callout. If the equation collapses to a simpler form under specific conditions (e.g., zero temperature, uncorrelated particles, large separation), place those in a `### Simplifications` section in the Equation Index entry. Simplifications must be genuine special cases where the expression collapses — not notation changes or rewritings in different symbols.
 - For theorem statements (which are prose, not equations), include the formal statement inside the callout:
 
 ```markdown
@@ -268,6 +270,10 @@ Highlight every term that has an entry in the chapter Glossary, at the location 
 
 - **Vocabulary terms and named concepts** — Thomas-Fermi-Dirac approximation, Dirac exchange, external potential, Hartree energy, universal functional, constrained search, N-representability, V-representability, derivative discontinuity, etc.
 - **Named quantities when first defined** — electron density, spin density, chemical potential, Fermi energy, grand potential, etc.
+
+### Highlights in the Equation Index
+
+The `==highlight==` convention also applies inside Equation Index files. When a glossary term appears in an equation description, symbol table, or other prose within the Equation Index, it should be wrapped in `==` delimiters to indicate that the term has a glossary entry. These highlights must not be removed during editing — they are intentional markers, not formatting errors.
 
 ### What NOT to Highlight
 
