@@ -48,6 +48,8 @@ Use the callout type that matches the entry's category in the Study Methodology 
 | `[!figure]` | Orange (255, 184, 108) | Figures and diagrams | Image |
 | `[!derivation]` | Purple (142, 68, 173) | Derivation prompts at points where the text derives or hints at a derivation | Pen-line |
 | `[!exercise]` | Green (0, 200, 83) | Exercises and worked problems | Pencil |
+| `[!question]` | Default blue | Conceptual recall questions in expository sections | Help-circle |
+| `[!lesson]` | Light blue (100, 180, 255) | Key principles and transferable lessons learned from derivations, exercises, or exposition | Lightbulb |
 
 ### Callout Syntax
 
@@ -153,6 +155,100 @@ The `[!derivation]` callout requires a custom CSS snippet in the vault's `.obsid
 ```
 
 Enable it in Obsidian: Settings → Appearance → CSS Snippets → toggle on the snippet file.
+
+---
+
+## Step 3b: Add Question Callouts
+
+Question callouts mark conceptual passages in the chapter that test **understanding and recall** — "do I understand what this means and why it matters?" — as opposed to derivation callouts, which test **working ability**. They use the same `[!question]` callout type used in the Equation Index.
+
+### When to Place a Question Callout
+
+Place a `[!question]` callout at any point in the chapter where:
+
+- The text discusses a **conceptual distinction** (e.g., ground state vs. excited state, noninteracting vs. Hartree-Fock, different definitions of correlation energy) rather than working through algebra.
+- The text describes **physical interpretation** of a result, **limitations** of an approximation, or **conditions** under which a theorem fails — material that is expository, not derivational.
+- The section is **not already covered** by a derivation or exercise callout. Question callouts fill the gaps between derivations and exercises; they should never go inside a derivation, inside an exercise, or in a section where a derivation callout already prompts the reader.
+
+Do **not** place a question callout:
+
+- In the middle of a derivation or its worked solution.
+- On material that is already the target of a `[!derivation]` or `[!exercise]` callout.
+- On a section that is purely a list of references or bibliographic notes.
+
+### Question Callout Syntax
+
+```markdown
+> [!question]
+>
+> (a) First question testing recall or conceptual understanding.
+> (b) Second question, often asking "why" or "what does this mean physically."
+> (c) Optional third question probing limitations or connections forward.
+```
+
+### Prompt-Writing Philosophy for Questions
+
+Question callouts follow the same multi-part (a)/(b)/(c) format used in the Equation Index. The key differences from derivation prompts:
+
+- Questions ask the reader to **state**, **explain**, **distinguish**, or **identify** — not to **derive** or **prove**.
+- Questions should test understanding of the narrative, not algebra. If the answer requires computation, it belongs in a derivation or exercise callout instead.
+- Each question callout should have 2–3 parts. Parts should build from recall ("what is X?") to understanding ("why does X matter?" or "when does X fail?").
+
+### Relationship to Other Callout Types
+
+Question callouts are **complementary** to derivation and exercise callouts:
+
+- A section may have a `[!question]` callout for the conceptual introduction and a `[!derivation]` callout for the mathematical content that follows.
+- Question callouts from the chapter may overlap with `[!question]` callouts in the Equation Index. This is acceptable — the chapter questions target the narrative context, while the Index questions target specific equations.
+
+---
+
+## Step 3c: Add Lesson Callouts
+
+Lesson callouts capture the **transferable principles** that the reader should take away from a derivation, exercise, or expository passage. They answer the question: "What general rule or technique did I just learn that I can apply elsewhere?" They are distinct from all other callout types in that they are *retrospective* — placed **after** worked material, summarizing what was learned, rather than before it.
+
+### When to Place a Lesson Callout
+
+Place a `[!lesson]` callout **after** any passage where the reader has worked through or read material that yields one or more reusable principles. This includes:
+
+- After a derivation (or its `---` divider) that establishes a **general technique** (e.g., "variational stationarity kills wavefunction-derivative terms") or a **physical principle** (e.g., "the force on a nucleus depends only on the electron density").
+- After an exercise or worked example that teaches a **problem-solving strategy** applicable beyond the immediate context.
+- After an expository passage that states a **rule, condition, or criterion** that governs when an approximation is valid, when a method breaks down, or how terms in an energy expression behave.
+
+Do **not** place a lesson callout:
+
+- On trivial or obvious statements that do not constitute a transferable insight.
+- On material that is purely definitional (definitions belong in `[!definition]` callouts).
+- Inside a derivation or exercise — lessons go *after* the worked material, as a summary.
+
+### Lesson Callout Syntax
+
+```markdown
+> [!lesson] Short title summarizing the principle
+>
+> - **Principle 1.** One-sentence statement of a transferable rule or technique.
+> - **Principle 2.** Another transferable insight from the same passage.
+```
+
+Lessons use a bulleted list of concise, declarative statements. Each bullet should be self-contained — a reader skimming the chapter should be able to read the lesson callout alone and understand the principle without re-reading the derivation.
+
+### Prompt-Writing Philosophy for Lessons
+
+- State the principle in its **most general form**, not tied to the specific equation or system. For example, write "For any operator that commutes with the Hamiltonian, the expectation value is time-independent" rather than "The expectation value of $\hat{V}_{\text{ext}}$ doesn't change."
+- Where applicable, note the **conditions** under which the principle holds and what happens when they are violated.
+- Keep each bullet to 1–2 sentences. If a lesson requires a paragraph of explanation, it may be better suited to a `[!question]` callout instead.
+
+### CSS Setup
+
+The `[!lesson]` callout requires a custom CSS snippet:
+
+```css
+/* Lesson callout — light blue */
+.callout[data-callout="lesson"] {
+    --callout-color: 100, 180, 255;
+    --callout-icon: lucide-lightbulb;
+}
+```
 
 ---
 
@@ -454,6 +550,10 @@ This file serves as a drafting space and reference copy. It uses `##` headers fo
 - [ ] Derivation callouts are sequentially numbered (Derivation 1, Derivation 2, ...) within each chapter
 - [ ] Derivation prompts do not give away answers, intermediate steps, or methods — written like exam questions
 - [ ] Derivation prompts emphasize physical meaning (every prompt has at least one "why" or "what does this mean" question)
+- [ ] Conceptual sections not covered by derivation or exercise callouts have `[!question]` callouts
+- [ ] Question callouts use multi-part (a)/(b)/(c) format and test understanding, not derivation ability
+- [ ] Lesson callouts placed after derivations, exercises, or expository passages that yield transferable principles
+- [ ] Lesson bullets are general, self-contained, and state conditions for validity
 - [ ] Full derivations in the text have a `---` divider after them; passing mentions do not
 - [ ] Derivation callouts are independent of equation callouts (both may exist for the same result)
 - [ ] One exercise per major section, placed after heading and before body text
@@ -542,6 +642,38 @@ The markup of Chapter 3 (Theoretical Background) serves as the reference impleme
 | 14 | Pair distribution and exchange hole for noninteracting fermions | §3.7.1 | Mention | No |
 | 15 | Correlation hole sum rule | §3.7.2 | Mention | No |
 
+### Question Callouts (6 total)
+
+| # | Section | Topic |
+|---|---|---|
+| 1 | §3.1.2 | Ground vs. excited states — nonperturbative methods, DFT/QMC, metal-insulator distinction |
+| 2 | §3.3.1 (post-derivation) | Force theorem failures — Pulay corrections, basis completeness, core density |
+| 3 | §3.6 intro | Noninteracting vs. Hartree-Fock distinction, Kohn-Sham role |
+| 4 | §3.6.4 | ΔSCF methods — improving on Koopmans' theorem, finite vs. extended systems |
+| 5 | §3.7 intro | Pair correlations — sufficiency for energy, pair distribution interpretation, short-rangedness |
+| 6 | §3.7.2 intro | Correlation energy — sign, reference state definitions, coupling constant integration |
+
 ### Prompt Style Notes
 
-All 15 prompts were audited against the prompt-writing philosophy in Step 3. None give away intermediate steps or read as recipes. Each prompt: (a) states the target result by equation reference only, (b) asks at least one interpretive or physical-meaning question, and (c) does not reveal the method or key insight the reader must discover. The Chapter 3 prompts can be used as templates when marking up subsequent chapters.
+All 15 derivation prompts were audited against the prompt-writing philosophy in Step 3. None give away intermediate steps or read as recipes. Each prompt: (a) states the target result by equation reference only, (b) asks at least one interpretive or physical-meaning question, and (c) does not reveal the method or key insight the reader must discover. The Chapter 3 prompts can be used as templates when marking up subsequent chapters.
+
+All 6 question callouts target conceptual/expository passages not covered by derivation or exercise callouts. Each uses the (a)/(b)/(c) format, testing understanding and recall rather than derivation ability.
+
+### Lesson Callouts (12 total)
+
+| # | Title | After |
+|---|---|---|
+| 1 | Separation of scales and the Born-Oppenheimer approximation | Derivation 1 |
+| 2 | One-body operators reduce to density integrals | Derivation 3 |
+| 3 | The variational principle as a computational strategy | Derivation 4 (`---` divider) |
+| 4 | Coulomb energy grouping and the short-range nature of exchange-correlation | Derivation 5 |
+| 5 | The force theorem and variational stationarity | Derivation 6 (`---` divider) |
+| 6 | The generalized force theorem and adiabatic connection | Derivation 8 (`---` divider) |
+| 7 | Free energy minimization and the Gibbs distribution | Derivation 9 / §3.5 conclusion |
+| 8 | Fermi-Dirac statistics and the independent-particle simplification | Derivation 10 / §3.6.1 conclusion |
+| 9 | Antisymmetry, exchange, and self-interaction cancellation | Derivation 11 |
+| 10 | Koopmans' theorem and the meaning of eigenvalues | Derivation 13 |
+| 11 | The exchange hole and its physical constraints | Derivation 14 / §3.7.1 conclusion |
+| 12 | Correlation: what it does and what it doesn't do | Derivation 15 / §3.7.2 conclusion |
+
+Each lesson callout is placed after the worked material it summarizes and contains 2–4 bulleted principles stated in their most general, transferable form.

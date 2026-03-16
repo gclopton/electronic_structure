@@ -1,8 +1,4 @@
-**4**
 
-**Periodic Solids and Electron Bands**
-
-**Summary**
 
 Classification of crystals and their excitations by symmetry is a general approach applicable to electronic states, vibrational states, and other properties. The first part of this chapter deals with translational symmetry, which has the same universal form in all crystals and which leads to the Bloch theorem that rigorously classifies excitations by their crystal momentum. (The discussion here follows Ashcroft and Mermin, [280], chapters 4-8.) The other relevant symmetries are time reversal and point symmetries. The latter depend on the specific crystal structure and are treated only briefly; detailed classification can be found in texts on group theory. Timereversal symmetry is relatively simple to formulate but has profound consequences.
 

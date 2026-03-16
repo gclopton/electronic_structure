@@ -60,6 +60,7 @@ Electronic Structure Vault
 | S3 | Exchange hole for noninteracting fermions | §3.7.1 |
 
 
+
 # Definitions & Building Blocks
 
 ## 1. Electronic Hamiltonian (compact form)

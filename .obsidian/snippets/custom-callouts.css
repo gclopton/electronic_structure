@@ -3,3 +3,9 @@
     --callout-color: 142, 68, 173;
     --callout-icon: lucide-pen-line;
 }
+
+/* Lesson callout — light blue */
+.callout[data-callout="lesson"] {
+    --callout-color: 100, 180, 255;
+    --callout-icon: lucide-lightbulb;
+}

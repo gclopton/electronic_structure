@@ -96,12 +96,6 @@ The small parameter is the inverse nuclear mass, equivalently the electron-to-nu
 
 The approximation breaks down when nonadiabatic coupling between electronic and nuclear motion is not small, for example near degeneracies or avoided crossings of electronic surfaces, in light-atom systems, or when proton/nuclear quantum effects are important. In such cases one loses access to effects that require explicit coupled electron-nuclear dynamics, such as vibronic mixing, phonon-assisted transitions beyond adiabatic perturbation theory, nonradiative transitions at conical intersections, and other electron-phonon nonadiabatic phenomena.
 
-> [!lesson] Separation of scales and the Born-Oppenheimer approximation
->
-> - **When two sets of degrees of freedom have very different masses (or energy scales), the heavy/slow ones can be treated as fixed parameters.** The small parameter is the mass ratio $m_e/M_I$. This strategy — freezing slow degrees of freedom and solving for fast ones — is the prototype for adiabatic approximations throughout physics.
-> - **Always identify the small parameter.** The validity of any perturbative or adiabatic approximation depends on having a well-defined expansion parameter. Here it is $m_e/M_I$ (or $\sqrt{m_e/M_I}$ for vibrational estimates).
-> - **Know when the approximation fails.** The Born-Oppenheimer approximation breaks down near electronic degeneracies, avoided crossings, and conical intersections — anywhere the electronic state changes rapidly with nuclear position so that the adiabatic assumption is violated.
-
 Ignoring the nuclear kinetic energy, the fundamental hamiltonian for the theory of electronic structure can be written as
 
 > [!definition] Electronic Hamiltonian (Eq. 3.2)
@@ -241,15 +235,7 @@ $$
 \end{aligned}
 $$
 
-In the last step we recognized the definition of $n(\mathbf{r})$ from Eq. (3.8). This reduction works for any one-body operator — only one electron coordinate appears in the operator, so the remaining $N-1$ integrations produce the density. The kinetic energy $\langle\hat{T}\rangle$ and the electron-electron interaction $\langle\hat{V}_{\text{int}}\rangle$ cannot be similarly simplified: $\hat{T}$ involves derivatives (not just multiplication), and $\hat{V}_{\text{int}}$ is a two-body operator coupling pairs of coordinates.
-
-> [!lesson] One-body operators reduce to density integrals
->
-> - **The expectation value of any one-body multiplicative operator can be written as an integral over the electron density $n(\mathbf{r})$.** This is because the operator acts on one coordinate at a time, and the remaining $N-1$ integrations produce the density. This reduction is the reason the density plays such a central role in electronic structure.
-> - **The exchange symmetry of $|\Psi|^2$ produces a factor of $N$.** Since $|\Psi|^2$ is symmetric under particle exchange (even though $\Psi$ itself is antisymmetric), every electron contributes identically, giving $N$ identical terms.
-> - **Two-body operators and derivative operators do not reduce to density integrals.** The kinetic energy involves $\nabla^2$ (not multiplication), and $\hat{V}_{\text{int}}$ couples pairs of coordinates. This is why the full many-body problem cannot be solved in terms of $n(\mathbf{r})$ alone without additional constructions (e.g., the exchange-correlation functional).
-
-Thus the total energy takes the form
+In the last step we recognized the definition of $n(\mathbf{r})$ from Eq. (3.8). This reduction works for any one-body operator — only one electron coordinate appears in the operator, so the remaining $N-1$ integrations produce the density. The kinetic energy $\langle\hat{T}\rangle$ and the electron-electron interaction $\langle\hat{V}_{\text{int}}\rangle$ cannot be similarly simplified: $\hat{T}$ involves derivatives (not just multiplication), and $\hat{V}_{\text{int}}$ is a two-body operator coupling pairs of coordinates. Thus the total energy takes the form
 
 > [!theorem] Total energy as expectation value (Eq. 3.9)
 >
@@ -340,23 +326,12 @@ Therefore the stationarity condition $\delta E=0$ for arbitrary independent vari
 
 For practical electronic structure, the variational formulation is more fundamental because in realistic many-electron problems one usually cannot solve the exact eigenvalue equation directly. Instead one restricts $\Psi$ to a tractable class of trial states and minimizes or makes stationary the energy within that space, which is precisely the framework used in Hartree-Fock, density functional theory, quantum Monte Carlo, and other approximate methods.
 
-> [!lesson] The variational principle as a computational strategy
->
-> - **Eigenstates are stationary points of the energy functional.** The Schrödinger equation is not an independent postulate — it is the stationarity condition of the Rayleigh-Ritz variational principle. Any method that finds an energy minimum automatically finds an eigenstate (within the space searched).
-> - **Constrained minimization with Lagrange multipliers is equivalent to direct variation of the Rayleigh quotient.** Both routes give the same eigenvalue equation. Choose whichever is more convenient for the problem at hand.
-> - **Restricting the trial wavefunction to a tractable class and minimizing within that class is the foundation of all practical electronic structure methods.** Hartree-Fock restricts to single determinants; DFT works with the density; quantum Monte Carlo uses stochastic sampling of trial states. The variational principle guarantees that the resulting energy is an upper bound to the true ground-state energy.
 
 ---
 
 The ground-state wavefunction $\Psi_{0}$ is the state with the lowest energy, which can be determined, in principle, by minimizing the total energy with respect to all the parameters in $\Psi\left(\left\{\mathbf{r}_{i}\right\}\right)$, with the constraint that $\Psi$ must obey the particle symmetry and any conservation laws. Excited states are saddle points of the energy with respect to variations in $\Psi$.
 
 ## 3.1.2 Ground and Excited Electronic States
-
-> [!question]
->
-> (a) Why must the ground state of an interacting electron system be treated by nonperturbative methods, whereas excitations can often be treated perturbatively?
-> (b) Name two theoretical approaches that are primarily ground-state methods and explain why this is significant.
-> (c) What ground-state properties can reveal whether a material is a metal or an insulator, even though this might seem like an excited-state property?
 
 The distinction between ground and excited states pointed out in Chapter 2 is equally obvious when approached from the point of view of solving the many-body equations for the electrons. Except in special cases, the ground state must be treated by nonperturbative methods because the different terms in the energy equation are large and tend to cancel. The properties of the ground state include the total energy, electron density, and correlation functions. From the correlation functions one can derive properties that at first sight would not be considered to be ground-state properties, such as whether the material is a metal or an insulator. In any case, one needs to establish which state is the ground state, often comparing states that are very different in character but similar in energy.
 
@@ -489,12 +464,6 @@ $$
 
 This is the non-classical piece: it measures how the true correlated two-particle distribution differs from the Coulomb energy of a smooth charge cloud with the same one-particle density. Because the classical long-range part has already been removed, the remaining exchange-correlation contribution is associated with the local depletion and rearrangement of charge around each electron, and is therefore short-ranged.
 
-> [!lesson] Coulomb energy grouping and the short-range nature of exchange-correlation
->
-> - **In extended systems, individual energy terms diverge; only neutral groupings are finite.** The Hartree, external-potential, and ion-ion terms are each divergent on their own, but their sum $E^{\text{CC}}$ — the classical Coulomb energy of the total charge distribution — is finite provided the system is charge-neutral.
-> - **Exchange and correlation effects are short-ranged.** Subtracting the classical Coulomb energy from the full interaction energy leaves only the non-classical piece $\langle\hat{V}_{\text{int}}\rangle - E_{\text{Hartree}}$, which measures the local depletion of charge around each electron. This is why local and semi-local approximations to exchange-correlation (LDA, GGA) work as well as they do.
-> - **Charge neutrality is a prerequisite for finite energies in periodic systems.** This condition must be enforced in any practical calculation on extended matter.
-
 [^2]
 # 3.3 Force and Stress Theorems
 
@@ -593,12 +562,6 @@ Hence the force depends only on the density $n$ of the electrons and the other n
 
 Here $n(\mathbf{r})$ is the unperturbed density and the other nuclei are held fixed, as shown schematically in the left-hand side of Fig. I.1. Since each nucleus interacts with the electrons and other nuclei via Coulomb interactions, the right-hand side of Eq. (3.19) can be shown (Exercise 3.3) to equal the nuclear charge times the total electric field, which is the electrostatic theorem of Feynman. The cancellation of the kinetic-energy and electron-electron terms occurs because the exact electronic state is stationary with respect to variations of the wavefunction at fixed nuclear positions. This cancellation can fail if the electronic state is not exact or not fully variational with respect to the chosen representation, for example in an incomplete basis (Pulay terms), or if the ionic potential is nonlocal, in which case the force cannot be written solely in terms of the density.
 
-> [!lesson] The force theorem and variational stationarity
->
-> - **At a variational extremum, the wavefunction-derivative terms vanish.** When differentiating $E = \langle\Psi|\hat{H}|\Psi\rangle$ with respect to any parameter $\lambda$, the terms involving $\partial\Psi/\partial\lambda$ vanish if $\Psi$ is an exact eigenstate, because $\hat{H}|\Psi\rangle = E|\Psi\rangle$ and $\partial\langle\Psi|\Psi\rangle/\partial\lambda = 0$. Only the explicit $\lambda$-dependence of $\hat{H}$ survives. This is the single most important simplification in the theory of forces, stresses, and generalized response.
-> - **For local potentials, the force on a nucleus depends only on the electron density.** Despite the electrons having kinetic energy and mutual interactions, all those contributions cancel by stationarity. The force is purely electrostatic — nuclear charge times the total electric field.
-> - **This simplification fails when the wavefunction is not fully variational** — e.g., with an incomplete basis set (requiring Pulay corrections) or with nonlocal pseudopotentials (where the force cannot be written solely in terms of the density).
-
 ---
 
 In the case of nonlocal potentials (such as pseudopotentials), the force cannot be expressed solely in terms of the electron density. However, the original expression is still valid and useful expressions can be directly derived from
@@ -607,13 +570,7 @@ $$
 -\frac{\partial E}{\partial \mathbf{R}_{I}}=-\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_{I}}|\Psi\rangle-\frac{\partial E_{I I}}{\partial \mathbf{R}_{I}}
 $$
 
-Because the force theorem depends on the requirement that the electronic states are at their variational minimum, it follows that there must be a continuum of "force theorems" that corresponds to the addition of any linear variation in $\Psi$ or $n$ to the above expression. Although such terms vanish in principle, they can have an enormous impact upon the accuracy and physical interpretation of resulting formulas. The most relevant example in electronic structure is the case of core electrons: It is more physical and more accurate computationally to move the electron density in the core region along with the nucleus rather than holding the density strictly fixed. The reason is that core electrons are tightly bound to the nucleus and move rigidly with it to an excellent approximation; the "frozen density" assumed in the bare force theorem is therefore a poor zeroth-order description of what actually happens when a nucleus is displaced, and including the core density motion absorbs a large part of the higher-order corrections into the leading term. Methods to accomplish this are described in Appendix I and illustrated in Figure I.1.
-
-> [!question]
->
-> (a) Under what conditions does the Hellmann-Feynman force theorem fail to give the correct force as the simple derivative of the total energy?
-> (b) What are Pulay corrections, and when must they be included in a practical calculation?
-> (c) Why is it more physical and computationally accurate to move the core electron density along with the nucleus rather than holding the density strictly fixed?
+Because the force theorem depends on the requirement that the electronic states are at their variational minimum, it follows that there must be a continuum of "force theorems" that corresponds to the addition of any linear variation in $\Psi$ or $n$ to the above expression. Although such terms vanish in principle, they can have an enormous impact upon the accuracy and physical interpretation of resulting formulas. The most relevant example in electronic structure is the case of core electrons: It is more physical and more accurate computationally to move the electron density in the core region along with the nucleus rather than holding the density strictly fixed. Methods to accomplish this are described in Appendix I and illustrated in Figure I.1.
 
 Finally, there are drawbacks to the fact that expressions for the force theorem depend on the electronic wavefunction being an exact eigenstate. If the basis is not complete, or the state is approximated, then there may be additional terms. For example, if the basis is not complete and it changes as the positions of the nuclei move, then Pulay corrections [269] must be explicitly included so that the expression for the force given by the force theorem is identical to the explicit derivative of the energy (Exercise 3.4). Explicit expressions are given for use in independent-particle Kohn-Sham calculations in Section 7.5.
 
@@ -902,12 +859,6 @@ where $V_{\text {int }}$ is the full interaction term Eq. (3.5) and $\Psi_{\lamb
 
 In density functional theory one usually refines this construction by allowing the external potential itself to depend on $\lambda$, chosen so that the ground-state density remains equal to the physical density for all $\lambda$. The resulting intermediate systems are then auxiliary rather than directly physical, because their electron-electron interaction strength is artificial. Nevertheless, the construction is useful because it converts the exchange-correlation energy into an integral over the interaction strength, making clear how exchange and correlation accumulate as the interaction is turned on.
 
-> [!lesson] The generalized force theorem and adiabatic connection
->
-> - **The force theorem applies to any parameter in the Hamiltonian, not just nuclear positions.** For any parameter $\lambda$ on which $\hat{H}$ depends smoothly, $\partial E/\partial \lambda = \langle\Psi_\lambda|\partial\hat{H}/\partial\lambda|\Psi_\lambda\rangle$, provided $\Psi_\lambda$ is an exact stationary state. This is the same variational stationarity that simplifies the force theorem.
-> - **Finite energy differences can be computed by integrating the generalized force over a continuous path.** This turns a single difficult calculation (the energy of an interacting system) into an integral over a family of simpler calculations.
-> - **Adiabatic connection: turning on the electron-electron interaction from $\lambda=0$ to $\lambda=1$ connects noninteracting and interacting systems.** This construction is the conceptual foundation of the exchange-correlation energy in density functional theory and explains why local and semi-local density functionals can capture non-trivial interaction effects.
-
 ---
 
 # 3.5 Statistical Mechanics and the Density Matrix
@@ -1030,17 +981,7 @@ $$
 
 which reduces to a ground-state expectation value of the form of Eq. (3.7) at $T=0$. For the case of noninteracting particles, the general formulas reduce to the well-known expressions for fermions and bosons given in the next section.
 
-> [!lesson] Free energy minimization and the Gibbs distribution
->
-> - **At finite temperature, the correct equilibrium is found by minimizing the free energy $F = U - TS$, not the energy alone.** The energy term favors occupation of low-energy states; the entropy term favors spreading probability over many states. Their competition produces the Gibbs (Boltzmann) distribution $\hat{\rho} = Z^{-1} e^{-\beta\hat{H}}$.
-> - **The density matrix $\hat{\rho}$ plays the same role at finite temperature that the wavefunction plays at $T=0$.** All equilibrium expectation values are given by $\langle\hat{O}\rangle = \text{Tr}\,\hat{\rho}\hat{O}$, which reduces to $\langle\Psi_0|\hat{O}|\Psi_0\rangle$ in the zero-temperature limit.
-
 # 3.6 Independent-Electron Approximations
-
-> [!question]
->
-> (a) What is the key distinction between "noninteracting" (Hartree-like) and Hartree-Fock independent-particle approaches, given that both assume electrons are uncorrelated except for the exclusion principle?
-> (b) In what sense does a Kohn-Sham calculation use a noninteracting Hamiltonian, yet still account for exchange and correlation effects?
 
 There are two basic independent-particle approaches that may be classified as "noninteracting" and "Hartree-Fock." They are similar in that each assumes the electrons are uncorrelated except that they must obey the exclusion principle. However, they are different in that Hartree-Fock includes the electron-electron Coulomb interaction in the energy while neglecting the correlation that is introduced in the true wavefunction due to those interactions. In general, "noninteracting" theories have some effective potential that incorporates some effect of the real interaction, but there is no interaction term explicitly included in the effective hamiltonian. This approach is often referred to as "Hartree" or "Hartree-like," after D. R. Hartree [50], who included an average Coulomb interaction in a rather heuristic way. ${ }^{7}$ More to the point of modern calculations, all calculations
 
@@ -1183,12 +1124,6 @@ $$
 n^{\sigma}(\mathbf{r})=\rho(\mathbf{r}, \sigma ; \mathbf{r}, \sigma)=\sum_{i} f_{i}^{\sigma}\left|\psi_{i}^{\sigma}(\mathbf{r})\right|^{2} .
 $$
 
-> [!lesson] Fermi-Dirac statistics and the independent-particle simplification
->
-> - **The Pauli exclusion principle ($n_i^\sigma = 0$ or $1$) uniquely determines the Fermi-Dirac functional form.** The "+1" in the denominator is a direct consequence of the occupation restriction. For bosons, unrestricted occupation gives the Bose-Einstein form with "−1" instead.
-> - **For noninteracting particles, many-body expectation values collapse to occupation-weighted single-particle sums:** $\langle\hat{O}\rangle = \sum_{i,\sigma} f_i^\sigma \langle\psi_i^\sigma|\hat{O}|\psi_i^\sigma\rangle$. This enormous simplification — from an $N$-body trace to a sum over single-particle states — is what makes independent-particle theories computationally tractable.
-> - **The density is the diagonal part of the single-body density matrix:** $n^\sigma(\mathbf{r}) = \sum_i f_i^\sigma |\psi_i^\sigma(\mathbf{r})|^2$. This formula is the practical starting point for computing densities in Kohn-Sham DFT and Hartree-Fock calculations.
-
 ## 3.6.2 Hartree-Fock Approximation
 
 A standard method of many-particle theory is the Hartree-Fock method, which was first applied to atoms in 1930 by Fock [53]. In this approach one writes a properly antisymmetrized determinant wavefunction for a fixed number $N$ of electrons and finds the single determinant that minimizes the total energy for the full interacting hamiltonian Eq. (3.2). If there is no spin-orbit interaction, the determinant wavefunction $\Phi$ can be written as a Slater determinant ${ }^{9}$
@@ -1298,12 +1233,6 @@ The $i=j$ part of the direct term is an unphysical self-interaction, but for sam
 > $$
 
 The first term groups together the single-body expectation values that involve a sum over orbitals, whereas the third and fourth terms are the direct and exchange interactions among electrons, which are double sums. We have followed the usual practice of including the $i=j$ "self-interaction," which is spurious but which cancels in the sum of direct and exchange terms. When this term is included, the sum over all orbitals gives the density and the direct term is simply the Hartree energy defined in Eq. (3.15). The "exchange" term, which acts only between same-spin electrons since the spin parts of the orbitals are orthogonal for opposite spins, is discussed below in Section 3.7 and in the chapters on density functional theory.
-
-> [!lesson] Antisymmetry, exchange, and self-interaction cancellation
->
-> - **Antisymmetry of the wavefunction produces two distinct two-body terms: direct (Coulomb) and exchange.** The direct term comes from pairing bra and ket orbitals without exchange; the exchange term comes from swapping two particles. Without antisymmetry, only the direct Coulomb term would exist.
-> - **Exchange acts only between same-spin electrons.** The orthogonality of spin functions causes the exchange integral to vanish when the two orbitals have different spins.
-> - **Self-interaction cancels exactly between the direct and exchange terms.** For the $i=j$ contribution, the direct and exchange integrals are equal in magnitude and opposite in sign. This is why Hartree-Fock correctly reduces to the ordinary Schrödinger equation for one-electron systems like hydrogen — a critical consistency check for any electronic structure method.
 
 > [!derivation] Derivation 12: Hartree-Fock equations from constrained variational minimization
 > Derive the Hartree-Fock eigenvalue equations Eq. (3.45) by minimizing the energy Eq. (3.44) with respect to the orbitals. In what sense are these equations "self-consistent"? Why is the resulting effective Hamiltonian different for each orbital — what physical effect makes it state-dependent — and why does this make the equations fundamentally harder to solve than ordinary eigenvalue problems?
@@ -1452,28 +1381,11 @@ This is Koopmans' theorem. Its key assumption is the frozen-orbital approximatio
 
 For occupied states, the eigenvalues are lowered by the exchange term, which cancels the spurious repulsive self-interaction in the Hartree term. To find the energies for addition of electrons, one must compute empty orbitals of the Hartree-Fock equation (3.45). For these states there also is no spurious selfinteraction since both the direct and the exchange potential terms in Eq. (3.45) involve only the occupied states. In general, the gaps between addition and removal energies for electrons are greatly overestimated in the Hartree-Fock approximation because of the neglect of orbital relaxation and dynamical correlation. This overestimate shows that Hartree-Fock includes exchange exactly within a single determinant, but neglects the correlation screening that reduces the true cost of adding or removing an electron.
 
-> [!lesson] Koopmans' theorem and the meaning of eigenvalues
->
-> - **Hartree-Fock eigenvalues are frozen-orbital addition and removal energies.** The eigenvalue $\varepsilon_i^\sigma$ equals the energy cost of removing (or adding) an electron from (to) orbital $i$, keeping all other orbitals fixed. This is exact within the frozen-orbital approximation.
-> - **The frozen-orbital approximation neglects orbital relaxation and correlation.** In reality, when an electron is removed, the remaining orbitals relax and correlation changes. Koopmans' theorem therefore systematically overestimates band gaps and ionization energies.
-> - **Eigenvalues in approximate theories do not always have a simple physical meaning.** The lesson generalizes beyond Hartree-Fock: in Kohn-Sham DFT, eigenvalues are Lagrange multipliers of an auxiliary system and are not rigorously removal energies (except for the highest occupied state). Always check what an eigenvalue means in the specific theory being used.
-
 ## 3.6.4 △SCF Methods
 
-> [!question]
->
-> (a) What limitation of Koopmans' theorem does the ΔSCF approach address, and why does this yield significantly improved addition and removal energies?
-> (b) Why is the ΔSCF method most naturally applied to finite systems such as atoms, and what difficulty arises when trying to extend it to extended (periodic) systems?
-
-In finite systems, such as atoms, it is possible to improve upon the use of the eigenvalues as approximate excitation energies. Significant improvement in the addition and removal energies result from the "delta Hartree-Fock approximation," in which one calculates total energy differences directly from Eq. (3.44), allowing the orbitals to relax and taking into account the exchange of an added electron with all the others. The energy difference approach for finite systems can be used in any self-consistent field method, hence the name " $\triangle \mathrm{SCF}$." In extended (periodic) systems the method is problematic because adding or removing a single electron from an infinite system changes the total energy by an infinitesimal amount per unit cell, making the energy difference $E_{N \pm 1}-E_N$ numerically ill-defined; one must instead work with charged supercells and contend with long-range electrostatic artifacts that require careful correction. Illustrations of the $\Delta$SCF approach for finite systems are given in Section 10.6.
+In finite systems, such as atoms, it is possible to improve upon the use of the eigenvalues as approximate excitation energies. Significant improvement in the addition and removal energies result from the "delta Hartree-Fock approximation," in which one calculates total energy differences directly from Eq. (3.44), allowing the orbitals to relax and taking into account the exchange of an added electron with all the others. The energy difference approach for finite systems can be used in any self-consistent field method, hence the name " $\triangle \mathrm{SCF}$." Illustrations are given in Section 10.6.
 
 # 3.7 Exchange and Correlation
-
-> [!question]
->
-> (a) Why are two-body correlation functions sufficient to determine the interaction energy of a many-electron system, even though the wavefunction depends on all $N$ electron coordinates?
-> (b) What does it mean physically for the pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ to equal unity, and what does a deviation from unity indicate?
-> (c) Why are the remaining correlation terms $\Delta n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ and $g-1$ short-ranged, vanishing at large $|\mathbf{r}-\mathbf{r}'|$?
 
 The key problem of electronic structure is that the electrons form an interacting manybody system, with a wavefunction, in general, given by $\Psi\left(\left\{\mathbf{r}_{i}\right\}\right) \equiv \Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N}\right)$, as discussed in Section 3.1. Since the interactions always involve pairs of electrons, two-body correlation functions are sufficient to determine many properties, such as the energy given by Eq. (3.9). Writing out the form for a general expectation value Eq. (3.7) explicitly, the joint probability $n\left(\mathbf{r}, \sigma ; \mathbf{r}^{\prime}, \sigma^{\prime}\right)$ of finding electrons of $\operatorname{spin} \sigma$ at point $\mathbf{r}$ and of $\operatorname{spin} \sigma^{\prime}$ at point $\mathbf{r}^{\prime}$ is given by
 
@@ -1678,20 +1590,7 @@ with analogous expressions for a reference down-spin electron. Thus each electro
 
 [^9]For systems with many electrons the exchange hole must be calculated numerically, except for special cases. The most relevant for us is the homogeneous gas considered in the following section.
 
-> [!lesson] The exchange hole and its physical constraints
->
-> - **The exchange hole is always non-positive and integrates to exactly one missing electron.** These are exact constraints that any approximation to exchange must satisfy. The non-positivity follows from the squared-modulus form of Eq. (3.54); the sum rule follows from orthonormality of the orbitals.
-> - **Exchange acts only between same-spin electrons.** The Kronecker delta $\delta_{\sigma\sigma'}$ in the exchange hole means opposite-spin electrons are unaffected by exchange. This is why spin-polarized systems (e.g., ferromagnets) have lower exchange energy — more same-spin pairs means a deeper exchange hole.
-> - **The exchange energy is the interaction of each electron with its positive exchange hole.** This reinterpretation of the last term in Eq. (3.44) is physically intuitive: each electron digs a hole in the surrounding same-spin density, and the Coulomb attraction to this hole lowers the energy.
-> - **For one-electron systems, the exchange hole exactly cancels the Hartree self-interaction.** This is the simplest consistency check: any theory that fails to cancel self-interaction for hydrogen is fundamentally flawed.
-
 ## 3.7.2 Beyond Hartree-Fock: Correlation
-
-> [!question]
->
-> (a) Why is the correlation energy always negative for the ground state, and what variational theorem guarantees this?
-> (b) What are the two standard choices of reference state used to define $E_c$, and why does the distinction matter in principle even if numerically it is often small?
-> (c) How does correlation affect both the kinetic and potential energies simultaneously, and what technique from §3.4 provides a unified framework for accounting for both contributions?
 
 The energy of a state of many electrons in the Hartree-Fock approximation Eq. (3.44) is the best possible wavefunction made from a single determinant (or a sum of a few determinants in multireference Hartree-Fock [274] needed for degenerate cases). Improvement of the wavefunction to include correlation introduces extra degrees of freedom in the wavefunction and therefore always lowers the energy for any state, ground or excited, by a theorem often attributed to MacDonald [279]. The lowering of the energy is termed the "correlation energy" $E_{c}$.
 
@@ -1793,14 +1692,7 @@ Thus correlation does not change the total missing charge around a reference ele
 The correlation energy is more complicated to calculate than the exchange energy because correlation affects both kinetic and potential energies. Both effects can be taken into account by a "coupling constant integration" using the methods of Section 3.4. The theory of interacting systems is beyond the scope of this book and the reader is referred to the companion volume [1] for an in-depth presentation. Nevertheless, it is essential to take correlation into account in realistic calculations, and the goal here is to show how to understand and use aspects that have an important role in present-day electronic structure
 theory and practical calculations. Coupling constant integration is discussed for the model system, the homogeneous gas in Chapter 5, and is a key aspect of ongoing developments of functionals for density functional theory (see especially Sections 8.2, 9.3, and 9.7).
 
-> [!lesson] Correlation: what it does and what it doesn't do
->
-> - **The correlation hole integrates to zero.** Unlike the exchange hole (which accounts for one missing electron), the correlation hole only *redistributes* charge — it removes density from some regions and adds it to others, but the total missing charge is unchanged. This is a consequence of particle conservation alone and holds for any wavefunction.
-> - **Correlation is most important for opposite-spin electrons.** Same-spin electrons are already kept apart by the Pauli exclusion principle (exchange). The main effect of correlation is to further reduce the probability of finding opposite-spin electrons close together (Coulomb correlation).
-> - **The correlation energy is always negative for the ground state.** Adding variational degrees of freedom beyond a single determinant always lowers the energy, by MacDonald's theorem. Any approximation to the ground-state correlation energy should therefore be negative.
-> - **Correlation affects both kinetic and potential energy simultaneously.** This is why direct calculation of $E_c$ is difficult — one cannot simply compute a "correlation potential." The coupling constant integration from §3.4 provides a unified framework that accounts for both contributions.
-
-# SELECT FURTHER READING
+**SELECT FURTHER READING**
 
 The companion book [1] also presents the basic theory with an emphasis on the role of correlation beyond Hartree-Fock. In that book, Hartree-Fock plays a larger role because it is the starting point for the development of much of the theory.
 
