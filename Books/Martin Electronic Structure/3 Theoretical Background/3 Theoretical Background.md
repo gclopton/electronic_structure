@@ -14,14 +14,17 @@ The subject of this book is the ongoing progress toward describing properties of
 > \end{aligned}
 > $$
 
+
+
 where electrons are denoted by lowercase subscripts and nuclei - with charge $Z_{I}$ and mass $M_{I}$ - are denoted by uppercase subscripts. The challenge in the theory of electronic
 
 [^0]structure is to develop methods that can treat the effects of the electron-electron interactions with sufficient accuracy that one can predict the diverse array of phenomena exhibited by matter starting from Eq. (3.1). It is most informative and productive to start with the fundamental many-body theory. Many expressions, such as the force theorem, are more easily derived in the full theory with no approximations. It is then straightforward to specialize to independent-particle approaches and the actual formulas needed for most of the following chapters.
 
 There is only one term in Eq. (3.1) that can be regarded as small, the inverse mass of the nuclei $1 / M_{I}$. A perturbation series can be defined in terms of this parameter, which is expected to have general validity for the full interacting system of electrons and nuclei. If we first set the mass of the nuclei to infinity, then the kinetic energy of the nuclei can be ignored. This is the Born-Oppenheimer or adiabatic approximation [90] defined in Appendix C, which is an excellent approximation for many purposes, e.g., the calculation of nuclear vibration modes in most solids [91, 180]. In other cases, it forms the starting point for perturbation theory in electron-phonon interactions, which is the basis for understanding electrical transport in metals, polaron formation in insulators, certain metalinsulator transitions, and the BCS theory of superconductivity. Thus we shall focus on the hamiltonian for the electrons, in which the positions of the nuclei are parameters.
 
+
 > [!derivation] Derivation 1: Born-Oppenheimer reduction of the full Hamiltonian
-> Derive the electronic Hamiltonian Eq. (3.2) from the full Hamiltonian Eq. (3.1). What is the small parameter that controls the approximation, and why is it physically reasonable? Under what circumstances does this approximation break down, and what phenomena become inaccessible?
+> Write the total energy as an expectation value of the Born–Oppenheimer electronic Hamiltonian. To compute the energy contribution from the electron-nuclear interaction, do you need to know the full $N$-electron wavefunction? Show why or why not.
 
 Starting from Eq. (3.1), separate the terms into electronic kinetic energy, electron-nucleus attraction, electron-electron interaction, nuclear kinetic energy, and nucleus-nucleus interaction:
 
@@ -165,58 +168,106 @@ $$
 i \hbar \frac{\mathrm{~d} \Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right)}{\mathrm{d} t}=\hat{H} \Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right)
 $$
 
-where the many-body wavefunction for the electrons is $\Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right) \equiv \Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N} ; t\right)$, the spin is assumed to be included in the coordinate $\mathbf{r}_{i}$, and, of course, the wavefunction must be antisymmetric in the coordinates of the electrons $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N}$. The eigenstates of Eq. (3.6) can be written as $\Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right)=\Psi\left(\left\{\mathbf{r}_{i}\right\}\right) \mathrm{e}^{-\mathrm{i}(E / \hbar) t}$. Even though it is not feasible to actually solve the equations for many interacting electrons, it is very useful and instructive to define properties such as the energy, density, forces, and excitations in the full many-body framework before making approximations.
+where the many-body wavefunction for the electrons is $\Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right) \equiv \Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N} ; t\right)$, the spin is assumed to be included in the coordinate $\mathbf{r}_{i}$. Concretely, this means each $\mathbf{r}_i$ stands for the pair $(\mathbf{r}_i, \sigma_i)$ of spatial position and spin index, and every "integration over $\mathbf{r}_i$" is shorthand for $\sum_{\sigma_i} \int d^3 r_i$. In what follows, spin sums will sometimes be written explicitly — especially when a spatial coordinate is singled out and its integral is evaluated, leaving the spin sum with nowhere to hide. The wavefunction must be antisymmetric in the coordinates of the electrons $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N}$. The eigenstates of Eq. (3.6) can be written as $\Psi\left(\left\{\mathbf{r}_{i}\right\} ; t\right)=\Psi\left(\left\{\mathbf{r}_{i}\right\}\right) \mathrm{e}^{-\mathrm{i}(E / \hbar) t}$. Even though it is not feasible to actually solve the equations for many interacting electrons, it is very useful and instructive to define properties such as the energy, density, forces, and excitations in the full many-body framework before making approximations.
 
 For an eigenstate, the time-independent expression for any observable is an expectation value of an operator $\hat{O}$, which involves an integral over all coordinates,
 
-$$
-\langle\hat{O}\rangle=\frac{\langle\Psi| \hat{O}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
-$$
 
-> [!derivation] Derivation 2: Electron density from the density operator
-> Derive the integral formula Eq. (3.8) for $n(\mathbf{r})$ from the density operator and the expectation value Eq. (3.7). Where does the prefactor $N$ come from, and what property of the wavefunction is responsible for it?
+> [!definition] Expectation Value of a Local Operator
+> 
+> $$
+> \langle\hat{O}\rangle=\frac{\langle\Psi| \hat{O}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
+> $$
+> 
+
+
+
+> [!exercise] Expectation Value of a Local Operator
+> Let $x_i \equiv\left(\mathbf{r}_i, \sigma_i\right)$ and $\Psi\left(x_1, \ldots, x_N\right)$. 
+> 1.) Write the expectation value of a local operator $\hat{O}=O\left(x_1, \ldots, x_N\right)= \frac{\langle\Psi| \hat{O}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}$ for an $N$-particle wavefunction in the complete position-spin basis.
+> 2.) Write the expression in the case where the many-body coordinate is written compactly as $X=\left(x_1, \ldots, x_N\right)$.
+> 3.) Write the expression for the case where $\Psi$ is normalized.
+
+
+##### Part A
+
+$$\langle\hat{O}\rangle=\frac{\langle\Psi| \hat{O}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}=\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N \Psi^*\left(x_1, \ldots, x_N\right) O\left(x_1, \ldots, x_N\right) \Psi\left(x_1, \ldots, x_N\right)}{\sum \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2}$$
+
+
+##### Part B
+
+$$\langle\hat{O}\rangle=\frac{\sum_{\left\{\sigma_i\right\}} \int d R \Psi^*(X) O(X) \Psi(X)}{\sum_{\left\{\sigma_i\right\}} \int d R|\Psi(X)|^2}, \quad d R \equiv d^3 r_1 \cdots d^3 r_N$$
+
+
+
+
+##### Part C
+
+
+$$\langle\hat{O}\rangle=\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N \Psi^*\left(x_1, \ldots, x_N\right) O\left(x_1, \ldots, x_N\right) \Psi\left(x_1, \ldots, x_N\right)$$
+
+
+
+
 
 The density of particles $n(\mathbf{r})$, which plays a central role in electronic structure theory, is given by the expectation value of the density operator $\hat{n}(\mathbf{r})=\sum_{i=1, N} \delta\left(\mathbf{r}-\mathbf{r}_{i}\right)$,
 
-> [!definition] Electron density (Eq. 3.8)
+
+
+> [!definition] State-Dependent Electron Density of the Many-Electron Wavefunction (Eq. 3.8)
 >
 > $$
-> n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}=N \frac{\int \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N} \sum_{\sigma_{1}}\left|\Psi\left(\mathbf{r}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}}{\int \mathrm{~d}^{3} r_{1} \mathrm{~d}^{3} r_{2} \cdots \mathrm{~d}^{3} r_{N}\left|\Psi\left(\mathbf{r}_{1}, \mathbf{r}_{2}, \mathbf{r}_{3}, \ldots, \mathbf{r}_{N}\right)\right|^{2}},
+> n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
 > $$
 
-To see this, insert the density operator into the expectation value without yet assuming normalization:
+
+
+> [!exercise] State-Dependent Electron Density of the Many-Electron Wavefunction
+> Let $x_i \equiv\left(\mathbf{r}_i, \sigma_i\right)$ and $\Psi\left(x_1, \ldots, x_N\right)$. 
+> 1.) Write the expression for the state-dependent electron density $n(\mathbf{r})$ of the $N$-electron wavefunction in the complete position-spin basis.
+> 2.) Write the expression for the case where $\Psi$ is normalized.
+> 3.) Write the expression for the case in which the electron wavefunction is antisymmetric.
+
+
+
+
+
+$$n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}$$
+$$=\frac{\langle\Psi| \sum_{i=1}^N \delta\left(\mathbf{r}-\hat{\mathbf{r}}_i\right)|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}$$
+
+$$=\frac{\sum_{\sigma_1 \cdots \sigma_N} \int d \mathbf{r}_1 \cdots d \mathbf{r}_N \Psi^*\left(x_1, \ldots, x_N\right)\left(\sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)\right) \Psi\left(x_1, \ldots, x_N\right)}{\sum_{\sigma_1 \cdots \sigma_N} \int d \mathbf{r}_1 \cdots d \mathbf{r}_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2}$$
+
+$$=\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)}{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2}$$
+
+
+
+
+### Case 1: $\Psi$ is normalized
+
+$$n(\mathbf{r})=\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)$$
+
+
+
+### Case 2: $\Psi$ is antisymmetric 
+
+
+For an antisymmetric electron wavefunction, all particles are equivalent, so this is often written as
 
 $$
-\begin{aligned}
-n(\mathbf{r})
-&= \frac{\langle\Psi| \hat{n}(\mathbf{r}) |\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \\
-&= \frac{1}{\langle\Psi \mid \Psi\rangle}
-\sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; \Psi^{*}(\mathbf{r}_{1},\ldots,\mathbf{r}_{N})\,\delta(\mathbf{r}-\mathbf{r}_{i})\,\Psi(\mathbf{r}_{1},\ldots,\mathbf{r}_{N}).
-\end{aligned}
+n(\mathbf{r})=N \sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_2 \cdots d^3 r_N\left|\Psi\left(\mathbf{r} \sigma_1, x_2, \ldots, x_N\right)\right|^2,
 $$
 
-For the $i$-th term in the sum, the delta function $\delta(\mathbf{r}-\mathbf{r}_{i})$ collapses the $\mathbf{r}_{i}$ integration, setting $\mathbf{r}_{i} = \mathbf{r}$. The $i = 1$ contribution, for instance, gives
+where the sum over $\sigma_1$ is included as part of the full spin sum.
 
-$$
-\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}.
-$$
 
-Because the electrons are identical fermions, $|\Psi|^{2}$ is symmetric under exchange of any two electron coordinates (the antisymmetry of $\Psi$ squares away). Therefore every term in the sum over $i$ gives exactly the same integral — only the label of the "surviving" coordinate differs. Summing all $N$ identical terms produces the factor of $N$ in Eq. (3.8).
 
-Thus
 
-$$
-\begin{aligned}
-n(\mathbf{r})
-&= \frac{N \int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}}{\langle\Psi \mid \Psi\rangle} \\
-&= N \frac{\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}}{\int \mathrm{d}^{3}r_{1} \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N}\; |\Psi(\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2}},
-\end{aligned}
-$$
 
-which is Eq. (3.8). Here the sum over $\sigma_{1}$ appears because once the spatial coordinate of one electron is fixed at $\mathbf{r}$, one must still sum over that electron's spin.
 
-> [!derivation] Derivation 3: Total energy expression — external potential reduces to a density integral
-> Using the result for $n(\mathbf{r})$ from Eq. (3.8), simplify the total energy expectation value into the form of Eq. (3.9). Which terms in the Hamiltonian can be expressed purely in terms of the density, and which cannot? What is it about the structure of a one-body vs. two-body operator that makes the difference?
+
+
+---
+
 
 
 The total energy is the expectation value of the hamiltonian. Using $\hat{H} = \hat{T} + \hat{V}_{\text{ext}} + \hat{V}_{\text{int}} + E_{II}$, the linearity of the expectation value gives
@@ -226,22 +277,106 @@ E=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
 =\langle\hat{T}\rangle + \langle\hat{V}_{\text{ext}}\rangle + \langle\hat{V}_{\text{int}}\rangle + E_{II},
 $$
 
-The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} V_{\text{ext}}(\mathbf{r}_{i})$. Its expectation value therefore reduces by the same logic used for the density operator (Derivation 2): each term in the sum over $i$ gives the same integral after exploiting the exchange symmetry of $|\Psi|^{2}$, so
+The external potential is a one-body operator, $\hat{V}_{\text{ext}} = \sum_{i} V_{\text{ext}}(\mathbf{r}_{i})$. Its expectation value therefore reduces by the same logic used for the density operator (Derivation 2): each term in the sum over $i$ gives the same integral after exploiting the exchange symmetry of $|\Psi|^{2}$. Writing the intermediate steps explicitly,
+
+
+---
+
+
+> [!Derivation] Electron-density form of the one-body external potential operator
+> Let 
+> 
+> $$n(\mathrm{r})=\frac{\langle\Psi| \hat{n}(\mathrm{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle} =\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)}{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2}$$
+> 
+> Show that the expectation value for the external-potential energy $\hat{V}_{\text {ext }}$ for the wavefunction $\Psi\left(x_1, \ldots, x_N\right)$ that depends on $3 N$ spatial coordinates plus spin variables, can be reduced to a form that depends only on the electron density $n(\mathbf{r})$ which depends only on the three coordinates of a single point in space.
+
+
+For an $N$-electron system in an external scalar potential $v_{\text {ext }}(\mathbf{r})$, the external-potential operator is
 
 $$
-\begin{aligned}
-\langle\hat{V}_{\text{ext}}\rangle
-&= \frac{\langle\Psi| \hat{V}_{\text{ext}}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \\
-&= \frac{1}{\langle\Psi \mid \Psi\rangle}
-\sum_{i=1}^{N} \int \mathrm{d}^{3}r_{1} \cdots \mathrm{d}^{3}r_{N}\; |\Psi|^{2}\, V_{\text{ext}}(\mathbf{r}_{i}) \\
-&= \frac{N}{\langle\Psi \mid \Psi\rangle}
-\int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})
-\int \mathrm{d}^{3}r_{2} \cdots \mathrm{d}^{3}r_{N} \sum_{\sigma_{1}}\; |\Psi(\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{N})|^{2} \\
-&= \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}).
-\end{aligned}
+\hat{V}_{\mathrm{ext}}=\sum_{i=1}^N v_{\mathrm{ext}}\left(\mathbf{r}_i\right) .
 $$
 
-In the last step we recognized the definition of $n(\mathbf{r})$ from Eq. (3.8). This reduction works for any one-body operator — only one electron coordinate appears in the operator, so the remaining $N-1$ integrations produce the density. The kinetic energy $\langle\hat{T}\rangle$ and the electron-electron interaction $\langle\hat{V}_{\text{int}}\rangle$ cannot be similarly simplified: $\hat{T}$ involves derivatives (not just multiplication), and $\hat{V}_{\text{int}}$ is a two-body operator coupling pairs of coordinates.
+
+The claim is that its expectation value in the many-body state $\Psi\left(x_1, \ldots, x_N\right)$, where $x_i=\left(\mathbf{r}_i, \sigma_i\right)$, can be written entirely in terms of the one-body density $n(\mathbf{r})$.
+
+Start from the normalized expectation value:
+
+$$
+\left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\frac{\langle\Psi| \hat{V}_{\mathrm{ext}}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
+$$
+
+
+Using the coordinate representation,
+
+$$
+\left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N v_{\mathrm{ext}}\left(\mathbf{r}_i\right)}{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2} .
+$$
+
+
+Now insert the identity
+
+$$
+v_{\mathrm{ext}}\left(\mathbf{r}_i\right)=\int d^3 r v_{\mathrm{ext}}(\mathbf{r}) \delta\left(\mathbf{r}-\mathbf{r}_i\right)
+$$
+
+
+Then
+
+$$
+\sum_{i=1}^N v_{\text {ext }}\left(\mathbf{r}_i\right)=\sum_{i=1}^N \int d^3 r v_{\text {ext }}(\mathbf{r}) \delta\left(\mathbf{r}-\mathbf{r}_i\right)=\int d^3 r v_{\text {ext }}(\mathbf{r}) \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right) .
+$$
+
+
+Substituting this into the expectation value gives
+
+$$
+\left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N|\Psi|^2 \int d^3 r v_{\mathrm{ext}}(\mathbf{r}) \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)}{\langle\Psi \mid \Psi\rangle}
+$$
+
+
+Interchange the order of integration:
+
+$$
+\left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\int d^3 r v_{\mathrm{ext}}(\mathbf{r}) \frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)}{\langle\Psi \mid \Psi\rangle}
+$$
+
+
+But the quantity in brackets is exactly the density $n(\mathbf{r})$ from your definition:
+
+$$
+n(\mathbf{r})=\frac{\sum_{\sigma_1, \ldots, \sigma_N} \int d^3 r_1 \cdots d^3 r_N\left|\Psi\left(x_1, \ldots, x_N\right)\right|^2 \sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right)}{\langle\Psi \mid \Psi\rangle} .
+$$
+
+
+Therefore,
+
+$$
+\left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\int d^3 r n(\mathbf{r}) v_{\mathrm{ext}}(\mathbf{r})
+$$
+
+
+This is the desired reduction. Although the wavefunction $\Psi\left(x_1, \ldots, x_N\right)$ depends on all $3 N$ spatial coordinates and all spin variables, the external-potential energy depends only on the one-particle density $n(\mathbf{r})$, which is a function of just the three coordinates $\mathbf{r}$.
+
+
+
+> [!NOTE]
+> If you want the operator form stated compactly, one often writes
+> 
+> $$
+> \hat{n}(\mathbf{r})=\sum_{i=1}^N \delta\left(\mathbf{r}-\mathbf{r}_i\right), \quad \hat{V}_{\mathrm{ext}}=\int d^3 r v_{\mathrm{ext}}(\mathbf{r}) \hat{n}(\mathbf{r})
+> $$
+> 
+> so that immediately
+> 
+> $$
+> \left\langle\hat{V}_{\mathrm{ext}}\right\rangle=\int d^3 r v_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})
+> $$
+> 
+> 
+> That is the key DFT result: the external part of the energy is a functional of the density alone.
+> 
+
 
 > [!lesson] One-body operators reduce to density integrals
 >
@@ -259,86 +394,259 @@ Thus the total energy takes the form
 
 where the expectation value of the external potential has been explicitly written as a simple integral over the density function. The final term $E_{I I}$ is the electrostatic nucleus-nucleus (or ion-ion) interaction, which is essential in the total energy calculation but is only a classical additive term in the theory of electronic structure.
 
-> [!derivation] Derivation 4: Rayleigh-Ritz variational principle → Schrödinger equation
-> Derive the time-independent Schrödinger equation Eq. (3.13) as a stationarity condition of the energy. Why is the variational formulation more fundamental than the eigenvalue equation for practical electronic structure? Compare the Lagrange-multiplier route (Eqs. 3.10–3.12) with direct variation of the ratio Eq. (3.9) (Exercise 3.1) — why must they agree?
 
-The eigenstates of the many-body hamiltonian are stationary points (saddle points or the minimum) of the energy expression (3.9) if $\Psi$ is regarded as a variable trial function. These may be found by varying the ratio in Eq. (3.9) or by varying the numerator subject to the constraint of orthonormality $(\langle\Psi \mid \Psi\rangle=1)$, which can be done using the method of Lagrange multipliers,
+---
 
-$$
-\delta[\langle\Psi| \hat{H}|\Psi\rangle-E(\langle\Psi \mid \Psi\rangle-1)]=0 .
-$$
-
-This is equivalent to the well-known Rayleigh-Ritz principle ${ }^{2}$
-
-> [!theorem] Rayleigh-Ritz variational principle (Eq. 3.11)
->
+> [!derivation] Derivation
+> Starting from the Rayleigh quotient
+> 
 > $$
-> \Omega_{\mathrm{RR}}=\langle\Psi| \hat{H}-E|\Psi\rangle,
+> E[\Psi]=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle},
 > $$
+> 
+> show that if the energy functional is stationary under arbitrary variations of the wavefunction, then the eigenstates of $\hat{H}$ are precisely the stationary points of the energy expectation-value functional. In particular, show that:
+> a. The Rayleigh-Ritz variational principle leads to the time-independent Schrödinger equation.
+> b. The same equation follows from a constrained variational principle with a Lagrange multiplier enforcing normalization.
+> c. We have shown that the Rayleigh-quotient variation and the Lagrange-multiplier constrained variation are mathematically equivalent. Which formulation is more convenient for a given derivation or approximation?
 
-which is stationary at any eigensolution $\left|\Psi_{m}\right\rangle .{ }^{3}$ More explicitly,
 
-$$
-\begin{aligned}
-\delta \Omega_{\mathrm{RR}}
-&= \delta \langle\Psi|(\hat{H}-E)|\Psi\rangle \\
-&= \langle\delta \Psi|(\hat{H}-E)|\Psi\rangle + \langle\Psi|(\hat{H}-E)|\delta \Psi\rangle - \delta E (\langle\Psi \mid \Psi\rangle-1).
-\end{aligned}
-$$
+##### Part A: Stationarity of the Rayleigh quotient
 
-Variation with respect to the multiplier $E$ gives the normalization condition
+Let
 
 $$
-\langle\Psi \mid \Psi\rangle=1.
+E[\Psi]=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}, \quad N[\Psi]=\langle\Psi| \hat{H}|\Psi\rangle, \quad D[\Psi]=\langle\Psi \mid \Psi\rangle
 $$
 
-Variation of the bra $\langle\Psi|$ gives
+
+Assume $\hat{H}$ is Hermitian. We vary $|\Psi\rangle$ and its complex conjugate independently, as is standard in variational calculus for complex wavefunctions.
+
+
+Start from
 
 $$
-\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle=0,
+E[\Psi]=\frac{N}{D}
 $$
 
-and variation of the ket $|\Psi\rangle$ gives the Hermitian-conjugate condition
+
+Its first variation is
 
 $$
-\langle\Psi|(\hat{H}-E)|\delta \Psi\rangle=0.
+\delta E=\delta\left(\frac{N}{D}\right)=\frac{\delta N D-N \delta D}{D^2}=\frac{1}{D}(\delta N-E \delta D) .
 $$
 
-Since $\langle\delta \Psi|$ is arbitrary, the first of these can hold for all variations only if
+
+Now compute $\delta N$ and $\delta D$ :
 
 $$
-(\hat{H}-E)|\Psi\rangle=0,
+\begin{gathered}
+\delta N=\delta\langle\Psi| \hat{H}|\Psi\rangle=\langle\delta \Psi| \hat{H}|\Psi\rangle+\langle\Psi| \hat{H}|\delta \Psi\rangle \\
+\delta D=\delta\langle\Psi \mid \Psi\rangle=\langle\delta \Psi \mid \Psi\rangle+\langle\Psi \mid \delta \Psi\rangle
+\end{gathered}
+$$
+
+
+Substitute these into $\delta E$ :
+
+$$
+\delta E=\frac{1}{\langle\Psi \mid \Psi\rangle}[\langle\delta \Psi| \hat{H}|\Psi\rangle+\langle\Psi| \hat{H}|\delta \Psi\rangle-E\langle\delta \Psi \mid \Psi\rangle-E\langle\Psi \mid \delta \Psi\rangle]
+$$
+
+
+Group terms:
+
+$$
+\delta E=\frac{1}{\langle\Psi \mid \Psi\rangle}[\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle+\langle\Psi|(\hat{H}-E)|\delta \Psi\rangle]
+$$
+
+
+
+Because $\hat{H}$ is Hermitian,
+
+$$
+\langle\Psi|(\hat{H}-E)|\delta \Psi\rangle=(\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle)^*,
+$$
+
+so
+
+$$
+\delta E=\frac{2 \operatorname{Re}\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}
+$$
+
+
+If the functional is stationary under arbitrary variations, then $\delta E=0$ for every $\delta \Psi$. Since $\delta \Psi$ is arbitrary, this is possible only if
+
+$$
+(\hat{H}-E)|\Psi\rangle=0
 $$
 
 that is,
 
-> [!theorem] Time-independent Schrödinger equation (Eq. 3.13)
->
-> $$
-> \hat{H}|\Psi\rangle=E|\Psi\rangle .
-> $$
+$$
+\hat{H}|\Psi\rangle=E|\Psi\rangle .
+$$
 
-The direct variation of the ratio Eq. (3.9) gives the same result. Writing
+
+This is exactly the time-independent Schrödinger equation.
+In coordinate representation, this becomes
+
+$$
+\hat{H} \Psi(\mathbf{r})=E \Psi(\mathbf{r})
+$$
+
+
+So the Rayleigh-Ritz stationarity condition implies the TISE.
+Now for the converse: if $|\Psi\rangle$ is an eigenstate,
+
+$$
+\hat{H}|\Psi\rangle=E|\Psi\rangle
+$$
+
+then substituting into the variation formula gives
+
+$$
+\delta E=\frac{1}{\langle\Psi \mid \Psi\rangle}[\langle\delta \Psi|(\hat{H}-E)|\Psi\rangle+\langle\Psi|(\hat{H}-E)|\delta \Psi\rangle]=0 .
+$$
+
+
+So every eigenstate is a stationary point of the energy functional.
+Hence the stationary points of the Rayleigh quotient are precisely the eigenstates of $\hat{H}$ (more precisely: the normalized vectors in eigenspaces of $\hat{H}$; in a degenerate eigenspace, any normalized linear combination is also stationary).
+
+A compact way to see the "precisely" statement is to expand in the eigenbasis $\{|n\rangle\}$ of $\hat{H}$ :
+
+$$
+|\Psi\rangle=\sum_n c_n|n\rangle, \quad \hat{H}|n\rangle=E_n|n\rangle
+$$
+
+
+Then
+
+$$
+E[\Psi]=\frac{\sum_n\left|c_n\right|^2 E_n}{\sum_n\left|c_n\right|^2}
+$$
+
+
+Varying with respect to $c_n^*$ gives
+
+$$
+0=\frac{\partial E}{\partial c_n^*}=\frac{c_n\left(E_n-E\right)}{\sum_m\left|c_m\right|^2}
+$$
+
+
+Therefore,
+
+$$
+c_n\left(E_n-E\right)=0 \quad \text { for all } n
+$$
+
+
+So any coefficient $c_n \neq 0$ must satisfy $E_n=E$. Thus $|\Psi\rangle$ can only have support inside a single eigenspace. That is exactly an eigenstate (or, in the degenerate case, any vector in that degenerate eigenspace).
+
+
+##### Part B: Constrained Variational Principle with Normalization
+
+
+
+Now impose normalization explicitly by introducing a Lagrange multiplier $\lambda$. Define
+
+$$
+\mathcal{F}\left[\Psi, \Psi^*, \lambda\right]=\langle\Psi| \hat{H}|\Psi\rangle-\lambda(\langle\Psi \mid \Psi\rangle-1)
+$$
+
+
+Take the variation:
+
+$$
+\delta \mathcal{F}=\delta\langle\Psi| \hat{H}|\Psi\rangle-\lambda \delta\langle\Psi \mid \Psi\rangle-(\langle\Psi \mid \Psi\rangle-1) \delta \lambda .
+$$
+
+
+Expanding the first two terms,
+
+$$
+\delta \mathcal{F}=\langle\delta \Psi| \hat{H}|\Psi\rangle+\langle\Psi| \hat{H}|\delta \Psi\rangle-\lambda\langle\delta \Psi \mid \Psi\rangle-\lambda\langle\Psi \mid \delta \Psi\rangle-(\langle\Psi \mid \Psi\rangle-1) \delta \lambda .
+$$
+
+
+Group terms:
+
+$$
+\delta \mathcal{F}=\langle\delta \Psi|(\hat{H}-\lambda)|\Psi\rangle+\langle\Psi|(\hat{H}-\lambda)|\delta \Psi\rangle-(\langle\Psi \mid \Psi\rangle-1) \delta \lambda .
+$$
+
+
+Because $\delta \Psi, \delta \Psi^*$, and $\delta \lambda$ are arbitrary, stationarity requires
+
+$$
+\begin{gathered}
+(\hat{H}-\lambda)|\Psi\rangle=0, \\
+\langle\Psi|(\hat{H}-\lambda)=0, \\
+\langle\Psi \mid \Psi\rangle=1 .
+\end{gathered}
+$$
+
+
+Thus
+
+$$
+\hat{H}|\Psi\rangle=\lambda|\Psi\rangle .
+$$
+
+
+So the constrained variational principle also gives the time-independent Schrödinger equation, with $\lambda$ playing the role of the eigenvalue.
+
+To identify $\lambda$, left-multiply by $\langle\Psi|$ :
+
+$$
+\langle\Psi| \hat{H}|\Psi\rangle=\lambda\langle\Psi \mid \Psi\rangle .
+$$
+
+
+Using normalization $\langle\Psi \mid \Psi\rangle=1$,
+
+$$
+\lambda=\langle\Psi| \hat{H}|\Psi\rangle=E .
+$$
+
+
+Therefore,
+
+$$
+\hat{H}|\Psi\rangle=E|\Psi\rangle .
+$$
+
+
+
+##### Part C
+
+
+In practice, the Lagrange-multiplier form is often easier when normalization is an explicit constraint you want to enforce during the calculation, especially when you may also have other constraints. It turns the problem into stationarity of
+
+$$
+\langle\Psi| \hat{H}|\Psi\rangle-\lambda(\langle\Psi \mid \Psi\rangle-1),
+$$
+
+which is usually algebraically cleaner than differentiating a quotient. It is also the natural form when you have multiple orthogonality constraints, such as when deriving equations for excited states or Hartree-Fock-type orbitals.
+
+The Rayleigh quotient form,
 
 $$
 E[\Psi]=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle},
 $$
 
-one finds
+is often nicer when you want the normalization-independence built in from the start. It makes the scale invariance obvious: multiplying $\Psi$ by any nonzero constant does not change $E[\Psi]$. It is also conceptually useful when emphasizing that the energy is defined on rays in Hilbert space rather than on normalized representatives only.
 
-$$
-\begin{aligned}
-\delta E
-&= \delta \left(\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}\right) \\
-&= \frac{\delta \langle\Psi| \hat{H}|\Psi\rangle \, \langle\Psi \mid \Psi\rangle - \langle\Psi| \hat{H}|\Psi\rangle \, \delta \langle\Psi \mid \Psi\rangle}{\langle\Psi \mid \Psi\rangle^{2}} \\
-&= \frac{\bigl(\langle\delta\Psi| \hat{H}|\Psi\rangle + \langle\Psi| \hat{H}|\delta\Psi\rangle\bigr)\langle\Psi \mid \Psi\rangle - E\langle\Psi \mid \Psi\rangle \bigl(\langle\delta\Psi \mid \Psi\rangle + \langle\Psi \mid \delta\Psi\rangle\bigr)}{\langle\Psi \mid \Psi\rangle^{2}} \\
-&= \frac{\langle\delta\Psi|(\hat{H}-E)|\Psi\rangle + \langle\Psi|(\hat{H}-E)|\delta\Psi\rangle}{\langle\Psi \mid \Psi\rangle}.
-\end{aligned}
-$$
 
-Therefore the stationarity condition $\delta E=0$ for arbitrary independent variations of bra and ket again implies $(\hat{H}-E)|\Psi\rangle=0$. The two approaches must agree because they are the same variational problem written in two equivalent forms: extremizing the Rayleigh quotient directly, or extremizing the numerator subject to fixed norm.
+> [!NOTE] When to use the Lagrange-multiplier form vs when to use the Rayleigh quotient form
+> A good rule of thumb is this. If you are doing a formal derivation of the Schrödinger equation, or handling explicit constraints, use the Lagrange-multiplier form. If you want to emphasize the variational meaning of the energy or the upper-bound property in approximation theory, the Rayleigh quotient is often the more natural language.
+> 
+> **Note:** Explicit constraints include things like:
+> 1.) Requiring normalization
+> 2.) Fixing particle number
+> 3.) Enforcing orthogonality among orbitals
+> 4.) Imposing symmetry restrictions that are not already built into the trial form
+> 5.) imposing more than one constraint like normalization and orthogonality to the ground state
 
-For practical electronic structure, the variational formulation is more fundamental because in realistic many-electron problems one usually cannot solve the exact eigenvalue equation directly. Instead one restricts $\Psi$ to a tractable class of trial states and minimizes or makes stationary the energy within that space, which is precisely the framework used in Hartree-Fock, density functional theory, quantum Monte Carlo, and other approximate methods.
 
 > [!lesson] The variational principle as a computational strategy
 >
@@ -373,10 +681,21 @@ It is helpful to clarify briefly several points that are essential to a proper d
 - Any extended system must be neutral if the energy is to be finite.
 - Terms in the energy must be organized in neutral groups for actual evaluation.
 
-> [!derivation] Derivation 5: Grouping the total energy into neutral classical Coulomb terms
-> The individual terms in Eq. (3.9) are separately divergent in an extended system. Rewrite the total energy so that all long-range Coulomb contributions are collected into a single, well-defined classical energy. What condition on the system is required for this grouping to be finite? What is the physical character of the residual non-classical piece, and why is it short-ranged?
 
-In Eq. (3.9) the most convenient approach is to identify and group together terms representing the classical Coulomb energies,
+
+> [!derivation] Derivation
+> Let $E^{CC}$ represent the classical coulomb energies and $E_{Hartree}$ represent the self-interaction energy of the density $n(\mathbf{r})$ treated as a classical charge density.
+> **Part I:** For an extended neutral Coulomb system
+> 
+> a.) show that the combination $E_H+\int d^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}$ s the classical electrostatic energy of the total charge distribution, while the three terms are not, in general, separately well-defined absolute energies. 
+> b.) show that the exact total energy can be rewritten as $E=\langle\hat{T}\rangle+\left(\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_H\right)+E^{\mathrm{CC}}$ so that the energy is decomposed into kinetic, classical Coulomb, and nonclassical exchange-correlation contributions.
+> c.) show that correlation effects are short ranged.
+> 
+>  **Part II:** Why is charge neutrality a prerequisite for finite energies in periodic systems?
+
+
+
+
 
 > [!equation] Classical Coulomb energy grouping (Eq. 3.14)
 >
@@ -384,7 +703,6 @@ In Eq. (3.9) the most convenient approach is to identify and group together term
 > E^{\mathrm{CC}}=E_{\mathrm{Hartree}}+\int \mathrm{d}^{3} r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I},
 > $$
 
-where $E_{\text {Hartree }}$ is the self-interaction energy of the density $n(\mathbf{r})$ treated as a classical charge density
 
 > [!definition] Hartree energy (Eq. 3.15)
 >
@@ -392,76 +710,7 @@ where $E_{\text {Hartree }}$ is the self-interaction energy of the density $n(\m
 > E_{\text {Hartree }}=\frac{1}{2} \int \mathrm{~d}^{3} r \mathrm{~d}^{3} r^{\prime} \frac{n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} .
 > $$
 
-To see why Eq. (3.14) is the classical Coulomb energy, define the nuclear and electronic charge densities
 
-$$
-\rho_{I}(\mathbf{r})=\sum_{I} Z_{I}\,\delta(\mathbf{r}-\mathbf{R}_{I}),
-\qquad
-\rho_{e}(\mathbf{r})=-n(\mathbf{r}),
-$$
-
-so that the total charge density is
-
-$$
-\rho_{\mathrm{tot}}(\mathbf{r})=\rho_{I}(\mathbf{r})+\rho_{e}(\mathbf{r})=\sum_{I} Z_{I}\,\delta(\mathbf{r}-\mathbf{R}_{I})-n(\mathbf{r}).
-$$
-
-Then the classical Coulomb energy of the total charge distribution is
-
-$$
-\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
-\frac{\rho_{\mathrm{tot}}(\mathbf{r})\rho_{\mathrm{tot}}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|},
-$$
-
-which expands as
-
-$$
-\begin{aligned}
-\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
-\frac{\rho_{\mathrm{tot}}(\mathbf{r})\rho_{\mathrm{tot}}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}
-&=
-\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
-\frac{n(\mathbf{r})n(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|} \\
-&\quad
--\sum_{I}\int \mathrm{d}^{3}r\, \frac{Z_{I}n(\mathbf{r})}{|\mathbf{r}-\mathbf{R}_{I}|}
-+\frac{1}{2}\sum_{I\neq J}\frac{Z_{I}Z_{J}}{|\mathbf{R}_{I}-\mathbf{R}_{J}|},
-\end{aligned}
-$$
-
-where the divergent $I=J$ nuclear self-terms are excluded because they do not belong to the physical interaction energy of distinct nuclei. Using
-
-$$
-V_{\mathrm{ext}}(\mathbf{r})=-\sum_{I}\frac{Z_{I}}{|\mathbf{r}-\mathbf{R}_{I}|},
-$$
-
-this becomes
-
-$$
-E_{\mathrm{Hartree}}+\int \mathrm{d}^{3}r\,V_{\mathrm{ext}}(\mathbf{r})\,n(\mathbf{r})+E_{II}=E^{\mathrm{CC}}.
-$$
-
-Since $E_{I I}$ is the interaction among the positive nuclei and $\int \mathrm{d}^{3} r V_{\text {ext }}(\mathbf{r}) n(\mathbf{r})$ is the interaction of the electrons with the nuclei, Eq. (3.14) is a neutral grouping of terms so long as the system is neutral. The evaluation of classical Coulomb energies is an intrinsic part of quantitative electronic structure calculations; methods for dealing with long-range Coulomb interaction are described in Appendix F.
-
-The neutrality condition is
-
-$$
-\int \mathrm{d}^{3}r\,\rho_{\mathrm{tot}}(\mathbf{r})
-=\sum_{I} Z_{I}-\int \mathrm{d}^{3}r\,n(\mathbf{r})=0.
-$$
-
-Only under this condition can the long-range Coulomb contributions be grouped into a finite macroscopic classical energy.
-
-It then follows that the total energy expression, (3.9), can be rearranged by adding and subtracting $E_{\text{Hartree}}$:
-
-$$
-\begin{aligned}
-E &= \langle\hat{T}\rangle + \langle\hat{V}_{\text{int}}\rangle + \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}) + E_{II} \\
-&= \langle\hat{T}\rangle + \langle\hat{V}_{\text{int}}\rangle + \bigl(\underbrace{E_{\text{Hartree}} + \int \mathrm{d}^{3}r\, V_{\text{ext}}(\mathbf{r})\, n(\mathbf{r}) + E_{II}}_{E^{\text{CC}}}\bigr) - E_{\text{Hartree}} \\
-&= \langle\hat{T}\rangle + \bigl(\langle\hat{V}_{\text{int}}\rangle - E_{\text{Hartree}}\bigr) + E^{\text{CC}}.
-\end{aligned}
-$$
-
-That is,
 
 > [!equation] Total energy decomposition with exchange-correlation (Eq. 3.16)
 >
@@ -469,25 +718,313 @@ That is,
 > E=\langle\hat{T}\rangle+\left(\left\langle\hat{V}_{\text {int }}\right\rangle-E_{\text {Hartree }}\right)+E^{\mathrm{CC}},
 > $$
 
-where each of the three terms is well defined. The middle term in brackets, $\left\langle\hat{V}_{\text {int }}\right\rangle-E_{\text {Hartree }}$, is the difference between the Coulomb energies of interacting, correlated electrons with density $n(\mathbf{r})$ and that of a continuous classical charge distribution having the same density, which is defined to be the potential part of the exchange-correlation energy $E_{\mathrm{xc}}$ in density functional theory (see Sections 6.4 and 8.2, especially the discussion related to Eq. (8.3)). ${ }^{4}$ Thus all long-range interactions cancel in the difference so that effects of exchange and correlation are short ranged. This is a point to which we will return in Chapter 7 and Appendix H.
 
-More explicitly, if $n^{(2)}(\mathbf{r},\mathbf{r}')$ denotes the pair density, then
+
+Using atomic units, let
 
 $$
-\left\langle\hat{V}_{\mathrm{int}}\right\rangle
-=\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
-\frac{n^{(2)}(\mathbf{r},\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|},
+\rho_I(\mathbf{r})=\sum_I Z_I \delta\left(\mathbf{r}-\mathbf{R}_I\right), \quad \rho_{\mathrm{tot}}(\mathbf{r})=\rho_I(\mathbf{r})-n(\mathbf{r}),
+$$
+
+so that neutrality of the extended system means
+
+$$
+\int d^3 r \rho_{\mathrm{tot}}(\mathbf{r})=0
+$$
+
+
+Also define
+
+$$
+\begin{gathered}
+E_H=\frac{1}{2} \iint d^3 r d^3 r^{\prime} \frac{n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} \\
+V_{\mathrm{ext}}(\mathbf{r})=-\sum_I \frac{Z_I}{\left|\mathbf{r}-\mathbf{R}_I\right|}=-\int d^3 r^{\prime} \frac{\rho_I\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+\end{gathered}
+$$
+
+and
+
+$$
+E_{I I}=\frac{1}{2} \sum_{I \neq J} \frac{Z_I Z_J}{\left|\mathbf{R}_I-\mathbf{R}_J\right|}
+$$
+
+
+
+##### Part 1A
+
+
+The classical Coulomb energy of the total charge distribution is
+
+$$
+E^{C C}=\frac{1}{2} \iint d^3 r d^3 r^{\prime} \frac{\rho_{\mathrm{tot}}(\mathbf{r}) \rho_{\mathrm{tot}}\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+$$
+
+with the nuclear self-energies excluded, so that the ionic part reduces to $E_{I I}$ rather than including the infinite $I=J$ self-terms.
+
+Now expand $\rho_{\text {tot }}=\rho_I-n$ :
+
+$$
+E^{C C}=\frac{1}{2} \iint \frac{\left[\rho_I(\mathbf{r})-n(\mathbf{r})\right]\left[\rho_I\left(\mathbf{r}^{\prime}\right)-n\left(\mathbf{r}^{\prime}\right)\right]}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d^3 r d^3 r^{\prime}
+$$
+
+
+Expanding term by term gives
+
+$$
+E^{C C}=\frac{1}{2} \iint \frac{n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d^3 r d^3 r^{\prime}-\iint \frac{\rho_I(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d^3 r d^3 r^{\prime}+\frac{1}{2} \iint \frac{\rho_I(\mathbf{r}) \rho_I\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d^3 r d^3 r^{\prime}
+$$
+
+
+The first term is exactly $E_H$. The middle term is
+
+$$
+-\iint \frac{\rho_I(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} d^3 r d^3 r^{\prime}=\int d^3 r^{\prime} V_{\mathrm{ext}}\left(\mathbf{r}^{\prime}\right) n\left(\mathbf{r}^{\prime}\right)
+$$
+
+because $V_{\text {ext }}$ is the potential generated by the ionic charge density. The last term, with the point-charge self-terms removed, is $E_{I I}$. Therefore
+
+$$
+E^{C C}=E_H+\int d^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}
+$$
+
+
+So the combination
+
+$$
+E_H+\int d^3 r V_{\text {ext }}(\mathbf{r}) n(\mathbf{r})+E_{I I}
+$$
+
+is precisely the classical electrostatic energy of the total neutral charge distribution.
+
+
+In an extended neutral Coulomb system, the electron-electron, electron-ion, and ion-ion terms each involve long-range $1 / r$ interactions between subsystems with individually infinite total charge. Because of that, each term separately is generally divergent, or at best only conditionally convergent and dependent on summation convention or boundary prescription. Only after the three pieces are combined into the neutral total-charge expression do the long-range divergences cancel. That is why $E^{C C}$ is well-defined, while the three pieces are not, in general, separately meaningful absolute energies.
+
+
+##### Part 1B
+
+
+The exact Born-Oppenheimer total energy is
+
+$$
+E=\langle\hat{T}\rangle+\left\langle\hat{V}_{\mathrm{int}}\right\rangle+\int d^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}
+$$
+
+
+Add and subtract $E_H$ :
+
+$$
+E=\langle\hat{T}\rangle+\left(\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_H\right)+\left(E_H+\int d^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}\right)
+$$
+
+
+Using part (a),
+
+$$
+E_H+\int d^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}=E^{C C}
 $$
 
 so
 
+> [!NOTE] Total energy decomposition with exchange-correlation (Eq. 3.16)
+> $$
+> E=\langle\hat{T}\rangle+\left(\left\langle\hat{V}_{\text {int }}\right\rangle-E_H\right)+E^{C C}
+> $$
+
+
+That is the desired decomposition. The interpretation is the following. The term $E^{C C}$ contains all of the purely classical Coulomb electrostatics of the total charge distribution. The term
+
 $$
-\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_{\mathrm{Hartree}}
-=\frac{1}{2}\int \mathrm{d}^{3}r\,\mathrm{d}^{3}r'\,
-\frac{n^{(2)}(\mathbf{r},\mathbf{r}')-n(\mathbf{r})n(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}.
+\left\langle\hat{V}_{\text {int }}\right\rangle-E_H
 $$
 
-This is the non-classical piece: it measures how the true correlated two-particle distribution differs from the Coulomb energy of a smooth charge cloud with the same one-particle density. Because the classical long-range part has already been removed, the remaining exchange-correlation contribution is associated with the local depletion and rearrangement of charge around each electron, and is therefore short-ranged.
+is the nonclassical correction: it measures the difference between the true electron-electron interaction energy and the Hartree energy obtained by treating $n(\mathbf{r})$ as a continuous classical charge cloud. This difference contains exchange and Coulomb-correlation effects, including removal of the unphysical Hartree self-interaction.
+
+
+A useful way to make that explicit is through the pair density
+
+$$
+n^{(2)}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=\left\langle\sum_{i \neq j} \delta\left(\mathbf{r}-\mathbf{r}_i\right) \delta\left(\mathbf{r}^{\prime}-\mathbf{r}_j\right)\right\rangle,
+$$
+
+for which
+
+$$
+\left\langle\hat{V}_{\mathrm{int}}\right\rangle=\frac{1}{2} \iint d^3 r d^3 r^{\prime} \frac{n^{(2)}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+$$
+
+
+Writing
+
+$$
+n^{(2)}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right) g\left(\mathbf{r}, \mathbf{r}^{\prime}\right)
+$$
+
+with $g$ the pair-correlation function, gives
+
+$$
+\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_H=\frac{1}{2} \iint d^3 r d^3 r^{\prime} \frac{n(\mathbf{r}) n\left(\mathbf{r}^{\prime}\right)\left[g\left(\mathbf{r}, \mathbf{r}^{\prime}\right)-1\right]}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+$$
+
+
+So this term vanishes only if the electrons really behaved like an uncorrelated classical charge cloud with $g=1$, which they do not.
+
+A small precision point: in Kohn-Sham DFT, the full $E_{x c}$ also contains the kinetic correction $T-T_s$. Here, since you have kept the exact interacting kinetic energy $\langle\hat{T}\rangle$ intact, the term $\left\langle\hat{V}_{\text {int }}\right\rangle-E_H$ is the nonclassical part of the interaction energy.
+
+
+##### Part 1C
+
+To show why correlation effects are short-ranged, introduce the exchange-correlation hole. Define the conditional density around an electron fixed at $\mathbf{r}$ by
+
+$$
+n_{\text {cond }}\left(\mathbf{r}^{\prime} \mid \mathbf{r}\right)=\frac{n^{(2)}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{n(\mathbf{r})},
+$$
+
+and then define
+
+$$
+n_{x c}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=n_{\text {cond }}\left(\mathbf{r}^{\prime} \mid \mathbf{r}\right)-n\left(\mathbf{r}^{\prime}\right) .
+$$
+
+
+Equivalently,
+
+$$
+n_{x c}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=n\left(\mathbf{r}^{\prime}\right)\left[g\left(\mathbf{r}, \mathbf{r}^{\prime}\right)-1\right] .
+$$
+
+
+Then
+
+$$
+\left\langle\hat{V}_{\mathrm{int}}\right\rangle-E_H=\frac{1}{2} \int d^3 r n(\mathbf{r}) \int d^3 r^{\prime} \frac{n_{x c}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|} .
+$$
+
+
+The exact exchange-correlation hole satisfies the sum rule
+
+$$
+\int d^3 r^{\prime} n_{x c}\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=-1
+$$
+
+
+That means one electron's worth of charge is missing around a reference electron. Now split
+
+$$
+n_{x c}=n_x+n_c,
+$$
+
+into exchange and correlation pieces. The exchange hole already satisfies
+
+$$
+\int d^3 r^{\prime} n_x\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=-1,
+$$
+
+
+so the correlation hole must satisfy
+
+$$
+\int d^3 r^{\prime} n_c\left(\mathbf{r}, \mathbf{r}^{\prime}\right)=0
+$$
+
+
+That last equation is the key fact. The correlation hole carries zero net charge. Therefore it produces no long-range monopole Coulomb field. In a multipole expansion, a neutral charge distribution has no $1 / r$ tail from net charge; its far-field potential decays faster than $1 / r$. Thus correlation cannot contribute to the long-range classical electrostatics. It only rearranges charge locally around the electron.
+
+This is the precise sense in which correlation effects are short-ranged: once the classical Coulomb term has been extracted into $E^{C C}$, the remaining correlation contribution comes from a neutral local rearrangement of charge around each electron, not from unscreened long-range electrostatics.
+
+Equivalently, if one writes
+
+$$
+E_c^{\mathrm{int}}=\frac{1}{2} \int d^3 r n(\mathbf{r}) \int d^3 u \frac{n_c(\mathbf{r}, \mathbf{r}+\mathbf{u})}{|\mathbf{u}|}
+$$
+
+then because
+
+$$
+\int d^3 u n_c(\mathbf{r}, \mathbf{r}+\mathbf{u})=0
+$$
+
+the large- $|\mathbf{u}|$ contributions cancel rather than accumulating as a long-range Coulomb term. The dominant contribution comes from the neighborhood of the reference electron, which is exactly what "short-ranged" means here.
+
+
+So the conceptual conclusion of the whole exercise is:
+
+$$
+E=\underbrace{\langle\hat{T}\rangle}_{\text {kinetic }}+\underbrace{E^{C C}}_{\text {classical Coulomb }}+\underbrace{\left(\left\langle\hat{V}_{\text {int }}\right\rangle-E_H\right)}_{\text {nonclassical exchange/correlation part of interaction }},
+$$
+
+and the reason this decomposition is useful is that all long-range Coulomb physics sits in $E^{C C}$, while the nonclassical correction is a local, short-ranged effect associated with the exchange-correlation hole.
+
+
+
+##### Part II
+
+
+Charge neutrality is required because the Coulomb interaction is long-ranged, and in a periodic system you are effectively summing that long-range interaction over infinitely many repeated copies of the cell. If the unit cell carries a nonzero net charge, then each copy also carries that same nonzero charge, so the crystal is an infinite array of uncompensated charge. The Coulomb potential of such a distribution does not decay fast enough for the electrostatic energy per cell to remain finite.
+
+The cleanest way to see this is from the classical Coulomb energy of the total charge density $\rho(\mathbf{r})$,
+
+$$
+E^{C C}=\frac{1}{2} \iint d^3 r d^3 r^{\prime} \frac{\rho(\mathbf{r}) \rho\left(\mathbf{r}^{\prime}\right)}{\left|\mathbf{r}-\mathbf{r}^{\prime}\right|}
+$$
+
+
+In a periodic solid, $\rho(\mathbf{r})$ is periodic, so it is natural to write it in reciprocal space:
+
+$$
+\rho(\mathbf{r})=\sum_{\mathbf{G}} \rho_{\mathbf{G}} e^{i \mathbf{G} \cdot \mathbf{r}} .
+$$
+
+
+Then the Coulomb energy per cell takes the schematic form
+
+$$
+E^{C C} \sim \frac{1}{2 \Omega} \sum_{\mathbf{G} \neq 0} \frac{4 \pi}{G^2}\left|\rho_{\mathbf{G}}\right|^2
+$$
+
+provided the $\mathbf{G}=0$ term is absent. But
+
+$$
+\rho_{\mathbf{G}=0}=\frac{1}{\Omega} \int_{\Omega} \rho(\mathbf{r}) d^3 r
+$$
+
+is just the average charge density in the unit cell, i.e. the net cell charge divided by the cell volume. If the unit cell is neutral, then
+
+$$
+\int_{\Omega} \rho(\mathbf{r}) d^3 r=0
+$$
+
+so $\rho_{\mathbf{G}=0}=0$, and the dangerous $1 / G^2$ singularity at $G=0$ is removed. If the cell is not neutral, then the $G=0$ contribution is nonzero, and the Coulomb kernel
+
+$$
+\frac{4 \pi}{G^2}
+$$
+
+blows up as $G \rightarrow 0$. That is the reciprocal-space signature of the divergence.
+The same point can be understood in real space. If one cell has net charge $Q \neq 0$, then at large distances it looks like a point charge $Q$, so the interaction between distant cells scales like
+
+$$
+\frac{Q^2}{R} .
+$$
+
+
+Now sum this over all cells in the infinite lattice. Because the number of cells at radius $R$ grows like $R^2$, the shell contribution behaves like
+
+$$
+R^2 \cdot \frac{1}{R} \sim R,
+$$
+
+and the integral over $R$ diverges. So the electrostatic energy per cell is not finite. Neutrality is what cancels that monopole term. Once the net charge vanishes, the far field is much weaker, and the long-range divergence is removed.
+
+
+
+This is why, in periodic electronic-structure calculations, a non-neutral cell is fundamentally problematic. A charged supercell does not represent a well-defined infinite Coulomb system unless one adds some compensating background or other regularization. In practice, codes often introduce a uniform neutralizing background for charged cells, but then the absolute electrostatic energy is no longer the physical energy of an isolated charged periodic crystal; it is the energy of the charged cell plus that artificial compensating background, and finite-size corrections are usually needed.
+
+So the essential lesson is this: in a periodic Coulomb system, neutrality is what removes the $G=0$ singularity, eliminates the long-range monopole field, and makes the electrostatic energy per cell finite. Without neutrality, the repeated lattice carries infinite self-repulsion, and the energy is not well-defined.
+
+
+
+
+
 
 > [!lesson] Coulomb energy grouping and the short-range nature of exchange-correlation
 >
@@ -504,6 +1041,17 @@ One of the beautiful theorems of physics is the "force theorem" for the force co
 
 > [!derivation] Derivation 6: Force (Hellmann-Feynman) theorem
 > Derive the expression Eq. (3.19) for the force on a nucleus. The result is remarkable: despite the electrons having kinetic energy and mutual interactions that both change as nuclei move, the force depends only on the electron density. What principle causes all other contributions to vanish, and under what circumstances can this cancellation fail?
+
+
+Let $\mathbf{R}_I$ represent the position of the nucleus, $n(\mathbf{r})$ represent the unperturbed density, $\langle\Psi \mid \Psi\rangle=1$ (for convenience) and
+
+$$E=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \equiv\langle\hat{H}\rangle=\langle\hat{T}\rangle+\left\langle\hat{V}_{\text {int }}\right\rangle+\int \mathrm{d}^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}$$
+
+
+
+a.) For a local potential, show that the force $\mathbf{F}_I$ depends only on the density $n$ of the electrons and the other nuclei.
+b.) For a local potential, show that the force theorem applied to a nucleus leads to the force being exactly the electric field at the given nucleus due to the charge density of the rest of the system (electrons and other nuclei) times the charge of the given nucleus.
+c.) When does this simplification fail? Show why.
 
 The force conjugate to any parameter describing a system, such as the position of a nucleus $\mathbf{R}_{I}$, can always be written
 

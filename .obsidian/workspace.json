@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
+                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/3 Theoretical Background.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Equation Index — Martin, Chapter 3"
+                  "title": "3 Theoretical Background"
                 }
               },
               {
@@ -32,16 +32,15 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background V2.md",
+                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "3 Theoretical Background V2"
+                  "title": "Equation Index — Martin, Chapter 3"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           },
           {
             "id": "a8990ecbb4211ecc",
@@ -77,8 +76,8 @@
                         "useWin32Conhost": true
                       },
                       "serial": {
-                        "columns": 124,
-                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4melectronic_structure\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mls\r\n\u001b[36;1mBooks\u001b[0m                          Converting PDFs to Markdown.md environment.yml                test_molten.py\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mgit\u001b[0m commit -m \u001b[33m\"edited equation index to entry 10\"\r\n\u001b[0m[master 6a49791] edited equation index to entry 10\r\n Committer: Grady Clopton <gradyclopton@wirelessprv-10-192-137-92.near.illinois.edu>\r\nYour name and email address were configured automatically based\r\non your username and hostname. Please check that they are accurate.\r\nYou can suppress this message by setting them explicitly. Run the\r\nfollowing command and follow the instructions in your editor to edit\r\nyour configuration file:\r\n\r\n    git config --global --edit\r\n\r\nAfter doing this, you may fix the identity used for this commit with:\r\n\r\n    git commit --amend --reset-author\r\n\r\n 6 files changed, 488 insertions(+), 714 deletions(-)\r\n delete mode 100644 Chapter_Markup_Instructions_RECOVERED.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m push -u origin master\r\nEnumerating objects: 22, done.\r\nCounting objects: 100% (22/22), done.\r\nDelta compression using up to 10 threads\r\nCompressing objects: 100% (12/12), done.\r\nWriting objects: 100% (12/12), 31.41 KiB | 7.85 MiB/s, done.\r\nTotal 12 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)\r\nremote: Resolving deltas: 100% (8/8), completed with 8 local objects.\r\nTo github.com:gclopton/electronic_structure.git\r\n   1d0e152..6a49791  master -> master\r\nbranch 'master' set up to track 'origin/master'.\r\n\r\n\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/ObsidianVaults/\u001b[38;5;255;1melectronic_structure\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !1 \u001b[33;49m\u001b[38;5;244m────────────────────────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 05:13:29 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[93C\u001b[38;5;244m─╯\u001b[113D\u001b[0m",
+                        "columns": 122,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4melectronic_structure\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mls\r\n\u001b[36;1mBooks\u001b[0m                          Converting PDFs to Markdown.md environment.yml                test_molten.py\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mgit\u001b[0m commit -m \u001b[33m\"edited equation index to entry 10\"\r\n\u001b[0m[master 6a49791] edited equation index to entry 10\r\n Committer: Grady Clopton <gradyclopton@wirelessprv-10-192-137-92.near.illinois.edu>\r\nYour name and email address were configured automatically based\r\non your username and hostname. Please check that they are accurate.\r\nYou can suppress this message by setting them explicitly. Run the\r\nfollowing command and follow the instructions in your editor to edit\r\nyour configuration file:\r\n\r\n    git config --global --edit\r\n\r\nAfter doing this, you may fix the identity used for this commit with:\r\n\r\n    git commit --amend --reset-author\r\n\r\n 6 files changed, 488 insertions(+), 714 deletions(-)\r\n delete mode 100644 Chapter_Markup_Instructions_RECOVERED.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m push -u origin master\r\nEnumerating objects: 22, done.\r\nCounting objects: 100% (22/22), done.\r\nDelta compression using up to 10 threads\r\nCompressing objects: 100% (12/12), done.\r\nWriting objects: 100% (12/12), 31.41 KiB | 7.85 MiB/s, done.\r\nTotal 12 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)\r\nremote: Resolving deltas: 100% (8/8), completed with 8 local objects.\r\nTo github.com:gclopton/electronic_structure.git\r\n   1d0e152..6a49791  master -> master\r\nbranch 'master' set up to track 'origin/master'.\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mgit\u001b[0m commit -m \u001b[33m\"edited equation index to entry 10\"\r\n\u001b[0m[master 6345b62] edited equation index to entry 10\r\n Committer: Grady Clopton <gradyclopton@wirelessprv-10-192-137-92.near.illinois.edu>\r\nYour name and email address were configured automatically based\r\non your username and hostname. Please check that they are accurate.\r\nYou can suppress this message by setting them explicitly. Run the\r\nfollowing command and follow the instructions in your editor to edit\r\nyour configuration file:\r\n\r\n    git config --global --edit\r\n\r\nAfter doing this, you may fix the identity used for this commit with:\r\n\r\n    git commit --amend --reset-author\r\n\r\n 6 files changed, 157 insertions(+), 239 deletions(-)\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m push -u origin master\r\nEnumerating objects: 27, done.\r\nCounting objects: 100% (27/27), done.\r\nDelta compression using up to 10 threads\r\nCompressing objects: 100% (14/14), done.\r\nWriting objects: 100% (14/14), 16.90 KiB | 5.63 MiB/s, done.\r\nTotal 14 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)\r\nremote: Resolving deltas: 100% (10/10), completed with 10 local objects.\r\nTo github.com:gclopton/electronic_structure.git\r\n   6a49791..6345b62  master -> master\r\nbranch 'master' set up to track 'origin/master'.\r\n\r\n\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/ObsidianVaults/\u001b[38;5;255;1melectronic_structure\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !1 \u001b[33;49m\u001b[38;5;244m──────────────────────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 08:07:20 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[0m                \u001b[91C\u001b[38;5;244m─╯\u001b[109D\u001b[0m",
                         "rows": 5
                       }
                     }
@@ -246,8 +245,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 424.5,
-    "collapsed": true
+    "width": 424.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -275,58 +273,25 @@
     "type": "floating",
     "children": [
       {
-        "id": "df170bbc67a1525a",
+        "id": "6e9e53b231692f0c",
         "type": "window",
         "children": [
           {
-            "id": "457b6b1aff1a40d2",
+            "id": "77b8528339a55d08",
             "type": "tabs",
             "children": [
               {
-                "id": "49542b517ab4eefa",
+                "id": "002ca58b023cdbcc",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Chapter Markup Instructions"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 244,
-        "y": 38,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
-        "id": "ef1cf9cfb6cce1c6",
-        "type": "window",
-        "children": [
-          {
-            "id": "dd553c54f03f8ebc",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "0c08dbab6be6e285",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Equation Index — Martin, Chapter 3"
+                  "title": "3 Theoretical Background Original"
                 }
               }
             ]
@@ -344,10 +309,13 @@
   },
   "active": "b582e7746b73b68f",
   "lastOpenFiles": [
-    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background V2.md",
-    "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
-    "Books/Martin Electronic Structure/3 Theoretical Background/Glossary — Martin, Chapter 3.md",
     "Books/Martin Electronic Structure/3 Theoretical Background/3 Theoretical Background.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/Notation.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background V2.md",
+    "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
+    "Books/Martin Electronic Structure/3 Theoretical Background/Glossary — Martin, Chapter 3.md",
     "Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands/4 Periodic Solids and Electron Bands.md",
     "Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands/4 Periodic Solids and Electron Bands.md.tmp.5.1773661220698",
     "Books/Martin Electronic Structure/4 Periodic Solids and Electron Bands/original/4 Periodic Solids and Electron Bands.md",
@@ -356,12 +324,10 @@
     "Books/Martin Electronic Structure/6 Density Functional Theory: Foundations/Equation Index — Martin, Chapter 6.md",
     "Books/Martin Electronic Structure/pedagogy.md",
     "Chapter_Markup_Instructions_RECOVERED.md",
-    "Books/Martin Electronic Structure/Chapter Markup Instructions.md",
     "Books/Martin Electronic Structure/2 Overview/2 Overview.md",
     "Books/Martin Electronic Structure/3 Theoretical Background/Equation Index — Martin, Chapter 3.md.tmp.5.1773637662951",
     "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background V1.md",
     "Books/Martin Electronic Structure/Front Matter/6 List of Notation/6 List of Notation.md",
-    "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original.md",
     "Books/Martin Electronic Structure/Study Methodology — Electronic Structure Chapters.md",
     "Books/Martin Electronic Structure/3 Theoretical Background/3 Theoretical Background.md.tmp.5.1773624357312",
     "Books/Martin Electronic Structure/3 Theoretical Background/original/3 Theoretical Background Original 1.md",

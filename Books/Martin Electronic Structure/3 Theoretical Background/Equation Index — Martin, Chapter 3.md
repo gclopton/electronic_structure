@@ -1,69 +1,81 @@
-# Equation Index — Martin, Chapter 3: Theoretical Background
 
-Electronic Structure Vault
+1. [[#1 Definitions & Building Blocks|1 Definitions & Building Blocks]]
+	1. [[#1 Definitions & Building Blocks#1.1 Electron kinetic energy $\hat{T}$|1.1 Electron kinetic energy $\hat{T}$]]
+	2. [[#1 Definitions & Building Blocks#1.2 External potential $\hat{V}_{\text{ext}}$|1.2 External potential $\hat{V}_{\text{ext}}$]]
+	3. [[#1 Definitions & Building Blocks#1.3 Electron-electron interaction $\hat{V}_{\text{int}}$|1.3 Electron-electron interaction $\hat{V}_{\text{int}}$]]
+	4. [[#1 Definitions & Building Blocks#1.4 Nuclear kinetic energy $\hat{T}_{\text{nuclei}}$|1.4 Nuclear kinetic energy $\hat{T}_{\text{nuclei}}$]]
+	5. [[#1 Definitions & Building Blocks#1.5 Ion-ion interaction energy $E_{II}$|1.5 Ion-ion interaction energy $E_{II}$]]
+	6. [[#1 Definitions & Building Blocks#1.6 Full Hamiltonian for electrons and nuclei (§3.1)|1.6 Full Hamiltonian for electrons and nuclei (§3.1)]]
+	7. [[#1 Definitions & Building Blocks#1.7 Electronic Hamiltonian (compact form)|1.7 Electronic Hamiltonian (compact form)]]
+		1. [[#1.7 Electronic Hamiltonian (compact form)#1.7.1 Simplifications|1.7.1 Simplifications]]
+	8. [[#1 Definitions & Building Blocks#1.8 8a. Density Operator|1.8 8a. Density Operator]]
+	9. [[#1 Definitions & Building Blocks#1.9 Electron density $n(\mathbf{r})$|1.9 Electron density $n(\mathbf{r})$]]
+		1. [[#1.9 Electron density $n(\mathbf{r})$#1.9.1 Simplifications|1.9.1 Simplifications]]
+	10. [[#1 Definitions & Building Blocks#1.10 Hartree energy $E_{\text{Hartree}}$|1.10 Hartree energy $E_{\text{Hartree}}$]]
+	11. [[#1 Definitions & Building Blocks#1.11 Slater determinant|1.11 Slater determinant]]
+		1. [[#1.11 Slater determinant#1.11.1 Simplifications|1.11.1 Simplifications]]
+	12. [[#1 Definitions & Building Blocks#1.12 11b. Projection operator|1.12 11b. Projection operator]]
+	13. [[#1 Definitions & Building Blocks#1.13 Single-body density matrix|1.13 Single-body density matrix]]
+		1. [[#1.13 Single-body density matrix#1.13.1 Simplifications|1.13.1 Simplifications]]
+	14. [[#1 Definitions & Building Blocks#1.14 Fermi-Dirac distribution|1.14 Fermi-Dirac distribution]]
+	15. [[#1 Definitions & Building Blocks#1.15 Joint pair probability $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$|1.15 Joint pair probability $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$]]
+	16. [[#1 Definitions & Building Blocks#1.16 Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$|1.16 Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$]]
+		1. [[#1.16 Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$#1.16.1 Alternate Forms|1.16.1 Alternate Forms]]
+		2. [[#1.16 Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$#1.16.2 Simplifications|1.16.2 Simplifications]]
+	17. [[#1 Definitions & Building Blocks#1.17 Exchange hole for noninteracting fermions (§3.7.1)|1.17 Exchange hole for noninteracting fermions (§3.7.1)]]
+	18. [[#1 Definitions & Building Blocks#1.18 Exchange-correlation hole $n_{\text{xc}}$|1.18 Exchange-correlation hole $n_{\text{xc}}$]]
+2. [[#2 Theoretical Foundations|2 Theoretical Foundations]]
+	1. [[#2 Theoretical Foundations#2.1 Total energy as expectation value|2.1 Total energy as expectation value]]
+	2. [[#2 Theoretical Foundations#2.2 Rayleigh-Ritz variational principle|2.2 Rayleigh-Ritz variational principle]]
+		1. [[#2.2 Rayleigh-Ritz variational principle#2.2.1 Alternate Forms|2.2.1 Alternate Forms]]
+	3. [[#2 Theoretical Foundations#2.3 Time-independent Schrödinger equation|2.3 Time-independent Schrödinger equation]]
+	4. [[#2 Theoretical Foundations#2.4 Force (Hellmann-Feynman) theorem|2.4 Force (Hellmann-Feynman) theorem]]
+		1. [[#2.4 Force (Hellmann-Feynman) theorem#2.4.1 Alternate Forms|2.4.1 Alternate Forms]]
+		2. [[#2.4 Force (Hellmann-Feynman) theorem#2.4.2 Assumptions|2.4.2 Assumptions]]
+	5. [[#2 Theoretical Foundations#2.5 Stress (generalized virial) theorem|2.5 Stress (generalized virial) theorem]]
+		1. [[#2.5 Stress (generalized virial) theorem#2.5.1 Alternate Forms|2.5.1 Alternate Forms]]
+	6. [[#2 Theoretical Foundations#2.6 Virial theorem for pressure|2.6 Virial theorem for pressure]]
+		1. [[#2.6 Virial theorem for pressure#2.6.1 Assumptions|2.6.1 Assumptions]]
+		2. [[#2.6 Virial theorem for pressure#2.6.2 Simplifications|2.6.2 Simplifications]]
+	7. [[#2 Theoretical Foundations#2.7 Generalized force theorem and coupling constant integration|2.7 Generalized force theorem and coupling constant integration]]
+		1. [[#2.7 Generalized force theorem and coupling constant integration#2.7.1 Simplifications|2.7.1 Simplifications]]
+	8. [[#2 Theoretical Foundations#2.8 Free energy and the density matrix (§3.5)|2.8 Free energy and the density matrix (§3.5)]]
+		1. [[#2.8 Free energy and the density matrix (§3.5)#2.8.1 Simplifications|2.8.1 Simplifications]]
+	9. [[#2 Theoretical Foundations#2.9 Koopmans' theorem|2.9 Koopmans' theorem]]
+		1. [[#2.9 Koopmans' theorem#2.9.1 Assumptions|2.9.1 Assumptions]]
+		2. [[#2.9 Koopmans' theorem#2.9.2 Failure Modes|2.9.2 Failure Modes]]
+3. [[#3 Energy Expressions & Functionals|3 Energy Expressions & Functionals]]
+	1. [[#3 Energy Expressions & Functionals#3.1 Classical Coulomb energy grouping $E^{\text{CC}}$|3.1 Classical Coulomb energy grouping $E^{\text{CC}}$]]
+		1. [[#3.1 Classical Coulomb energy grouping $E^{\text{CC}}$#3.1.1 Assumptions|3.1.1 Assumptions]]
+		2. [[#3.1 Classical Coulomb energy grouping $E^{\text{CC}}$#3.1.2 Simplifications|3.1.2 Simplifications]]
+	2. [[#3 Energy Expressions & Functionals#3.2 Total energy decomposition with exchange-correlation|3.2 Total energy decomposition with exchange-correlation]]
+	3. [[#3 Energy Expressions & Functionals#3.3 Hartree-Fock total energy|3.3 Hartree-Fock total energy]]
+	4. [[#3 Energy Expressions & Functionals#3.4 Exchange energy from the exchange hole|3.4 Exchange energy from the exchange hole]]
+	5. [[#3 Energy Expressions & Functionals#3.5 Independent-particle energy at finite temperature|3.5 Independent-particle energy at finite temperature]]
+		1. [[#3.5 Independent-particle energy at finite temperature#3.5.1 Assumptions|3.5.1 Assumptions]]
+		2. [[#3.5 Independent-particle energy at finite temperature#3.5.2 Simplifications|3.5.2 Simplifications]]
+4. [[#4 Approximations & Their Failures|4 Approximations & Their Failures]]
+	1. [[#4 Approximations & Their Failures#4.1 Born-Oppenheimer (adiabatic) approximation|4.1 Born-Oppenheimer (adiabatic) approximation]]
+		1. [[#4.1 Born-Oppenheimer (adiabatic) approximation#4.1.1 Failure Modes|4.1.1 Failure Modes]]
+		2. [[#4.1 Born-Oppenheimer (adiabatic) approximation#4.1.2 Practical Consequences|4.1.2 Practical Consequences]]
+	2. [[#4 Approximations & Their Failures#4.2 Noninteracting (Hartree-like) electron approximation|4.2 Noninteracting (Hartree-like) electron approximation]]
+		1. [[#4.2 Noninteracting (Hartree-like) electron approximation#4.2.1 Assumptions|4.2.1 Assumptions]]
+		2. [[#4.2 Noninteracting (Hartree-like) electron approximation#4.2.2 Practical Consequences|4.2.2 Practical Consequences]]
+	3. [[#4 Approximations & Their Failures#4.3 Hartree-Fock approximation|4.3 Hartree-Fock approximation]]
+		1. [[#4.3 Hartree-Fock approximation#4.3.1 Assumptions|4.3.1 Assumptions]]
+		2. [[#4.3 Hartree-Fock approximation#4.3.2 Alternate Forms|4.3.2 Alternate Forms]]
+		3. [[#4.3 Hartree-Fock approximation#4.3.3 Failure Modes|4.3.3 Failure Modes]]
+		4. [[#4.3 Hartree-Fock approximation#4.3.4 Practical Consequences|4.3.4 Practical Consequences]]
+	4. [[#4 Approximations & Their Failures#4.4 $\Delta$SCF method|4.4 $\Delta$SCF method]]
+		1. [[#4.4 $\Delta$SCF method#4.4.1 Assumptions|4.4.1 Assumptions]]
+		2. [[#4.4 $\Delta$SCF method#4.4.2 Failure Modes|4.4.2 Failure Modes]]
 
 
-## Master Reference
 
-### Definitions & Building Blocks (1–16)
-
-| # | Name | Section |
-|---|---|---|
-| 1 | Electron kinetic energy $\hat{T}$ | §3.1 |
-| 2 | External potential $\hat{V}_{\text{ext}}$ | §3.1 |
-| 3 | Electron-electron interaction $\hat{V}_{\text{int}}$ | §3.1 |
-| 4 | Nuclear kinetic energy $\hat{T}_{\text{nuclei}}$ | §3.1 |
-| 5 | Ion-ion interaction energy $E_{II}$ | §3.1 |
-| 6 | Full Hamiltonian for electrons and nuclei | §3.1 |
-| 7 | Electronic Hamiltonian (compact form) | §3.1 |
-| 8 | Electron density $n(\mathbf{r})$ | §3.1.1 |
-| 9 | Hartree energy $E_{\text{Hartree}}$ | §3.2 |
-| 10 | Slater determinant | §3.6.2 |
-| 11 | Single-body density matrix | §3.6.1 |
-| 12 | Fermi-Dirac distribution | §3.6.1 |
-| 13 | Joint pair probability $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ | §3.7 |
-| 14 | Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ | §3.7 |
-| 15 | Exchange hole for noninteracting fermions | §3.7.1 |
-| 16 | Exchange-correlation hole $n_{\text{xc}}$ | §3.7.2 |
-
-### Theoretical Foundations (17–25)
-
-| # | Name | Section |
-|---|---|---|
-| 17 | Total energy as expectation value | §3.1.1 |
-| 18 | Rayleigh-Ritz variational principle | §3.1.1 |
-| 19 | Time-independent Schrödinger equation | §3.1.1 |
-| 20 | Force (Hellmann-Feynman) theorem | §3.3.1 |
-| 21 | Stress (generalized virial) theorem | §3.3.2 |
-| 22 | Virial theorem for pressure | §3.3.2 |
-| 23 | Generalized force theorem and coupling constant integration | §3.4 |
-| 24 | Free energy and the density matrix | §3.5 |
-| 25 | Koopmans' theorem | §3.6.3 |
-
-### Energy Expressions & Functionals (26–30)
-
-| # | Name | Section |
-|---|---|---|
-| 26 | Classical Coulomb energy grouping $E^{\text{CC}}$ | §3.2 |
-| 27 | Total energy decomposition with exchange-correlation | §3.2 |
-| 28 | Hartree-Fock total energy | §3.6.2 |
-| 29 | Exchange energy from the exchange hole | §3.7.1 |
-| 30 | Independent-particle energy at finite temperature | §3.6.1 |
-
-### Approximations & Their Failures (31–34)
-
-| # | Name | Section |
-|---|---|---|
-| 31 | Born-Oppenheimer (adiabatic) approximation | §3.1 |
-| 32 | Noninteracting (Hartree-like) electron approximation | §3.6.1 |
-| 33 | Hartree-Fock approximation | §3.6.2 |
-| 34 | $\Delta$SCF method | §3.6.4 |
+# 1 Definitions & Building Blocks
 
 
-# Definitions & Building Blocks
-
-
-## 1. Electron kinetic energy $\hat{T}$
+## 1.1 Electron kinetic energy $\hat{T}$
 
 
 > [!question]
@@ -92,7 +104,7 @@ Electron kinetic energy, $\hat{T}$ — The operator representing the total kinet
 
 
 
-## 2. External potential $\hat{V}_{\text{ext}}$
+## 1.2 External potential $\hat{V}_{\text{ext}}$
 
 
 > [!question]
@@ -118,7 +130,7 @@ External potential, $\hat{V}_{\text{ext}}$ — The operator representing the tot
 
 > **Connections Forward:** The Hohenberg-Kohn theorem (Ch 6) proves $n(\mathbf{r}) \to V_{\text{ext}}(\mathbf{r})$ is unique. Pseudopotentials (Ch 11) replace the bare nuclear potential with a smoother effective potential. In VASP, $V_{\text{ext}}$ comes from the POTCAR file (PAW potentials) and the nuclear positions from POSCAR.
 
-## 3. Electron-electron interaction $\hat{V}_{\text{int}}$
+## 1.3 Electron-electron interaction $\hat{V}_{\text{int}}$
 
 
 > [!question]
@@ -144,7 +156,7 @@ Electron-electron interaction, $\hat{V}_{int}$ - The operator representing the t
 
 > **Connections Forward:** Decomposition into Hartree + xc is the basis of DFT (Ch 7). The coupling constant integration (Entry 23) connects noninteracting and interacting systems by scaling $\hat{V}_{\text{int}}$. The exchange-correlation hole (Entry 16) provides a real-space picture of how $\hat{V}_{\text{int}}$ is modified by quantum effects.
 
-## 4. Nuclear kinetic energy $\hat{T}_{\text{nuclei}}$
+## 1.4 Nuclear kinetic energy $\hat{T}_{\text{nuclei}}$
 
 
 > [!question]
@@ -171,7 +183,7 @@ Nuclear kinetic energy, $\hat{T}_{\text{nuclei}}$ — The quantum mechanical kin
 
 > **Connections Forward:** Dropping this term gives the Born-Oppenheimer approximation (Entry 31). Treating it perturbatively gives electron-phonon coupling (Ch 19). Ab initio molecular dynamics (Ch 18) restores nuclear motion classically on the BO energy surface. Nuclear quantum effects (zero-point energy, tunneling) require path-integral methods or explicit nuclear wavefunction calculations.
 
-## 5. Ion-ion interaction energy $E_{II}$
+## 1.5 Ion-ion interaction energy $E_{II}$
 
 
 > [!question]
@@ -196,7 +208,7 @@ Ion-ion interaction energy, $E_{II}$ — The classical Coulomb repulsion energy 
 > **Connections Forward:** Appears in the classical Coulomb grouping (Entry 26) where it combines with $E_{\text{Hartree}}$ and $\int V_{\text{ext}}\,n\,d^3r$ to form the finite $E^{\text{CC}}$. In VASP, the Ewald energy in OUTCAR is $E_{II}$ computed via Ewald summation. The Madelung constant (Appendix F) characterizes $E_{II}$ for specific crystal structures.
 
 
-## 6. Full Hamiltonian for electrons and nuclei (§3.1)
+## 1.6 Full Hamiltonian for electrons and nuclei (§3.1)
 
 > [!question]
 >
@@ -224,7 +236,7 @@ Full Hamiltonian, $\hat{H}$ — The total energy operator for a system of intera
 
 
 
-## 7. Electronic Hamiltonian (compact form)
+## 1.7 Electronic Hamiltonian (compact form)
 
 
 
@@ -243,7 +255,7 @@ Full Hamiltonian, $\hat{H}$ — The total energy operator for a system of intera
 
 Electronic Hamiltonian (compact form), $\hat{H}$ — The total energy operator for $N$ electrons in a fixed nuclear potential, obtained from the full Hamiltonian by invoking the Born-Oppenheimer approximation (dropping the nuclear kinetic energy term, justified by $m_e/M_I \ll 1$) so that the nuclear positions $\{\mathbf{R}_I\}$ enter only as fixed parameters. It decomposes into four physically distinct contributions: the electron kinetic energy $\hat{T}$, which is universal (identical for every electron system); the external potential $\hat{V}_{\text{ext}}$, the electron-nuclear attraction that is the only system-specific part of the Hamiltonian — what makes CeO$_2$ different from Si or H$_2$; the electron-electron Coulomb repulsion $\hat{V}_{\text{int}}$, summed over all distinct pairs with a factor of $\frac{1}{2}$ to correct for double-counting; and the ion-ion interaction $E_{II}$, a classical scalar (not an operator) that is essential for total energies but plays no role in determining the electronic wavefunction.
 
-### Simplifications
+### 1.7.1 Simplifications
 
 Setting $\hbar = m_e = e = 4\pi/\epsilon_0 = 1$ (Hartree atomic units) eliminates all fundamental constants from the equations, reducing notational clutter. The physics is unchanged. Energies are in Hartrees and lengths in Bohr radii, and the individual terms become:
 
@@ -263,9 +275,15 @@ $$ \hat{T} = \sum_i -\frac{1}{2}\nabla_i^2 \qquad \hat{V}_{\text{ext}} = \sum_{i
 > **Connections Forward:** This Hamiltonian is the starting point for everything in the book. The Hohenberg-Kohn theorems (Ch 6) prove that the ground-state density determines all properties of this Hamiltonian. The Kohn-Sham construction (Ch 7) replaces this intractable many-body operator with an auxiliary single-particle system. In VASP, the nuclear positions come from POSCAR and the external potential from POTCAR.
 
 
+## 1.8 Density Operator
+
+> [!definition] Density Operator
+> $$\hat{n}(\mathbf{r})=\sum_{i=1}^N \delta\left(\mathbf{r}-\hat{\mathbf{r}}_i\right)$$
 
 
-## 8. Electron density $n(\mathbf{r})$
+
+
+## 1.9 Electron density $n(\mathbf{r})$
 
 > [!question]
 >
@@ -279,9 +297,12 @@ $$ \hat{T} = \sum_i -\frac{1}{2}\nabla_i^2 \qquad \hat{V}_{\text{ext}} = \sum_{i
 > $$ n(\mathbf{r}) = N \frac{\int d^3r_2 \cdots d^3r_N \sum_{\sigma_1} |\Psi(\mathbf{r}, \mathbf{r}_2, \ldots, \mathbf{r}_N)|^2}{\int d^3r_1 \, d^3r_2 \cdots d^3r_N \, |\Psi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N)|^2} $$
 
 
+$$n(\mathbf{r})=\frac{\langle\Psi| \hat{n}(\mathbf{r})|\Psi\rangle}{\langle\Psi \mid \Psi\rangle}$$
+
+
 Electron density, $n(\mathbf{r})$ — The probability per unit volume of finding any one of the $N$ electrons at position $\mathbf{r}$, regardless of the positions of all other electrons and regardless of spin. It is obtained by fixing one electron's coordinate at $\mathbf{r}$, summing over its spin, integrating the squared modulus of the full $N$-electron wavefunction over the coordinates of the remaining $N-1$ electrons, and multiplying by $N$ to account for the indistinguishability of electrons. The denominator ensures that the density is properly normalized, meaning $n(\mathbf{r})$ integrates over all space to give exactly $N$, the total number of electrons in the system. The total density $n(\mathbf{r}) = n^\uparrow(\mathbf{r}) + n^\downarrow(\mathbf{r})$ serves as the central variable in density functional theory (DFT), where, by the Hohenberg-Kohn theorems, it uniquely determines (up to a constant) the external potential and hence all ground-state properties of the system.
 
-### Simplifications
+### 1.9.1 Simplifications
 
 For a system of independent particles described by single-particle orbitals $\psi_i^\sigma$ with occupation numbers $f_i^\sigma$, the spin-resolved density reduces to a weighted sum of orbital densities:
 
@@ -306,7 +327,7 @@ This is far simpler than the full many-body definition because there is no $3N$-
 
 > **Connections Forward:** The density is the central variable of DFT (Ch 6–9). The Hohenberg-Kohn theorem proves it determines all ground-state properties. In VASP, the CHGCAR file contains $n(\mathbf{r})$ on a real-space grid.
 
-## 9. Hartree energy $E_{\text{Hartree}}$
+## 1.10 Hartree energy $E_{\text{Hartree}}$
 
 > [!question]
 >
@@ -335,7 +356,7 @@ Hartree energy, $E_{\text{Hartree}}$ — The classical electrostatic self-intera
 
 
 
-## 10. Slater determinant
+## 1.11 Slater determinant
 
 
 > [!question]
@@ -352,7 +373,7 @@ Hartree energy, $E_{\text{Hartree}}$ — The classical electrostatic self-intera
 
 Slater determinant, $\Phi$ — An antisymmetrized, multielectron wavefunction constructed as the determinant of a matrix whose elements are one-electron spin-orbitals $\phi_i(\mathbf{r}_j, \sigma_j)$, written compactly as $\Phi(1, 2, \ldots, N) = (1/\sqrt{N!})\det[\phi_i(\mathbf{r}_j, \sigma_j)]$, where the rows label orbitals and the columns label electrons (or vice versa). It is the simplest wavefunction that satisfies the Pauli exclusion principle: swapping any two columns (exchanging two electrons) flips the sign of the determinant, enforcing antisymmetry. The prefactor $1/\sqrt{N!}$ normalizes the wavefunction when the spin-orbitals are orthonormal. Slater determinants serve as the fundamental building blocks of Hartree-Fock theory and configuration interaction methods, and all correlation beyond exchange is, by definition, what a single determinant cannot capture.
 
-### Simplifications
+### 1.11.1 Simplifications
 
 If any two rows are identical — meaning two electrons occupy the same spin-orbital — the determinant vanishes ($\Phi = 0$). This is the Pauli exclusion principle expressed algebraically: no two electrons can share the same quantum state.
 
@@ -364,7 +385,7 @@ If any two rows are identical — meaning two electrons occupy the same spin-orb
 
 > **Connections Forward:** Hartree-Fock (Entry 33) minimizes the energy over single determinants. The Kohn-Sham construction (Ch 7) uses a Slater determinant of auxiliary orbitals to produce the exact density. Correlation (Entry 16) is everything a single determinant misses.
 
-## 11b. Projection operator
+## 1.12 11b. Projection operator
 
 > [!question]
 >
@@ -387,7 +408,7 @@ Projection operator, $|\psi_i^\sigma\rangle\langle\psi_i^\sigma|$ — An operato
 > **Connections Forward:** Projection operators are the building blocks of the single-body density matrix (Entry 11). They also appear implicitly in the resolution of the identity $\sum_i |\psi_i\rangle\langle\psi_i| = \hat{1}$, which is used throughout quantum mechanics to insert complete sets of states.
 
 
-## 11. Single-body density matrix
+## 1.13 Single-body density matrix
 
 > [!question]
 >
@@ -401,7 +422,7 @@ Projection operator, $|\psi_i^\sigma\rangle\langle\psi_i^\sigma|$ — An operato
 
 Single-body density matrix, $\hat{\rho}$ — An operator that encodes the complete single-particle occupation information for a system of independent or effectively independent electrons, constructed as a weighted sum of projection operators $|\psi_i^\sigma\rangle f_i^\sigma \langle\psi_i^\sigma|$ over all orbitals. Each projector picks out a single orbital, and the Fermi-Dirac occupation $f_i^\sigma$ weights it by the probability that the orbital is actually occupied at thermal equilibrium — a fully occupied orbital contributes its full weight, a partially occupied orbital contributes a fraction, and an empty orbital contributes nothing. Without these weights, summing all projectors would just give the identity operator, treating every orbital equally regardless of whether electrons are in it; the $f_i^\sigma$ factors are what turn a sum over all possible states into a description of the system's actual physical state. Its diagonal part in the position-spin representation yields the electron density, $n^\sigma(\mathbf{r}) = \rho(\mathbf{r},\sigma;\mathbf{r},\sigma)$, while its off-diagonal part $\rho(\mathbf{r},\sigma;\mathbf{r}',\sigma)$ with $\mathbf{r} \neq \mathbf{r}'$ records how the electron's wavefunction phase at one point connects to its phase at another — the density tells you *where* electrons are, but not *how they are moving*, and recovering that requires knowing how the wavefunction changes from point to point. This off-diagonal information is what makes it possible to compute the kinetic energy (which depends on spatial derivatives of the wavefunction) and the exchange energy (which depends on orbital overlap between different positions). Any expectation value of a single-body operator reduces to $\langle\hat{O}\rangle = \text{Tr}\,\hat{\rho}\hat{O} = \sum_{i,\sigma} f_i^\sigma \langle\psi_i^\sigma|\hat{O}|\psi_i^\sigma\rangle$, collapsing the many-body trace to a weighted sum over single-particle matrix elements.
 
-### Simplifications
+### 1.13.1 Simplifications
 
 In the position-spin representation, the density matrix becomes:
 
@@ -423,7 +444,7 @@ $$ n^\sigma(\mathbf{r}) = \rho(\mathbf{r},\sigma;\mathbf{r},\sigma) = \sum_i f_i
 
 > **Connections Forward:** The density matrix appears in the exchange hole (Entry 29), in the force theorem applied to nonlocal potentials (Ch 13), and in the formulation of the Kohn-Sham equations (Ch 7). In VASP, the density matrix for correlated orbitals is the object that the DFT+U correction acts on.
 
-## 12. Fermi-Dirac distribution
+## 1.14 Fermi-Dirac distribution
 
 > [!question]
 >
@@ -446,7 +467,7 @@ Fermi-Dirac distribution, $f_i^\sigma$ — The equilibrium occupation probabilit
 
 > **Connections Forward:** The Fermi-Dirac distribution is used in all finite-temperature DFT calculations. In VASP, `ISMEAR` and `SIGMA` control the smearing scheme — Fermi-Dirac smearing (`ISMEAR = -1`) directly implements this distribution. The E-fermi in OUTCAR is $\mu$.
 
-## 13. Joint pair probability $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$
+## 1.15 Joint pair probability $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$
 
 > [!question]
 >
@@ -469,7 +490,7 @@ Joint pair probability, $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ — The proba
 
 > **Connections Forward:** The pair correlation function determines the exchange-correlation energy (Entry 29) and its decomposition into exchange and correlation holes (Entry 16). The coupling constant integration (Entry 23) provides a route to the xc energy through the pair distribution.
 
-## 14. Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$
+## 1.16 Pair distribution function $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$
 
 > [!question]
 >
@@ -483,7 +504,7 @@ Joint pair probability, $n(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ — The proba
 
 Pair distribution function, $g(\mathbf{r},\sigma;\mathbf{r}',\sigma')$ — A dimensionless measure of how much the actual probability of finding two electrons together deviates from the uncorrelated baseline. The raw pair correlation $\Delta n$ (Entry 13) depends on the local density — a region with more electrons naturally has a larger $\Delta n$ simply because there are more electrons present, not because they are more strongly correlated. Dividing the joint pair probability by the uncorrelated product $n(\mathbf{r},\sigma)\,n(\mathbf{r}',\sigma')$ normalizes out this density dependence, yielding a pure measure of correlation strength: $g = 1$ means the two electrons are completely uncorrelated, $g < 1$ means they avoid each other more than independent particles would (a "hole"), and $g > 1$ means they are found together more often than independent particles would be — which can occur for opposite-spin pairs when correlation draws them closer than the mean-field picture predicts. For same-spin fermions the Pauli principle enforces $g(\mathbf{r},\sigma;\mathbf{r},\sigma) = 0$ — two electrons of the same spin can never occupy the same point. At large separations $g \to 1$, because the correlation correction $\Delta n$ is short-ranged (Entry 13), making $g - 1$ a dimensionless, short-ranged measure of electronic correlation.
 
-### Alternate Forms
+### 1.16.1 Alternate Forms
 
 Substituting the decomposition $n(\mathbf{r},\sigma;\mathbf{r}',\sigma') = n(\mathbf{r},\sigma)\,n(\mathbf{r}',\sigma') + \Delta n$ (Entry 13) into the definition gives:
 
@@ -491,7 +512,7 @@ $$ g(\mathbf{r},\sigma;\mathbf{r}',\sigma') = 1 + \frac{\Delta n(\mathbf{r},\sig
 
 This form isolates $g - 1$ as the pair correlation normalized by the uncorrelated density product, which allows comparison of correlation strength across different regions or different systems on equal footing — two regions with very different densities may have very different $\Delta n$ values, but if $g - 1$ is the same in both, the electrons are equally correlated; the difference in $\Delta n$ was just due to having more or fewer electrons present, not stronger or weaker correlation.
 
-### Simplifications
+### 1.16.2 Simplifications
 
 For uncorrelated particles, $\Delta n = 0$ and $g = 1$ everywhere — finding one electron at $\mathbf{r}$ tells you nothing about whether another is at $\mathbf{r}'$.
 
@@ -508,7 +529,7 @@ At large separation $|\mathbf{r} - \mathbf{r}'| \to \infty$, $g \to 1$ because t
 
 > **Connections Forward:** The pair distribution function is the central object for understanding exchange and correlation energies. It connects directly to the xc hole (Entry 16) and the coupling constant integration formula for $E_{\text{xc}}$ in DFT (Ch 8, §8.2).
 
-## 15. Exchange hole for noninteracting fermions (§3.7.1)
+## 1.17 Exchange hole for noninteracting fermions (§3.7.1)
 
 > [!question]
 >
@@ -531,7 +552,7 @@ At large separation $|\mathbf{r} - \mathbf{r}'| \to \infty$, $g \to 1$ because t
 > **Connections Forward:** The exchange energy (Entry 29) is the Coulomb interaction of each electron with its exchange hole. The exchange hole is the starting point for understanding the exchange-correlation hole (Entry 16) and for constructing approximate density functionals (Ch 8–9). Self-interaction cancellation in Hartree-Fock is a direct consequence of the exchange hole integrating to exactly one electron.
 
 
-## 16. Exchange-correlation hole $n_{\text{xc}}$
+## 1.18 Exchange-correlation hole $n_{\text{xc}}$
 
 > [!question]
 >
@@ -556,9 +577,9 @@ Exchange-correlation hole, $n_{\text{xc}}$ — The total change in the density o
 
 ---
 
-# Theoretical Foundations
+# 2 Theoretical Foundations
 
-## 17. Total energy as expectation value
+## 2.1 Total energy as expectation value
 
 
 > [!question]
@@ -584,7 +605,7 @@ Total energy as expectation value — The ground-state total energy expressed as
 
 > **Connections Forward:** This energy expression is reorganized in Entry 26 (classical Coulomb grouping) and Entry 27 (xc decomposition) for practical use. The Kohn-Sham total energy (Ch 7) is a rearrangement of these same four contributions.
 
-## 18. Rayleigh-Ritz variational principle
+## 2.2 Rayleigh-Ritz variational principle
 
 > [!question]
 >
@@ -604,7 +625,7 @@ Rayleigh-Ritz variational principle — The statement that the energy functional
 | $E$ | Lagrange multiplier → eigenvalue | Hartree | **Energy eigenvalue** | Enforces normalization; equals the energy of the stationary state. |
 | $\|\Psi\rangle$ | Trial wavefunction | — | **Variational wavefunction** | Any normalized, antisymmetric $N$-electron wavefunction. The one that minimizes $\langle\hat{H}\rangle$ is the ground state. |
 
-### Alternate Forms
+### 2.2.1 Alternate Forms
 
 Requiring stationarity of the energy ratio $\langle\Psi|\hat{H}|\Psi\rangle / \langle\Psi|\Psi\rangle$ subject to the normalization constraint $\langle\Psi|\Psi\rangle = 1$, enforced by the Lagrange multiplier $E$, gives the equivalent variational condition:
 
@@ -614,7 +635,7 @@ Setting this variation to zero yields the time-independent Schrödinger equation
 
 > **Connections Forward:** The variational principle is the logical backbone of the force theorem (Entry 20), the Hohenberg-Kohn theorems (Ch 6), and the Kohn-Sham construction (Ch 7). The Hartree-Fock equations (Entry 33) arise from restricting the variational search to single determinants.
 
-## 19. Time-independent Schrödinger equation
+## 2.3 Time-independent Schrödinger equation
 
 > [!question]
 >
@@ -636,7 +657,7 @@ Time-independent Schrödinger equation — The eigenvalue equation $\hat{H}|\Psi
 
 > **Connections Forward:** All of electronic structure theory is an attempt to solve this equation approximately. DFT (Ch 6–9) replaces it with single-particle equations. Hartree-Fock (Entry 33) restricts the solution space to single determinants. Quantum Monte Carlo samples the wavefunction stochastically.
 
-## 20. Force (Hellmann-Feynman) theorem
+## 2.4 Force (Hellmann-Feynman) theorem
 
 > [!question]
 >
@@ -657,7 +678,7 @@ Force (Hellmann-Feynman) theorem — The statement that the force on nucleus $I$
 | $-\int n(\mathbf{r})\,\partial V_{\text{ext}}/\partial\mathbf{R}_I\,d^3r$ | Vector | Hartree/Bohr | **Electron-nuclear force** | Force exerted by the electron cloud on nucleus $I$. Purely electrostatic. |
 | $-\partial E_{II}/\partial\mathbf{R}_I$ | Vector | Hartree/Bohr | **Ion-ion force** | Coulomb repulsion from other nuclei. Classical. |
 
-### Alternate Forms
+### 2.4.1 Alternate Forms
 
 More generally, the derivative of the energy with respect to any parameter $\lambda$ in the Hamiltonian equals the expectation value of the derivative of the Hamiltonian:
 
@@ -665,13 +686,13 @@ $$ \frac{\partial E}{\partial \lambda} = \langle\Psi|\frac{\partial \hat{H}}{\pa
 
 The force on nucleus $I$ is the special case $\lambda = \mathbf{R}_I$. This general form is the basis for the coupling constant integration (Entry 23) and for computing the stress tensor (Entry 21).
 
-### Assumptions
+### 2.4.2 Assumptions
 
 The theorem is exact when $|\Psi\rangle$ is an exact eigenstate (or, more generally, when the energy is stationary with respect to all variational parameters). When the basis is incomplete and depends on nuclear positions, Pulay corrections must be added. For nonlocal potentials (pseudopotentials), the force cannot be expressed solely in terms of the density but retains the form $-\langle\Psi|\partial\hat{H}/\partial\mathbf{R}_I|\Psi\rangle$.
 
 > **Connections Forward:** Forces are computed in every structural relaxation. In VASP with a plane-wave basis, the basis is independent of nuclear positions so there are no Pulay corrections for internal coordinates — but Pulay *stress* corrections are needed (Ch 13). The force theorem also underlies the coupling constant integration (Entry 23).
 
-## 21. Stress (generalized virial) theorem
+## 2.5 Stress (generalized virial) theorem
 
 
 > [!question]
@@ -702,7 +723,7 @@ Stress (generalized virial) theorem — The generalization of the force theorem 
 | $x_{kk'} = \lvert\mathbf{x}_{kk'}\rvert$ | Scalar | Bohr | **Pair distance** | Magnitude of the separation between particles $k$ and $k'$. |
 | $\hat{V}$ | Operator | Hartree | **Pair interaction potential** | The Coulomb interaction between particles $k$ and $k'$. Its radial derivative $d\hat{V}/dx_{kk'}$ weights the interaction tensor. |
 
-### Alternate Forms
+### 2.5.1 Alternate Forms
 
 Evaluating the energy derivative explicitly gives the stress as an expectation value with two physically distinct contributions:
 
@@ -712,7 +733,7 @@ The first term is the kinetic stress — it measures how much momentum flux the 
 
 > **Connections Forward:** The stress tensor is needed for cell optimization in VASP (ISIF ≥ 3). Pulay stress — the spurious stress from an incomplete plane-wave basis — is a major practical concern (Ch 13). Setting ENCUT sufficiently high or using the correction from Appendix G is essential.
 
-## 22. Virial theorem for pressure
+## 2.6 Virial theorem for pressure
 
 > [!question]
 >
@@ -726,11 +747,11 @@ The first term is the kinetic stress — it measures how much momentum flux the 
 
 Virial theorem for pressure — An exact constraint that links the pressure of a system to the balance between its kinetic and potential energies. It is obtained from the stress theorem (Entry 21) by taking the isotropic trace of the stress tensor — averaging over the three diagonal components $\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$ — which is why the factor of 3 appears: there are three spatial dimensions contributing to the pressure. The coefficients 2 and 1 in front of the kinetic and potential energies reflect the distinct scaling behavior of each under a uniform dilation of space: kinetic energy scales as $L^{-2}$ (it depends on spatial derivatives, which grow when the system shrinks) while the Coulomb potential scales as $L^{-1}$ (it depends on inverse distances), and these different power laws are what produce the 2-to-1 ratio. The theorem serves as a powerful consistency check on calculations — if your computed kinetic and potential energies don't satisfy this relation at the correct pressure, something is wrong.
 
-### Assumptions
+### 2.6.1 Assumptions
 
 The theorem requires that all interactions are Coulombic ($1/r$) — if other power-law potentials or non-Coulombic interactions are present, the coefficients change. It also requires equilibrium: the system must be in a stationary state (or thermal equilibrium), so that the time-averaged virial is well-defined. Subject to these conditions, the theorem is exact and general, holding for any system — classical or quantum, at any temperature.
 
-### Simplifications
+### 2.6.2 Simplifications
 
 At zero pressure ($P = 0$), the left side vanishes and the theorem reduces to:
 
@@ -753,7 +774,7 @@ This means the total energy of a bound Coulomb system at equilibrium is always n
 
 
 
-## 23. Generalized force theorem and coupling constant integration
+## 2.7 Generalized force theorem and coupling constant integration
 
 > [!question]
 >
@@ -776,7 +797,7 @@ Generalized force theorem and coupling constant integration — A technique for 
 | $\partial\hat{H}/\partial\lambda$ | Operator | Hartree | **Hamiltonian derivative** | How the Hamiltonian changes per unit change in $\lambda$. For the coupling constant application ($e^2 \to e^2\lambda$), this is simply $\hat{V}_{\text{int}}$. |
 | $\Delta E$ | Scalar | Hartree | **Energy difference** | The total energy change accumulated by integrating from $\lambda_1$ to $\lambda_2$. |
 
-### Simplifications
+### 2.7.1 Simplifications
 
 When $\lambda$ specifically scales the electron-electron interaction ($e^2 \to e^2\lambda$), the Hamiltonian derivative $\partial\hat{H}/\partial\lambda$ reduces to $\hat{V}_{\text{int}}$ and the integration limits are 0 (noninteracting) to 1 (fully interacting):
 
@@ -786,7 +807,7 @@ At $\lambda = 0$ the electrons do not interact and the wavefunction is a single 
 
 > **Connections Forward:** The coupling constant integration is a key ingredient in the construction of the adiabatic connection formula for $E_{\text{xc}}$ (Ch 8, §8.2; Ch 9, §9.7). It provides the conceptual foundation for hybrid functionals, which mix exact exchange ($\lambda = 0$) with DFT correlation ($\lambda = 1$).
 
-## 24. Free energy and the density matrix (§3.5)
+## 2.8 Free energy and the density matrix (§3.5)
 
 > [!question]
 >
@@ -800,7 +821,7 @@ At $\lambda = 0$ the electrons do not interact and the wavefunction is a single 
 
 Free energy and the density matrix — The ==Helmholtz free energy== $F = U - TS$ expressed as a functional of the many-body density matrix $\hat{\rho}$, consisting of two competing contributions: the internal energy $\text{Tr}\,\hat{\rho}\hat{H}$, which favors low-energy states, and the entropy term $\frac{1}{\beta}\text{Tr}\,\hat{\rho}\ln\hat{\rho}$, which favors spreading occupation probability over many states. The energy term asks "which states are lowest in energy?" and tries to put all the weight there; the entropy term asks "how many ways can I spread the probability around?" and tries to make the distribution as uniform as possible. When $k_BT$ is much smaller than the energy spacing between quantum states, temperature is "low" — only the lowest states are appreciably occupied and the system effectively collapses to its ground state. When $k_BT$ is much larger than the spacing, temperature is "high" — many states get populated and the distribution becomes nearly uniform. What counts as "high" or "low" is not absolute but depends on the system's energy scale: for electrons in a typical solid the relevant spacings are on the order of eV and $k_BT \approx 0.025$ eV at room temperature, so room temperature is "low" for electrons; for vibrational modes in the same solid the spacings may be tens of meV, making room temperature "moderate" or "high" for phonons. The free energy is the thermodynamic potential that mediates this competition — the equilibrium state is the density matrix that minimizes $F$, balancing the drive toward low energy against the drive toward high entropy.
 
-### Simplifications
+### 2.8.1 Simplifications
 
 Minimizing $F$ with respect to $\hat{\rho}$ yields the equilibrium Boltzmann density matrix:
 
@@ -820,7 +841,7 @@ This assigns occupation probability proportional to $e^{-\beta E_i}$ to each eig
 
 > **Connections Forward:** The Mermin functional (Ch 6, §6.5.1) extends DFT to finite temperature using the density matrix. In VASP, Fermi-Dirac smearing effectively works at finite electronic temperature; the free energy $F$ (rather than $E$) should be used for metallic systems.
 
-## 25. Koopmans' theorem
+## 2.9 Koopmans' theorem
 
 > [!question]
 >
@@ -835,7 +856,7 @@ This assigns occupation probability proportional to $e^{-\beta E_i}$ to each eig
 
 Koopmans' theorem — An identification between single-particle eigenvalues and total energy differences: the Hartree-Fock eigenvalue of an occupied orbital is (minus) the ionization energy for removing that electron, and the eigenvalue of an unoccupied orbital is (minus) the electron affinity for adding an electron to that orbital. This gives eigenvalues a direct physical interpretation — they are the energies you would measure in a photoemission or inverse photoemission experiment, provided the remaining electrons don't rearrange after the electron is removed or added. The reason this identification works within Hartree-Fock is that the exchange term exactly cancels the spurious self-interaction in the Hartree potential: each electron's eigenvalue already accounts for the fact that it should not repel itself, so removing it costs exactly $\varepsilon_i$ in energy without any self-interaction artifact. This self-interaction cancellation is specific to Hartree-Fock — in DFT, Kohn-Sham eigenvalues do not obey Koopmans' theorem because the exchange-correlation potential only approximately cancels self-interaction.
 
-### Assumptions
+### 2.9.1 Assumptions
 
 The theorem requires frozen orbitals — all orbitals other than the one being added or removed are held fixed. Two effects are neglected by this assumption: orbital relaxation (the remaining electrons rearrange to lower the ion's energy after an electron is removed, so the true ionization energy is smaller than $|\varepsilon_i|$) and changes in correlation energy (the correlation energy of the $N$-electron and $(N-1)$-electron systems differ). These two errors partially cancel — relaxation lowers the energy, missing correlation raises it — but the cancellation is imperfect, and the net result is that Hartree-Fock eigenvalue differences systematically overestimate experimental values.
 
@@ -847,7 +868,7 @@ The theorem requires frozen orbitals — all orbitals other than the one being a
 | $E_{\text{HF}}^{\text{frozen}}(N-1, i)$ | Scalar | Hartree | **Frozen-orbital ion energy** | Total Hartree-Fock energy of the $(N-1)$-electron system after removing orbital $i$, with all remaining orbitals unchanged. |
 | $E_{\text{HF}}^{\text{frozen}}(N+1, a)$ | Scalar | Hartree | **Frozen-orbital anion energy** | Total Hartree-Fock energy of the $(N+1)$-electron system after adding an electron to orbital $a$, with all other orbitals unchanged. |
 
-### Failure Modes
+### 2.9.2 Failure Modes
 
 | System Class | Symptom | Physical Reason |
 |---|---|---|
@@ -859,9 +880,9 @@ The theorem requires frozen orbitals — all orbitals other than the one being a
 
 ---
 
-# Energy Expressions & Functionals
+# 3 Energy Expressions & Functionals
 
-## 26. Classical Coulomb energy grouping $E^{\text{CC}}$
+## 3.1 Classical Coulomb energy grouping $E^{\text{CC}}$
 
 > [!question]
 >
@@ -882,17 +903,17 @@ Classical Coulomb energy grouping, $E^{\text{CC}}$ — The total classical elect
 | $\int V_{\text{ext}}\,n\,d^3r$ | Functional of $n$ | Hartree   | **Electron-nuclear attraction** | The coupling between the electron cloud and the nuclear potential. Diverges alone.                                                      |
 | $E_{II}$                       | Scalar            | Hartree   | **Ion-ion repulsion**           | Classical nuclear-nuclear Coulomb energy. Diverges alone.                                                                               |
 
-### Assumptions
+### 3.1.1 Assumptions
 
 The cancellation of divergences requires charge neutrality — the total electron charge must exactly balance the total nuclear charge. If the system is not neutral, the electrostatic energy of an infinite periodic array of net charges diverges even after grouping. In practice, charged periodic cells (e.g., a vacancy with a net charge) require additional corrections (Makov-Payne, etc.) to account for the spurious interaction of the periodic images. The grouping also assumes periodic boundary conditions — without periodicity, the individual terms don't actually diverge (see Simplifications).
 
-### Simplifications
+### 3.1.2 Simplifications
 
 For a finite system (a molecule in vacuum, a cluster), each of the three terms is individually finite because the charge distributions have finite extent. The grouping is still convenient and numerically efficient, but it is not strictly necessary — you could compute $E_{\text{Hartree}}$, $\int V_{\text{ext}}\,n\,d^3r$, and $E_{II}$ separately and add them up. The divergence issue and the requirement to group are specific to periodic (extended) systems.
 
 > **Connections Forward:** This grouping appears in VASP output as the sum of Hartree, electron-nuclear, and Ewald energies. In the Kohn-Sham total energy (Ch 7), $E^{\text{CC}}$ is one of the well-defined energy blocks. Ewald summation (Appendix F) evaluates it in reciprocal space.
 
-## 27. Total energy decomposition with exchange-correlation
+## 3.2 Total energy decomposition with exchange-correlation
 
 > [!question]
 >
@@ -917,7 +938,7 @@ Total energy decomposition with exchange-correlation — A rearrangement of the 
 
 > **Connections Forward:** This decomposition is the prototype for the Kohn-Sham energy expression (Ch 7). The insight that xc is short-ranged is the physical justification for LDA (Ch 8) and GGA. It also explains why the xc hole picture (Entry 16) works — the relevant physics is local.
 
-## 28. Hartree-Fock total energy
+## 3.3 Hartree-Fock total energy
 
 > [!question]
 >
@@ -939,7 +960,7 @@ Hartree-Fock total energy — The total energy of a system described by a single
 
 > **Connections Forward:** The Hartree-Fock energy is the reference for defining the correlation energy ($E_c = E_{\text{exact}} - E_{\text{HF}}$). The DFT definition of $E_c$ differs slightly — orbitals are constrained to give the exact density rather than minimize $E_{\text{HF}}$ (see Ch 7). The exchange term here becomes the "exact exchange" mixed into hybrid functionals (PBE0, HSE).
 
-## 29. Exchange energy from the exchange hole
+## 3.4 Exchange energy from the exchange hole
 
 > [!question]
 >
@@ -962,7 +983,7 @@ Exchange energy from the exchange hole, $E_x$ — The energy lowering due to the
 
 > **Connections Forward:** The exchange energy is the starting point for understanding $E_{\text{xc}}$ in DFT. The LDA exchange (Dirac, Ch 5) approximates it locally. The exact exchange is the $\lambda = 0$ limit in the adiabatic connection (Ch 9, §9.7) and appears explicitly in hybrid functionals (PBE0: 25% exact exchange; HSE: screened exact exchange).
 
-## 30. Independent-particle energy at finite temperature
+## 3.5 Independent-particle energy at finite temperature
 
 > [!question]
 >
@@ -988,11 +1009,11 @@ Independent-particle energy at finite temperature — The expectation value of a
 | $\mu$ | Scalar | Hartree (or eV) | **Chemical potential** | Energy at which the Fermi-Dirac function equals $\frac{1}{2}$. At $T = 0$, identical to the ==Fermi energy==. |
 | $k_BT$ | Scalar | Hartree (or eV) | **Thermal energy scale** | Sets the width of the Fermi-Dirac smearing. States within $\sim k_BT$ of $\mu$ have fractional occupation. |
 
-### Assumptions
+### 3.5.1 Assumptions
 
 The reduction from a many-body trace to a sum over single-particle orbitals requires that the particles be **non-interacting** — the many-body state must be a single Slater determinant (or, at finite temperature, a density matrix built from independent single-particle occupations). In Kohn-Sham DFT this is achieved by construction: the interacting system is mapped onto a fictitious non-interacting system with the same density. The formula therefore applies exactly to the Kohn-Sham system, but the eigenvalues $\varepsilon_i^\sigma$ are Kohn-Sham eigenvalues, not true quasiparticle energies.
 
-### Simplifications
+### 3.5.2 Simplifications
 
 When the operator is the Hamiltonian itself ($\hat{O} = \hat{H}$), the matrix elements become eigenvalues and the expectation value reduces to the ==band energy== (Eq. 3.39):
 
@@ -1004,9 +1025,9 @@ At $T = 0$, the Fermi-Dirac weights become step functions — $f_i^\sigma = 1$ f
 
 ---
 
-# Approximations & Their Failures
+# 4 Approximations & Their Failures
 
-## 31. Born-Oppenheimer (adiabatic) approximation
+## 4.1 Born-Oppenheimer (adiabatic) approximation
 
 > [!question]
 >
@@ -1033,7 +1054,7 @@ Born-Oppenheimer (adiabatic) approximation — The approximation that the nuclea
 | $m_e / M_I$ | Dimensionless ratio | — | **Electron-to-nuclear mass ratio** | The small parameter justifying the approximation. Even for hydrogen (lightest nucleus), $m_e/M_I \approx 1/1836$. |
 | $E(\{\mathbf{R}_I\})$ | Scalar | Hartree | **Born-Oppenheimer energy surface** | The electronic ground-state energy as a function of nuclear positions. Nuclei move on this surface classically or semiclassically. |
 
-### Failure Modes
+### 4.1.1 Failure Modes
 
 | System Class | Symptom | Physical Reason |
 |---|---|---|
@@ -1042,13 +1063,13 @@ Born-Oppenheimer (adiabatic) approximation — The approximation that the nuclea
 | Superconductors | Cannot predict $T_c$ from BO surface alone | Cooper pairing requires explicit electron-phonon interaction |
 | Conical intersections (molecules) | Breakdown of adiabatic energy surface | Degenerate electronic states at nuclear configuration |
 
-### Practical Consequences
+### 4.1.2 Practical Consequences
 
 For your CeO₂ calculations, the Born-Oppenheimer approximation is excellent — you compute the electronic ground state for each set of nuclear positions during structural relaxation, and generate Born-Oppenheimer molecular dynamics (BOMD) trajectories for MLIP training data. Phonons can be computed from the curvature of the energy surface via finite differences or DFPT.
 
 > **Connections Forward:** Every DFT calculation assumes Born-Oppenheimer. Ab initio molecular dynamics (AIMD) in VASP computes forces from the BO energy surface at each time step. Electron-phonon coupling (perturbation theory on top of BO) is needed for transport properties and superconductivity.
 
-## 32. Noninteracting (Hartree-like) electron approximation
+## 4.2 Noninteracting (Hartree-like) electron approximation
 
 > [!question]
 >
@@ -1072,17 +1093,17 @@ Noninteracting (Hartree-like) electron approximation — The replacement of the 
 | $V_{\text{Hartree}}(\mathbf{r})$ | Scalar field | Hartree | **Hartree potential** | The classical electrostatic potential from the total electron density (Entry 9). Includes the unphysical self-interaction. |
 | $V_{\text{xc}}^\sigma(\mathbf{r})$ | Scalar field | Hartree | **Exchange-correlation potential** | The Kohn-Sham addition: a local, multiplicative potential that folds exchange, correlation, and the self-interaction correction into $V_{\text{eff}}$. Spin-dependent. |
 
-### Assumptions
+### 4.2.1 Assumptions
 
 The many-body electron-electron interaction is replaced by an effective single-particle potential — each electron sees an average field from all the others rather than interacting with them individually. This is exact in the Kohn-Sham formulation (the non-interacting system is constructed to reproduce the true density), but the exactness is only as good as the approximation to $V_{\text{xc}}^\sigma$. In the original Hartree approach, exchange and correlation are ignored entirely.
 
-### Practical Consequences
+### 4.2.2 Practical Consequences
 
 The entire machinery of electronic structure — plane-wave basis sets (Ch 12–13), pseudopotentials (Ch 11), k-point sampling — is devoted to solving this equation efficiently and accurately.
 
 > **Connections Forward:** The Kohn-Sham equations (Ch 7) are exactly this equation with a specific choice of $V_{\text{eff}}$. All the computational methods in Chapters 11–17 are methods for solving it. In VASP, the SCF cycle iteratively updates $V_{\text{eff}}$ until self-consistency.
 
-## 33. Hartree-Fock approximation
+## 4.3 Hartree-Fock approximation
 
 > [!question]
 >
@@ -1108,11 +1129,11 @@ Hartree-Fock approximation — The variational approximation in which the many-b
 | $\hat{V}_x^{i,\sigma}$ | Operator | Hartree | **Exchange operator** | Nonlocal and state-dependent — acts on $\psi_i$ by integrating over all other same-spin orbitals at $\mathbf{r}'$. Cannot be written as a simple function times $\psi_i(\mathbf{r})$. |
 | $N_{\text{basis}}^4$ | — | — | **HF scaling** | Computational cost scales as the fourth power of the basis set size, due to the four-index two-electron integrals. |
 
-### Assumptions
+### 4.3.1 Assumptions
 
 The many-body wavefunction is restricted to a **single Slater determinant** — the best possible antisymmetric product of single-particle orbitals. This is a variational restriction: the true ground state may require a superposition of many determinants. By construction, the single-determinant restriction captures exchange exactly (antisymmetry is built in) but misses all ==correlation energy==, defined as $E_c = E_{\text{exact}} - E_{\text{HF}}$. The correlation energy is always negative (the true ground state is always lower than the best single determinant).
 
-### Alternate Forms
+### 4.3.2 Alternate Forms
 
 The compact notation writes the full equation as an effective eigenvalue problem:
 
@@ -1120,7 +1141,7 @@ $$\hat{H}_{\text{eff}}^{i}\psi_i^\sigma = \varepsilon_i^\sigma\psi_i^\sigma, \qq
 
 The superscript $i$ on $\hat{H}_{\text{eff}}^{i}$ is the key distinction from Entry 32: the effective Hamiltonian depends on which orbital it acts on, because the exchange operator involves $\psi_i$ itself. Each orbital sees a slightly different equation — the system is not a standard eigenvalue problem but a set of coupled integro-differential equations solved self-consistently.
 
-### Failure Modes
+### 4.3.3 Failure Modes
 
 | System Class | Symptom | Physical Reason |
 |---|---|---|
@@ -1129,13 +1150,13 @@ The superscript $i$ on $\hat{H}_{\text{eff}}^{i}$ is the key distinction from En
 | Strongly correlated oxides | Cannot describe Mott insulating state | Missing correlation is the dominant energy scale for localized electrons |
 | Van der Waals systems | No binding | Dispersion is a pure correlation effect, absent in HF |
 
-### Practical Consequences
+### 4.3.4 Practical Consequences
 
 Hartree-Fock is rarely used as a standalone method for solids. Its main roles in modern electronic structure are: (1) defining the correlation energy as $E_c = E_{\text{exact}} - E_{\text{HF}}$, (2) providing the exact exchange used in hybrid functionals (PBE0, HSE), and (3) serving as the starting point for post-HF methods in quantum chemistry (MP2, CCSD(T)).
 
 > **Connections Forward:** The exchange term here is the "exact exchange" ($E_{\text{xx}}$) mixed into hybrid functionals (Ch 9). HSE screens the long-range part to cure the metallic-DOS problem. The Hartree-Fock exchange operator reappears in the generalized Kohn-Sham scheme.
 
-## 34. $\Delta$SCF method
+## 4.4 $\Delta$SCF method
 
 > [!question]
 >
@@ -1162,11 +1183,11 @@ $\Delta$SCF method — The approach of computing electron addition and removal e
 | $E_{\text{addition}}$ | Scalar | Hartree (or eV) | **Addition energy (electron affinity)** | Energy gained by adding an electron. Improves on Koopmans' $-\varepsilon_a$ by including orbital relaxation. |
 | $N$ | Integer | — | **Electron number** | Total number of electrons in the reference system. |
 
-### Assumptions
+### 4.4.1 Assumptions
 
 The method assumes that (1) the total energy functional is sufficiently accurate — in DFT, this means the exchange-correlation functional captures the relevant physics for both the $N$ and $N\pm1$ systems, (2) the SCF procedure converges to the correct ground state for each electron number, which is not guaranteed when the $N\pm1$ system has a very different electronic structure, and (3) for extended systems in supercell calculations, finite-size errors (spurious image interactions, incomplete screening) can be corrected systematically. The key advantage over Koopmans' theorem is that orbital relaxation is included automatically — no frozen-orbital assumption.
 
-### Failure Modes
+### 4.4.2 Failure Modes
 
 | System Class | Symptom | Physical Reason |
 |---|---|---|
