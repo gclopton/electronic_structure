@@ -1039,99 +1039,23 @@ So the essential lesson is this: in a periodic Coulomb system, neutrality is wha
 
 One of the beautiful theorems of physics is the "force theorem" for the force conjugate to any parameter in the hamiltonian. This is a very general idea perhaps formulated first in 1927 by Ehrenfest [263], who recognized that it is crucial for the correspondence principle of quantum and classical mechanics. He established the relevant relation by showing that the expression for force given below equals the expectation value of the operator corresponding to acceleration $\left\langle\mathrm{d}^{2} \hat{x} / \mathrm{d} t^{2}\right\rangle$. The ideas are implicit in the 1928 work of Born and Fock [264], and the explicit formulas used today were given by Güttiger [265] in 1932. The formulas were included in the treatises of Pauli [266] and Hellmann [267], the latter reformulating them as a variational principle in a form convenient for application to molecules. In 1939, when he was an undergraduate, Feynman [268] derived the force theorem and explicitly pointed out that the force on a nucleus is given strictly in terms of the charge density, independent of the electron kinetic energy, exchange, and correlation. Thus as an "electrostatic theorem," it should apparently be attributed to Feynman. The nomenclature "Hellmann-Feynman theorem" has been widely used, apparently originating with Slater [48]; however, we will use the term "force theorem."
 
-> [!derivation] Derivation 6: Force (Hellmann-Feynman) theorem
-> Derive the expression Eq. (3.19) for the force on a nucleus. The result is remarkable: despite the electrons having kinetic energy and mutual interactions that both change as nuclei move, the force depends only on the electron density. What principle causes all other contributions to vanish, and under what circumstances can this cancellation fail?
-
-
-Let $\mathbf{R}_I$ represent the position of the nucleus, $n(\mathbf{r})$ represent the unperturbed density, $\langle\Psi \mid \Psi\rangle=1$ (for convenience) and
-
-$$E=\frac{\langle\Psi| \hat{H}|\Psi\rangle}{\langle\Psi \mid \Psi\rangle} \equiv\langle\hat{H}\rangle=\langle\hat{T}\rangle+\left\langle\hat{V}_{\text {int }}\right\rangle+\int \mathrm{d}^3 r V_{\mathrm{ext}}(\mathbf{r}) n(\mathbf{r})+E_{I I}$$
 
 
 
-a.) For a local potential, show that the force $\mathbf{F}_I$ depends only on the density $n$ of the electrons and the other nuclei.
-b.) For a local potential, show that the force theorem applied to a nucleus leads to the force being exactly the electric field at the given nucleus due to the charge density of the rest of the system (electrons and other nuclei) times the charge of the given nucleus.
-c.) When does this simplification fail? Show why.
+> [!derivation]
+> Let $\mathbf{R}_I$ denote the position of nucleus $I$, let $n(\mathbf{r})$ be the unperturbed electronic density, and assume $\langle\Psi \mid \Psi\rangle=1$, with
+> 
+> $$
+> E=\langle\Psi| \hat{H}|\Psi\rangle=\langle\hat{T}\rangle+\left\langle\hat{V}_{\text {int }}\right\rangle+\int d^3 r V_{\text {ext }}(\mathbf{r}) n(\mathbf{r})+E_{I I}
+> $$
+> 
+> 
+> Assume throughout that the electronic state is an exact stationary state with respect to variations of $\Psi$ at fixed nuclear positions.
+> (a) Starting from $\mathbf{F}_I=-\partial E / \partial \mathbf{R}_I$, derive an expression for the force on nucleus $I$. Then show that, when the external potential is local, the force depends only on the unperturbed electron density and the positions of the other nuclei.
+> (b) For Coulombic electron-nucleus and nucleus-nucleus interactions, show that the force on nucleus $I$ can be interpreted as the charge of nucleus $I$ times the total electric field at $\mathbf{R}_I$ due to the rest of the system.
+> (c) Identify the assumptions used in parts (a) and (b), and explain when the resulting simplification breaks down. In particular, discuss the cases of nonlocal ionic potentials and non-variational or incomplete representations of the electronic state.
 
-The force conjugate to any parameter describing a system, such as the position of a nucleus $\mathbf{R}_{I}$, can always be written
 
-$$
-\mathbf{F}_{I}=-\frac{\partial E}{\partial \mathbf{R}_{I}}
-$$
-
-Starting from Eq. (3.9) and assuming $\langle\Psi \mid \Psi\rangle=1$ for convenience,
-
-$$
-E=\langle\Psi|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})|\Psi\rangle+E_{II}.
-$$
-
-Differentiating with respect to $\mathbf{R}_{I}$ gives
-
-$$
-\begin{aligned}
-\frac{\partial E}{\partial \mathbf{R}_{I}}
-&=
-\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\Psi\right\rangle
-+\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle \\
-&\quad
-+\left\langle\Psi\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
-+\frac{\partial E_{II}}{\partial \mathbf{R}_{I}},
-\end{aligned}
-$$
-
-because $\hat{T}$ and $\hat{V}_{\mathrm{int}}$ have no explicit dependence on nuclear positions. For an exact stationary state,
-
-$$
-(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})|\Psi\rangle=E_{\mathrm{el}}|\Psi\rangle,
-$$
-
-so the first and third terms become
-
-$$
-\begin{aligned}
-\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\Psi\right\rangle
-+\left\langle\Psi\middle|(\hat{T}+\hat{V}_{\mathrm{ext}}+\hat{V}_{\mathrm{int}})\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
-&=
-E_{\mathrm{el}}
-\left(
-\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
-+\left\langle\Psi\middle|\frac{\partial \Psi}{\partial \mathbf{R}_{I}}\right\rangle
-\right) \\
-&=
-E_{\mathrm{el}} \frac{\partial}{\partial \mathbf{R}_{I}}\langle\Psi \mid \Psi\rangle \\
-&= 0.
-\end{aligned}
-$$
-
-Thus
-
-$$
--\frac{\partial E}{\partial \mathbf{R}_{I}}
-=-\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
--\frac{\partial E_{II}}{\partial \mathbf{R}_{I}}.
-$$
-
-Now $\partial \hat{V}_{\mathrm{ext}}/\partial \mathbf{R}_{I}$ is still a one-body operator. Since
-
-$$
-\hat{V}_{\mathrm{ext}}=\sum_{j} V_{\mathrm{ext}}(\mathbf{r}_{j}),
-$$
-
-it follows that
-
-$$
-\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}
-=\sum_{j}\frac{\partial V_{\mathrm{ext}}(\mathbf{r}_{j})}{\partial \mathbf{R}_{I}}.
-$$
-
-Therefore, by the same reduction used in Derivations 2 and 3,
-
-$$
-\left\langle\Psi\middle|\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_{I}}\middle|\Psi\right\rangle
-=\int \mathrm{d}^{3}r\,n(\mathbf{r})\frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_{I}}.
-$$
-
-Hence the force depends only on the density $n$ of the electrons and the other nuclei,
 
 > [!theorem] Force (Hellmann-Feynman) theorem (Eq. 3.19)
 >
@@ -1139,7 +1063,320 @@ Hence the force depends only on the density $n$ of the electrons and the other n
 > \mathbf{F}_{I}=-\frac{\partial E}{\partial \mathbf{R}_{I}}=-\int \mathrm{d}^{3} r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_{I}}-\frac{\partial E_{I I}}{\partial \mathbf{R}_{I}} .
 > $$
 
-Here $n(\mathbf{r})$ is the unperturbed density and the other nuclei are held fixed, as shown schematically in the left-hand side of Fig. I.1. Since each nucleus interacts with the electrons and other nuclei via Coulomb interactions, the right-hand side of Eq. (3.19) can be shown (Exercise 3.3) to equal the nuclear charge times the total electric field, which is the electrostatic theorem of Feynman. The cancellation of the kinetic-energy and electron-electron terms occurs because the exact electronic state is stationary with respect to variations of the wavefunction at fixed nuclear positions. This cancellation can fail if the electronic state is not exact or not fully variational with respect to the chosen representation, for example in an incomplete basis (Pulay terms), or if the ionic potential is nonlocal, in which case the force cannot be written solely in terms of the density.
+Let
+
+$$
+E=\langle\Psi| \hat{H}|\Psi\rangle
+$$
+
+with
+
+$$
+\hat{H}=\hat{T}+\hat{V}_{\mathrm{int}}+\hat{V}_{\mathrm{ext}}+E_{I I},
+$$
+
+and assume throughout that $\langle\Psi \mid \Psi\rangle=1$, and that $\Psi$ is an exact stationary state for fixed nuclear positions.
+
+
+##### Part A: Force on Nucleus $I$
+
+By definition,
+
+$$
+\mathbf{F}_I=-\frac{\partial E}{\partial \mathbf{R}_I} .
+$$
+
+
+Now differentiate the energy:
+
+$$
+\frac{\partial E}{\partial \mathbf{R}_I}=\frac{\partial}{\partial \mathbf{R}_I}\langle\Psi| \hat{H}|\Psi\rangle .
+$$
+
+
+Using the product rule,
+
+$$
+\frac{\partial E}{\partial \mathbf{R}_I}=\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_I}\right| \hat{H}|\Psi\rangle+\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_I}|\Psi\rangle+\langle\Psi| \hat{H}\left|\frac{\partial \Psi}{\partial \mathbf{R}_I}\right\rangle .
+$$
+
+
+Since $\Psi$ is an exact stationary state at fixed nuclear positions, it satisfies
+
+$$
+\hat{H}|\Psi\rangle=E|\Psi\rangle, \quad\langle\Psi| \hat{H}=E\langle\Psi| .
+$$
+
+
+Therefore,
+
+$$
+\frac{\partial E}{\partial \mathbf{R}_I}=E\left\langle\left.\frac{\partial \Psi}{\partial \mathbf{R}_I} \right\rvert\, \Psi\right\rangle+\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_I}|\Psi\rangle+E\left\langle\Psi \left\lvert\, \frac{\partial \Psi}{\partial \mathbf{R}_I}\right.\right\rangle .
+$$
+
+
+Now use the normalization condition:
+
+$$
+\langle\Psi \mid \Psi\rangle=1 .
+$$
+
+
+Differentiating with respect to $\mathbf{R}_I$,
+
+$$
+\frac{\partial}{\partial \mathbf{R}_I}\langle\Psi \mid \Psi\rangle=\left\langle\left.\frac{\partial \Psi}{\partial \mathbf{R}_I} \right\rvert\, \Psi\right\rangle+\left\langle\Psi \left\lvert\, \frac{\partial \Psi}{\partial \mathbf{R}_I}\right.\right\rangle=0 .
+$$
+
+
+So the first and third terms cancel, leaving
+
+$$
+\frac{\partial E}{\partial \mathbf{R}_I}=\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_I}|\Psi\rangle .
+$$
+
+
+Hence the force is
+
+$$
+\mathbf{F}_I=-\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_I}|\Psi\rangle .
+$$
+
+
+
+Now $\hat{T}$ and $\hat{V}_{\text {int }}$ do not depend explicitly on the nuclear positions, so
+
+$$
+\frac{\partial \hat{H}}{\partial \mathbf{R}_I}=\frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_I}+\frac{\partial E_{I I}}{\partial \mathbf{R}_I} .
+$$
+
+
+Therefore,
+
+$$
+\mathbf{F}_I=-\langle\Psi| \frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_I}|\Psi\rangle-\frac{\partial E_{I I}}{\partial \mathbf{R}_I}
+$$
+
+
+If the external potential is local, then
+
+$$
+\hat{V}_{\mathrm{ext}}=\sum_j V_{\mathrm{ext}}\left(\mathbf{r}_j\right),
+$$
+
+and
+
+$$
+\langle\Psi| \frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_I}|\Psi\rangle=\int d^3 r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_I}
+$$
+
+
+So
+
+$$
+\mathbf{F}_I=-\int d^3 r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_I}-\frac{\partial E_{I I}}{\partial \mathbf{R}_I}
+$$
+
+
+This shows that, for a local potential, the force depends only on the unperturbed electron density $n(\mathbf{r})$ and on the positions of the nuclei through $V_{\text {ext }}$ and $E_{I I}$. There is no derivative of the density, because all wavefunction-response terms canceled by stationarity.
+
+
+This shows that, for a local potential, the force depends only on the unperturbed electron density $n(\mathbf{r})$ and on the positions of the nuclei through $V_{\text {ext }}$ and $E_{I I}$. There is no derivative of the density, because all wavefunction-response terms canceled by stationarity.
+
+If one writes the local external potential as a sum of contributions from individual nuclei,
+
+$$
+V_{\mathrm{ext}}(\mathbf{r})=\sum_J v_J\left(\mathbf{r}-\mathbf{R}_J\right),
+$$
+
+then
+
+$$
+\frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_I}=\frac{\partial v_I\left(\mathbf{r}-\mathbf{R}_I\right)}{\partial \mathbf{R}_I},
+$$
+
+and the force becomes
+
+$$
+\mathbf{F}_I=-\int d^3 r n(\mathbf{r}) \frac{\partial v_I\left(\mathbf{r}-\mathbf{R}_I\right)}{\partial \mathbf{R}_I}-\frac{\partial E_{I I}}{\partial \mathbf{R}_I} .
+$$
+
+
+So the force on nucleus $I$ is determined by the unperturbed density and the other nuclei.
+
+
+
+##### Part B: Coulombic interactions
+
+Now take the usual Coulomb forms:
+
+$$
+V_{\mathrm{ext}}(\mathbf{r})=-\sum_J \frac{Z_J}{\left|\mathbf{r}-\mathbf{R}_J\right|},
+$$
+
+and
+
+$$
+E_{I I}=\frac{1}{2} \sum_{J \neq K} \frac{Z_J Z_K}{\left|\mathbf{R}_J-\mathbf{R}_K\right|}
+$$
+
+
+Then the electron-nucleus part of the force on nucleus $I$ is
+
+$$
+\mathbf{F}_I^{(e)}=-\int d^3 r n(\mathbf{r}) \frac{\partial}{\partial \mathbf{R}_I}\left(-\frac{Z_I}{\left|\mathbf{r}-\mathbf{R}_I\right|}\right)
+$$
+
+
+Now
+
+$$
+\frac{\partial}{\partial \mathbf{R}_I}\left(\frac{1}{\left|\mathbf{r}-\mathbf{R}_I\right|}\right)=-\frac{\mathbf{R}_I-\mathbf{r}}{\left|\mathbf{R}_I-\mathbf{r}\right|^3}
+$$
+
+so
+
+$$
+\frac{\partial}{\partial \mathbf{R}_I}\left(-\frac{Z_I}{\left|\mathbf{r}-\mathbf{R}_I\right|}\right)=Z_I \frac{\mathbf{R}_I-\mathbf{r}}{\left|\mathbf{R}_I-\mathbf{r}\right|^3}
+$$
+
+
+Hence
+
+$$
+\mathbf{F}_I^{(e)}=-Z_I \int d^3 r n(\mathbf{r}) \frac{\mathbf{R}_I-\mathbf{r}}{\left|\mathbf{R}_I-\mathbf{r}\right|^3}=Z_I \int d^3 r n(\mathbf{r}) \frac{\mathbf{r}-\mathbf{R}_I}{\left|\mathbf{r}-\mathbf{R}_I\right|^3}
+$$
+
+
+Next, for the nucleus-nucleus term,
+
+$$
+\mathbf{F}_I^{(n)}=-\frac{\partial E_{I I}}{\partial \mathbf{R}_I}
+$$
+
+
+
+Since
+
+$$
+E_{I I}=\frac{1}{2} \sum_{J \neq K} \frac{Z_J Z_K}{\left|\mathbf{R}_J-\mathbf{R}_K\right|},
+$$
+
+differentiating with respect to $\mathbf{R}_I$ gives
+
+$$
+\mathbf{F}_I^{(n)}=\sum_{J \neq I} Z_I Z_J \frac{\mathbf{R}_I-\mathbf{R}_J}{\left|\mathbf{R}_I-\mathbf{R}_J\right|^3}
+$$
+
+
+Therefore the total force is
+
+$$
+\mathbf{F}_I=Z_I \int d^3 r n(\mathbf{r}) \frac{\mathbf{r}-\mathbf{R}_I}{\left|\mathbf{r}-\mathbf{R}_I\right|^3}+Z_I \sum_{J \neq I} Z_J \frac{\mathbf{R}_I-\mathbf{R}_J}{\left|\mathbf{R}_I-\mathbf{R}_J\right|^3}
+$$
+
+
+Factor out $Z_I$ :
+
+$$
+\boxed{\mathbf{F}_I=Z_I\left[\int d^3 r n(\mathbf{r}) \frac{\mathbf{r}-\mathbf{R}_I}{\left|\mathbf{r}-\mathbf{R}_I\right|^3}+\sum_{J \neq I} Z_J \frac{\mathbf{R}_I-\mathbf{R}_J}{\left|\mathbf{R}_I-\mathbf{R}_J\right|^3}\right]}
+$$
+
+Now interpret the bracket as the electric field at $\mathbf{R}_I$ due to the rest of the system.
+The electric field at $\mathbf{R}_I$ due to the electron density is
+
+$$
+\mathbf{E}_e\left(\mathbf{R}_I\right)=-\int d^3 r n(\mathbf{r}) \frac{\mathbf{R}_I-\mathbf{r}}{\left|\mathbf{R}_I-\mathbf{r}\right|^3}=\int d^3 r n(\mathbf{r}) \frac{\mathbf{r}-\mathbf{R}_I}{\left|\mathbf{r}-\mathbf{R}_I\right|^3}
+$$
+
+
+The electric field at $\mathbf{R}_I$ due to all other nuclei is
+
+$$
+\mathbf{E}_n\left(\mathbf{R}_I\right)=\sum_{J \neq I} Z_J \frac{\mathbf{R}_I-\mathbf{R}_J}{\left|\mathbf{R}_I-\mathbf{R}_J\right|^3}
+$$
+
+
+So
+
+$$
+\mathbf{E}_{\text {rest }}\left(\mathbf{R}_I\right)=\mathbf{E}_e\left(\mathbf{R}_I\right)+\mathbf{E}_n\left(\mathbf{R}_I\right),
+$$
+
+and therefore
+
+$$
+\mathbf{F}_I=Z_I \mathbf{E}_{\text {rest }}\left(\mathbf{R}_I\right)
+$$
+
+
+Thus, for Coulombic electron-nucleus and nucleus-nucleus interactions, the force on nucleus $I$ is exactly the charge of that nucleus times the total electric field at its position due to all electrons and all other nuclei.
+
+
+##### Part C: Assumptions and when the simplification fails
+
+The simplification in part (a) used two assumptions.
+The first is that $\Psi$ is an exact stationary state at fixed nuclear positions. That is what allowed the terms involving $\frac{\partial \Psi}{\partial \mathbf{R}_I}$ to cancel. If the state is not exact, or not variationally stationary, then those terms do not vanish, and the force is not given solely by the explicit derivative of the Hamiltonian.
+
+In that more general case,
+
+$$
+\frac{\partial E}{\partial \mathbf{R}_I}=\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_I}|\Psi\rangle+\left\langle\frac{\partial \Psi}{\partial \mathbf{R}_I}\right|(\hat{H}-E)|\Psi\rangle+\langle\Psi|(\hat{H}-E)\left|\frac{\partial \Psi}{\partial \mathbf{R}_I}\right\rangle,
+$$
+
+so the force contains extra wavefunction-response terms.
+The second assumption is that the external potential is local. Only then can one write
+
+$$
+\langle\Psi| \frac{\partial \hat{V}_{\mathrm{ext}}}{\partial \mathbf{R}_I}|\Psi\rangle=\int d^3 r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_I}
+$$
+
+
+If the ionic potential is nonlocal, this reduction to the density alone is no longer possible.
+For a nonlocal one-body potential,
+
+$$
+\langle\mathbf{r}| \hat{V}_{\mathrm{nl}}\left|\mathbf{r}^{\prime}\right\rangle=V_{\mathrm{nl}}\left(\mathbf{r}, \mathbf{r}^{\prime} ;\left\{\mathbf{R}_J\right\}\right),
+$$
+
+its expectation value is
+
+$$
+\left\langle\hat{V}_{\mathrm{nl}}\right\rangle=\int d^3 r d^3 r^{\prime} \gamma\left(\mathbf{r}, \mathbf{r}^{\prime}\right) V_{\mathrm{nl}}\left(\mathbf{r}, \mathbf{r}^{\prime} ;\left\{\mathbf{R}_J\right\}\right)
+$$
+
+where $\gamma\left(\mathbf{r}, \mathbf{r}^{\prime}\right)$ is the one-particle density matrix. Then
+
+
+
+where $\gamma\left(\mathbf{r}, \mathbf{r}^{\prime}\right)$ is the one-particle density matrix. Then
+
+$$
+\mathbf{F}_I^{\mathrm{nl}}=-\int d^3 r d^3 r^{\prime} \gamma\left(\mathbf{r}, \mathbf{r}^{\prime}\right) \frac{\partial V_{\mathrm{nl}}\left(\mathbf{r}, \mathbf{r}^{\prime} ;\left\{\mathbf{R}_J\right\}\right)}{\partial \mathbf{R}_I}
+$$
+
+
+So in the nonlocal case, the force depends on the density matrix, not just on the density $n(\mathbf{r})$.
+The electrostatic interpretation in part (b) uses an additional assumption: the interactions must actually be Coulombic. If the electron-nucleus interaction is replaced by a nonlocal pseudopotential or any other nonCoulombic form, then the force can no longer be interpreted simply as nuclear charge times the classical electric field of the rest of the system.
+
+There is one more important way the simplification can fail: even with a local Hamiltonian, the electronic representation may be incomplete. If the wavefunction is expanded in a basis that depends on the nuclear positions, then differentiating with respect to $\mathbf{R}_I$ also differentiates the basis functions. This produces the familiar Pulay terms. In a complete basis, or in a representation that does not move with the nuclei, these terms vanish; in an incomplete atom-centered basis, they generally do not.
+
+So the density-only Hellmann-Feynman formula
+
+$$
+\mathbf{F}_I=-\int d^3 r n(\mathbf{r}) \frac{\partial V_{\mathrm{ext}}(\mathbf{r})}{\partial \mathbf{R}_I}-\frac{\partial E_{I I}}{\partial \mathbf{R}_I}
+$$
+
+is exact only when the electronic state is truly stationary and the ionic potential is local. The further identification
+
+$$
+\mathbf{F}_I=Z_I \mathbf{E}_{\mathrm{rest}}\left(\mathbf{R}_I\right)
+$$
+
+requires, in addition, Coulombic interactions.
+
+
+
 
 > [!lesson] The force theorem and variational stationarity
 >
@@ -1147,15 +1384,9 @@ Here $n(\mathbf{r})$ is the unperturbed density and the other nuclei are held fi
 > - **For local potentials, the force on a nucleus depends only on the electron density.** Despite the electrons having kinetic energy and mutual interactions, all those contributions cancel by stationarity. The force is purely electrostatic — nuclear charge times the total electric field.
 > - **This simplification fails when the wavefunction is not fully variational** — e.g., with an incomplete basis set (requiring Pulay corrections) or with nonlocal pseudopotentials (where the force cannot be written solely in terms of the density).
 
----
 
-In the case of nonlocal potentials (such as pseudopotentials), the force cannot be expressed solely in terms of the electron density. However, the original expression is still valid and useful expressions can be directly derived from
 
-$$
--\frac{\partial E}{\partial \mathbf{R}_{I}}=-\langle\Psi| \frac{\partial \hat{H}}{\partial \mathbf{R}_{I}}|\Psi\rangle-\frac{\partial E_{I I}}{\partial \mathbf{R}_{I}}
-$$
 
-Because the force theorem depends on the requirement that the electronic states are at their variational minimum, it follows that there must be a continuum of "force theorems" that corresponds to the addition of any linear variation in $\Psi$ or $n$ to the above expression. Although such terms vanish in principle, they can have an enormous impact upon the accuracy and physical interpretation of resulting formulas. The most relevant example in electronic structure is the case of core electrons: It is more physical and more accurate computationally to move the electron density in the core region along with the nucleus rather than holding the density strictly fixed. The reason is that core electrons are tightly bound to the nucleus and move rigidly with it to an excellent approximation; the "frozen density" assumed in the bare force theorem is therefore a poor zeroth-order description of what actually happens when a nucleus is displaced, and including the core density motion absorbs a large part of the higher-order corrections into the leading term. Methods to accomplish this are described in Appendix I and illustrated in Figure I.1.
 
 > [!question]
 >

@@ -79,18 +79,189 @@
 
 
 > [!question]
->
-> (a) Write the electron kinetic energy operator in both SI-like and Hartree atomic units. What does each piece of the operator do, and why does the negative sign appear?
-> (b) What property of a wavefunction determines how much kinetic energy the electron carries? Why does this make the kinetic energy impossible to express as a simple functional of the density alone?
-> (c) How does the Kohn-Sham construction address the problem of computing the kinetic energy in DFT?
+> Assume the wavefunction $\psi(\mathbf{r})$ is defined by a planewave. Derive the form of it's kinetic energy ooperator.
+
+
+For a single nonrelativistic particle of mass $m$, start from a plane wave
+
+$$
+\psi(\mathbf{r})=A e^{i \mathbf{k} \cdot \mathbf{r}},
+$$
+
+where $A$ is a constant amplitude and $\mathbf{k}$ is the wavevector.
+
+The momentum operator in position space is
+
+$$
+\hat{\mathbf{p}}=-i \hbar \nabla .
+$$
+
+
+So the kinetic-energy operator is
+
+$$
+\hat{T}=\frac{\hat{\mathbf{p}}^2}{2 m}=\frac{1}{2 m}(-i \hbar \nabla) \cdot(-i \hbar \nabla)=-\frac{\hbar^2}{2 m} \nabla^2 .
+$$
+
+
+That is the general form of the kinetic-energy operator in the position representation.
+Now apply it to the plane wave:
+
+$$
+\nabla \psi(\mathbf{r})=i \mathbf{k} \psi(\mathbf{r}),
+$$
+
+and therefore
+
+$$
+\nabla^2 \psi(\mathbf{r})=-k^2 \psi(\mathbf{r}), \quad k^2=\mathbf{k} \cdot \mathbf{k} .
+$$
+
+
+Hence
+
+$$
+\hat{T} \psi(\mathbf{r})=-\frac{\hbar^2}{2 m} \nabla^2 \psi(\mathbf{r})=-\frac{\hbar^2}{2 m}\left(-k^2\right) \psi(\mathbf{r})=\frac{\hbar^2 k^2}{2 m} \psi(\mathbf{r}) .
+$$
+
+So for a plane wave, the wavefunction is an eigenfunction of the kinetic-energy operator, with eigenvalue
+
+$$
+E_{\mathrm{kin}}=\frac{\hbar^2 k^2}{2 m} .
+$$
+
+
+In summary, the kinetic-energy operator is
+
+$$
+\hat{T}=-\frac{\hbar^2}{2 m} \nabla^2
+$$
+
+and for a plane wave its kinetic energy is
+
+$$
+E_{\text {kin }}=\frac{\hbar^2 k^2}{2 m}
+$$
+
+
+If you want, I can also derive this from the time-independent Schrödinger equation or from the de Broglie relation $p=\hbar k$.
+
+
+
+> [!question]
+> (a) Write the electron kinetic-energy operator in both SI-like form and Hartree atomic units. 
+> (b) What does the Laplacian $\nabla^2$ measure when it acts on a wavefunction? What is the effect of multiplying $\nabla^2$ by the prefactor $-\hbar^2 /\left(2 m_e\right)$ ?
+> (c) How does stronger spatial variation on short length scales affect the magnitude of the $k$-components in a wavefunction's Fourier decomposition? 
+> (d) Suppose two particles have wavefunctions confined on the same characteristic length scale $L$. If one particle is 1000 times heavier than the other, how does the kinetic-energy scale compare for the same confinement?
+> (e) Explain how the kinetic energy changes when a wavefunction varies over a smaller characteristic length scale $L$. Why is it convenient to choose Hartree atomic units such that $\hbar=m_e=1$ ?
+> (f) How does the rate at which a wavefunction oscillates in space affect the electron's momentum? How is this related to the relation $p=\hbar k$ ?
+> (g) Why do electrons tend to delocalize more readily than heavier nuclei when one tries to confine them to a small spatial region?
+> (h) Where does the factor of $1 / 2$ come from in the prefactor $\hbar^2 /\left(2 m_e\right)$ ? How is it connected to the classical nonrelativistic expression for kinetic energy?
+> (i) How are the wavevector $k$ and the Laplacian $\nabla^2$ related in what they measure? In particular, how does $\nabla^2$ act on a plane wave $e^{i \mathbf{k} \cdot \mathbf{r}}$ ?
+> (j) Why does the kinetic energy depend on $k^2$ rather than $k$ ?
+> (k) How does the sign of the Laplacian depend on the local shape of the wavefunction? How does the sign convention ensure that wavefunctions with stronger variation have larger kinetic energy.
+
+
+##### part a
+
 
 > [!definition] Electron kinetic energy (from Eq. 3.1)
 >
 > $$ \hat{T} = -\frac{\hbar^2}{2m_e}\sum_i \nabla_i^2 = \sum_i -\frac{1}{2}\nabla_i^2 \quad \text{(Hartree units)} $$
 
 
-Electron kinetic energy, $\hat{T}$ — The operator representing the total kinetic energy of all electrons in the system. The sum runs over every electron $i$, with each term containing the Laplacian $\nabla_i^2$ acting on that electron's spatial coordinates. In SI-like form the prefactor $\hbar^2 / 2m_e$ sets the energy scale using the electron mass $m_e$; in Hartree atomic units (where $\hbar = m_e = 1$) this simplifies to a prefactor of $\frac{1}{2}$. The negative sign arises because the Laplacian of a localized wavefunction is negative in regions of high curvature, so that more spatially confined electrons — those with more rapidly varying wavefunctions — carry greater kinetic energy. This operator is one of the few terms in the electronic Hamiltonian that acts on each electron independently, making it straightforward to evaluate for any single-particle basis set. In density functional theory, the exact many-body kinetic energy is not directly accessible as a functional of the density alone; the Kohn-Sham scheme addresses this by computing the kinetic energy of a fictitious non-interacting reference system and absorbing the remainder into the exchange-correlation functional.
+##### part b
 
+The Laplacian
+
+$$
+\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}
+$$
+
+measures the local second-derivative content of the wavefunction: its curvature in space.
+
+If $\psi$ bends downward locally, $\nabla^2 \psi$ tends to be negative. If it bends upward locally, $\nabla^2 \psi$ tends to be positive. More generally, large magnitude of $\nabla^2 \psi$ signals strong spatial variation on short length scales.
+
+---
+
+The Laplacian tells you how tightly the wave bends in space, and the factor $-\hbar^2 /\left(2 m_e\right)$ translates that bending into the kinetic-energy cost of making an electron wave vary that rapidly. Put another way, the $\hbar^2$ converts inverse-length-squared behavior into momentum-squared behavior, and the $1 /\left(2 m_e\right)$ converts momentum squared into kinetic energy. The following dimensional check makes this even clearer:
+
+
+$$\frac{\hbar^2}{m_e} \nabla^2 \sim \frac{\left(M L^2 / T\right)^2}{M} \cdot \frac{1}{L^2}=\frac{M L^2}{T^2}$$
+
+
+##### part C
+
+
+A wavefunction can be decomposed into Fourier components:
+
+$$
+\psi(\mathbf{r})=\int \tilde{\psi}(\mathbf{k}) e^{i \mathbf{k} \cdot \mathbf{r}} d^3 k
+$$
+
+
+Each Fourier component corresponds to a spatial oscillation with wavelength
+
+$$
+\lambda \sim \frac{2 \pi}{k} .
+$$
+
+
+So if a wavefunction varies strongly on short length scales, that means it contains finer spatial structure, which requires shorter wavelengths and therefore larger $k$
+-values in its Fourier decomposition. In other words:
+- smooth, slowly varying wavefunctions are dominated by small $k$;
+- rapidly oscillating or tightly localized wavefunctions require substantial large- $k$ content.
+
+This connects directly to kinetic energy because each $k$-component contributes an energy proportional to
+
+$$
+\frac{\hbar^2 k^2}{2 m} .
+$$
+
+
+So higher- $k$ structure means higher kinetic energy.
+
+
+Now suppose two particles are confined on the same characteristic length scale $L$ . Confinement on scale $L$ means a typical wavevector magnitude of order
+
+$$
+k \sim \frac{1}{L} .
+$$
+
+
+Then the kinetic energy scales as
+
+$$
+T \sim \frac{\hbar^2}{2 m L^2}
+$$
+
+
+If one particle is 1000 times heavier than the other, and both are confined on the same length scale $L$, then their kinetic energies compare inversely with mass:
+
+$$
+T \propto \frac{1}{m} .
+$$
+
+
+So if
+
+$$
+m_{\text {heavy }}=1000 m_{\text {light }},
+$$
+
+then
+
+$$
+T_{\text {heavy }}=\frac{1}{1000} T_{\text {light }}
+$$
+
+
+Thus, for the same spatial confinement, the heavier particle has 1000 times smaller kinetic energy.
+
+
+Thus, for the same spatial confinement, the heavier particle has 1000 times smaller kinetic energy.
+
+This is a central reason electrons exhibit much stronger quantum-delocalization effects than nuclei: electrons are much lighter, so the same degree of localization costs them much more kinetic energy.
 
 
 | **Symbol** | **Type** | **Units** | **Name** | **Description** |
@@ -118,6 +289,20 @@ Electron kinetic energy, $\hat{T}$ — The operator representing the total kinet
 > $$ \hat{V}_{\text{ext}} = \sum_{i,I} V_I(|\mathbf{r}_i - \mathbf{R}_I|) = -\sum_{i,I}\frac{Z_I}{|\mathbf{r}_i - \mathbf{R}_I|} \quad \text{(Hartree units, bare Coulomb)} $$
 
 
+The external potential operator $\hat{V}_{ext}$ represents the total potential energy experienced by the electrons due the the electrostatic attractions between all the electrons and all of the nuclei in the system. 
+
+
+Since $\hat{V}_{ext}$ has the form $\frac{Z}{r}$, where $Z$ (the atomic number) is always a positive integer, and $r$ (the radial distance) is strictly a positive number, the negative value the guarantees that $V_{ext}$ stays negative for any value of $r$. In quantum mechanics, we define exactly 0 potential energy as the state where the electron and nucleus are infinitely far apart and completely unaware of each other (a free electron). $V_{ext}$ stays negative because the force between the electron and the Nucleus is attractive at any distance.
+
+
+That infinite dive at $r=0$ is a problem in computation because if you drop an electron into an infinitely deep well, its wavefunction will oscillate wildly near the core to maintain orthogonality. If you try to model semiconductor or nuclear material using a plane-wave basis set, resolving these rapid, tight oscillations would require a kinetic energy cutoff so massive that the calculation would never finish. To solve this, computational codes replace the base $- \frac{Z}{r}$ curve with a pseudopotential. This artificially flattens out the bottom of the well near the core–removing the $- \infty$ singularity entirely – while keeping the long Coulombic tail perfectly accurate in the valence region.
+
+
+![[Pasted image 20260321014503.png]]
+
+$$\begin{aligned} \hat{V}_{\text {ext }} & =\sum_{\text {ext }}\left(\vec{r}_i\right) \\ & =\frac{1}{4 \pi \varepsilon_0} \sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{(-e)\left(z_I e\right)}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\frac{1}{4 \pi \varepsilon_0} \sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{e^2 z_I}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{z_I}{\left|\vec{r}^{\prime}-\vec{R}_I\right|} \\ & =-\sum_{i, I} \frac{z_I}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\sum_{i, I} V_I\left(\left|\vec{r}_i-\vec{R}_I\right|\right)\end{aligned}$$
+
+
 
 External potential, $\hat{V}_{\text{ext}}$ — The operator representing the total potential energy experienced by the electrons due to all sources external to the electron system itself — most commonly the nuclei. For each electron $i$ and nucleus $I$ of charge $Z_I$ located at $\mathbf{R}_I$, it contributes an attractive Coulomb interaction inversely proportional to their separation $|\mathbf{r}_i - \mathbf{R}_I|$, with the negative sign reflecting the attraction between the negatively charged electron and the positively charged nucleus. The double sum runs over all electrons and all nuclei. Although written here for the specific case of bare (unscreened) Coulomb interactions in Hartree atomic units, the more general form $V_I(|\mathbf{r}_i - \mathbf{R}_I|)$ allows for the substitution of pseudopotentials or other effective ion-electron potentials that replace the singular nuclear Coulomb potential with a smoother function, particularly in solid-state calculations where core electrons are treated implicitly. In density functional theory, the external potential plays a foundational role: the Hohenberg-Kohn theorem establishes that the ground-state electron density uniquely determines $\hat{V}_{\text{ext}}$ (up to a constant), making it the bridge between the nuclear configuration and all electronic properties of the system.
 
@@ -127,6 +312,7 @@ External potential, $\hat{V}_{\text{ext}}$ — The operator representing the tot
 | $\hat{V}_{\text{ext}}$ | Sum of single-electron operators | Hartree | **External potential** | The electron-nuclear attraction. System-specific — encodes what material you are studying. |
 | $V_I(\|\mathbf{r} - \mathbf{R}_I\|)$ | Scalar function of position | Hartree | **Nuclear potential from nucleus $I$** | Bare Coulomb: $-Z_I/\|\mathbf{r} - \mathbf{R}_I\|$. Replaced by a pseudopotential in plane-wave calculations. |
 | $\int V_{\text{ext}} \, n \, d^3r$ | Scalar | Hartree | **Electron-nuclear energy** | The only term in the total energy that is an explicit, exact functional of the density alone. |
+
 
 > **Connections Forward:** The Hohenberg-Kohn theorem (Ch 6) proves $n(\mathbf{r}) \to V_{\text{ext}}(\mathbf{r})$ is unique. Pseudopotentials (Ch 11) replace the bare nuclear potential with a smoother effective potential. In VASP, $V_{\text{ext}}$ comes from the POTCAR file (PAW potentials) and the nuclear positions from POSCAR.
 
