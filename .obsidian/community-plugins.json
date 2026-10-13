@@ -18,10 +18,8 @@
   "obsidian-advanced-slides",
   "color-palette",
   "code-styler",
-  "obsidian-quiet-outline",
   "obsidian-vimrc-support",
   "terminal",
-  "colored-text",
   "number-headings-obsidian",
   "obsidian-hover-editor",
   "obsidian-style-settings",
@@ -33,7 +31,6 @@
   "dbfolder",
   "modalforms",
   "paste-from-history",
-  "keyword-highlighter",
   "inline-code-highlight",
   "calendar",
   "obsidian-carry-forward",
@@ -43,5 +40,13 @@
   "quick-explorer",
   "oin-gotoheading",
   "enhanced-tables",
-  "markdown-table-editor"
+  "markdown-table-editor",
+  "image-gallery",
+  "math-studio",
+  "ink-studio",
+  "study-studio",
+  "slide-studio",
+  "code-links",
+  "research-outline",
+  "research-colors"
 ]
