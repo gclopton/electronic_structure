@@ -79,7 +79,7 @@
 
 
 > [!question]
-> Assume the wavefunction $\psi(\mathbf{r})$ is defined by a planewave. Derive the form of it's kinetic energy ooperator.
+> Assume the wavefunction $\psi(\mathbf{r})$ is defined by a planewave. Derive the form of it's kinetic energy operator.
 
 
 For a single nonrelativistic particle of mass $m$, start from a plane wave
@@ -145,6 +145,61 @@ $$
 
 
 If you want, I can also derive this from the time-independent Schrödinger equation or from the de Broglie relation $p=\hbar k$.
+
+
+
+> [!question] Title
+> Contents
+
+
+
+
+
+
+
+
+```mathematica
+Manipulate[
+ Module[{y1, y2, ysum, lam1, lam2, maxAmp, maxK, spectrum}, 
+  y1[x_] := a1 Cos[k1 x + phi1];
+  y2[x_] := a2 Cos[k2 x + phi2];
+  ysum[x_] := y1[x] + y2[x];
+  lam1 = 2 Pi/k1;
+  lam2 = 2 Pi/k2;
+  maxAmp = a1 + a2 + 0.5;
+  maxK = Max[k1, k2] + 1;
+  (*In the complex Fourier convention,A Cos[k x+
+  phi] gives coefficients of magnitude A/2 at k and-k.*)
+  spectrum = {{-k1, a1/2}, {k1, a1/2}, {-k2, a2/2}, {k2, a2/2}};
+  Column[{Style[
+     Row[{"Wavelengths:   ", "\[Lambda]1 = ", NumberForm[lam1, {4, 2}],
+        "      ", "\[Lambda]2 = ", NumberForm[lam2, {4, 2}]}], 14], 
+    Plot[Evaluate[{y1[x], y2[x], ysum[x]}], {x, -xmax, xmax}, 
+     PlotStyle -> {Directive[Blue, Dashed, Thick], 
+       Directive[Darker[Green], Dashed, Thick], 
+       Directive[Black, Thick]}, 
+     PlotLegends -> 
+      Placed[{Row[{"a1 cos(k1 x + phi1)"}], Row[{"a2 cos(k2 x + phi2)"}],
+         "sum"}, Above], AxesLabel -> {"x", "value"}, 
+     GridLines -> Automatic, 
+     PlotRange -> {{-xmax, xmax}, {-maxAmp, maxAmp}}, 
+     ImageSize -> Large], 
+    ListPlot[spectrum, Filling -> Axis, 
+     PlotStyle -> Directive[Red, PointSize[0.025]], 
+     AxesLabel -> {"k", "|\!\(\*SubscriptBox[\(c\), \(k\)]\)|"}, 
+     PlotRange -> {{-maxK, maxK}, {0, Max[a1, a2]/2 + 0.2}}, 
+     GridLines -> {Range[-maxK, maxK], Automatic}, 
+     Ticks -> {Range[-maxK, maxK], Automatic}, ImageSize -> Large]}, 
+   Spacings -> 2]], {{a1, 1, "a1"}, 0, 2, 0.1, 
+  Appearance -> "Labeled"}, {{a2, 0.5, "a2"}, 0, 2, 0.1, 
+  Appearance -> "Labeled"}, Delimiter, {{k1, 1, "k1"}, 1, 10, 1, 
+  Appearance -> "Labeled"}, {{k2, 5, "k2"}, 1, 10, 1, 
+  Appearance -> "Labeled"}, Delimiter, {{phi1, 0, "phi1"}, 0, 2 Pi, 
+  Appearance -> "Labeled"}, {{phi2, 0, "phi2"}, 0, 2 Pi, 
+  Appearance -> "Labeled"}, Delimiter, {{xmax, 2 Pi, "x-range"}, Pi, 
+  6 Pi, Appearance -> "Labeled"}, ControlPlacement -> Left]
+```
+
 
 
 
@@ -284,9 +339,13 @@ This is a central reason electrons exhibit much stronger quantum-delocalization 
 > (b) What is the general form $V_I(|\mathbf{r}_i - \mathbf{R}_I|)$, and why might it differ from the bare Coulomb potential in practical calculations?
 > (c) What is the significance of $\hat{V}_{\text{ext}}$ for the Hohenberg-Kohn theorem?
 
-> [!definition] External potential (from Eqs. 3.1–3.2)
->
-> $$ \hat{V}_{\text{ext}} = \sum_{i,I} V_I(|\mathbf{r}_i - \mathbf{R}_I|) = -\sum_{i,I}\frac{Z_I}{|\mathbf{r}_i - \mathbf{R}_I|} \quad \text{(Hartree units, bare Coulomb)} $$
+
+
+
+> [!definition] External Potential Operator
+> 
+> $$\hat{V}_{\text {ext }}=\sum_{i=1}^{N_e} V_{\text {ext }}\left(\vec{r}_i\right)=\frac{1}{4 \pi \varepsilon_0} \sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{(-e)\left(z_I e\right)}{\left|\vec{r}_i-\vec{R}_I\right|}$$
+
 
 
 The external potential operator $\hat{V}_{ext}$ represents the total potential energy experienced by the electrons due the the electrostatic attractions between all the electrons and all of the nuclei in the system. 
@@ -298,20 +357,43 @@ Since $\hat{V}_{ext}$ has the form $\frac{Z}{r}$, where $Z$ (the atomic number) 
 That infinite dive at $r=0$ is a problem in computation because if you drop an electron into an infinitely deep well, its wavefunction will oscillate wildly near the core to maintain orthogonality. If you try to model semiconductor or nuclear material using a plane-wave basis set, resolving these rapid, tight oscillations would require a kinetic energy cutoff so massive that the calculation would never finish. To solve this, computational codes replace the base $- \frac{Z}{r}$ curve with a pseudopotential. This artificially flattens out the bottom of the well near the core–removing the $- \infty$ singularity entirely – while keeping the long Coulombic tail perfectly accurate in the valence region.
 
 
-![[Pasted image 20260321014503.png]]
+![[Pasted image 20260321014503.png|500]]
+
+$V_{\mathrm{ext}}(\vec{r}_i)=-\sum_{I=1}^{N_{\mathrm{nuc}}}\frac{Z_I}{\left|\vec{r}_i-\vec{R}_I\right|}$ is the exact discrete Coulombic interaction between the electron and nucleus 1, then adding the interaction with nucleus 2 and so on for all $N_{\mathrm{nuc}}$ nuclei in the system. And then the total external potential operator $\hat{V}_{\mathrm{ext}}$ gives us the sum of what every electron feels:
+
+$$
+\hat{V}_{\mathrm{ext}}=-\sum_{i=1}^{N_e}\left(\sum_{I=1}^{N_{\mathrm{nuc}}}\frac{Z_I}{\left|\vec{r}_i-\vec{R}_I\right|}\right)
+$$
+
+We call this an external potential because from the electron's perspective, it experiences these individual interactions as one continuous scalar field. It does not experience the interactions separately and instead feels the local bumpy landscape $V_{\mathrm{ext}}(\vec{r})$, which has deep, steep potential wells located exactly at the discrete coordinates of each nucleus $(\vec{R}_I)$.
+
+
+
+
+![[Pasted image 20260321020422.png|300]]
+
+
+Carrying around $e$, $m_{e}$, $\hbar$, and $4 \pi \varepsilon_{0}$ in every single term of the many-body Hamiltonian gets exhausting. To fix this, we use atomic units which define the fundamental constants of the electron to be exactly 1. In going from SI units to atomic units, we have
+
 
 $$\begin{aligned} \hat{V}_{\text {ext }} & =\sum_{\text {ext }}\left(\vec{r}_i\right) \\ & =\frac{1}{4 \pi \varepsilon_0} \sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{(-e)\left(z_I e\right)}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\frac{1}{4 \pi \varepsilon_0} \sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{e^2 z_I}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\sum_{i=1}^{N_e} \sum_{I=1}^{N_I} \frac{z_I}{\left|\vec{r}^{\prime}-\vec{R}_I\right|} \\ & =-\sum_{i, I} \frac{z_I}{\left|\vec{r}_i-\vec{R}_I\right|} \\ & =-\sum_{i, I} V_I\left(\left|\vec{r}_i-\vec{R}_I\right|\right)\end{aligned}$$
 
+Also note that in this expression screening is not a fundamental interaction; it is an emergent many-body effect that becomes important once you consider electron-electron repulsions. But $V_{\mathrm{ext}}$ only considers the attraction between the electrons and nuclei, which is why it ignores the background cloud that screens the interaction. This physical screening effect is instead handled by
+
+$$
+\hat{V}_{ee}=\sum_{i=1}^{N}\sum_{i>j}^{N}\frac{1}{\left|\vec{r}_i-\vec{r}_j\right|}
+$$
+
+| **Symbol**                           | **Type**                         | **Units**           | **Name**                               | **Description**                                                                                                         |
+| ------------------------------------ | -------------------------------- | ------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| $N_e$                                | Integer                          | —                   | **Total number of electrons**          | Counts how many electrons are present in the system.                                                                    |
+| $N_{\text{nuc}}$                     | Integer                          | —                   | **Total number of nuclei**             | Counts how many nuclei are present in the system.                                                                       |
+| $Z_I$                                | Integer                          | Proton charge units | **Atomic number of nucleus $I$**       | The charge of the $I$-th nucleus; for a bare Coulomb potential it sets the strength of the electron-nucleus attraction. |
+| $\mathbf{r}_i$                       | Position vector                  | Bohr                | **Position of electron $i$**           | The spatial coordinate of the $i$-th electron.                                                                          |
+| $\mathbf{R}_I$                       | Position vector                  | Bohr                | **Position of nucleus $I$**            | The spatial coordinate of the $I$-th nucleus.                                                                           |
+| $\|\mathbf{r}_i-\mathbf{R}_I\|$      | Scalar distance                  | Bohr                | **Electron-nucleus separation**        | The distance between electron $i$ and nucleus $I$.                                                                      |
 
 
-External potential, $\hat{V}_{\text{ext}}$ — The operator representing the total potential energy experienced by the electrons due to all sources external to the electron system itself — most commonly the nuclei. For each electron $i$ and nucleus $I$ of charge $Z_I$ located at $\mathbf{R}_I$, it contributes an attractive Coulomb interaction inversely proportional to their separation $|\mathbf{r}_i - \mathbf{R}_I|$, with the negative sign reflecting the attraction between the negatively charged electron and the positively charged nucleus. The double sum runs over all electrons and all nuclei. Although written here for the specific case of bare (unscreened) Coulomb interactions in Hartree atomic units, the more general form $V_I(|\mathbf{r}_i - \mathbf{R}_I|)$ allows for the substitution of pseudopotentials or other effective ion-electron potentials that replace the singular nuclear Coulomb potential with a smoother function, particularly in solid-state calculations where core electrons are treated implicitly. In density functional theory, the external potential plays a foundational role: the Hohenberg-Kohn theorem establishes that the ground-state electron density uniquely determines $\hat{V}_{\text{ext}}$ (up to a constant), making it the bridge between the nuclear configuration and all electronic properties of the system.
-
-
-| **Symbol** | **Type** | **Units** | **Name** | **Description** |
-|---|---|---|---|---|
-| $\hat{V}_{\text{ext}}$ | Sum of single-electron operators | Hartree | **External potential** | The electron-nuclear attraction. System-specific — encodes what material you are studying. |
-| $V_I(\|\mathbf{r} - \mathbf{R}_I\|)$ | Scalar function of position | Hartree | **Nuclear potential from nucleus $I$** | Bare Coulomb: $-Z_I/\|\mathbf{r} - \mathbf{R}_I\|$. Replaced by a pseudopotential in plane-wave calculations. |
-| $\int V_{\text{ext}} \, n \, d^3r$ | Scalar | Hartree | **Electron-nuclear energy** | The only term in the total energy that is an explicit, exact functional of the density alone. |
 
 
 > **Connections Forward:** The Hohenberg-Kohn theorem (Ch 6) proves $n(\mathbf{r}) \to V_{\text{ext}}(\mathbf{r})$ is unique. Pseudopotentials (Ch 11) replace the bare nuclear potential with a smoother effective potential. In VASP, $V_{\text{ext}}$ comes from the POTCAR file (PAW potentials) and the nuclear positions from POSCAR.
@@ -1381,6 +1463,3 @@ The method assumes that (1) the total energy functional is sufficiently accurate
 | Systems with strong charge transfer | Requires multiple SCF solutions | May converge to wrong state if initial guess is poor |
 
 > **Connections Forward:** The $\Delta$SCF approach is used in DFT for computing ionization energies and electron affinities of molecules (Ch 10, §10.6). For solids, constrained DFT or the quasiparticle approach (GW) is more appropriate. Your CeO₂ calculations use total energy differences between oxidation states, which is conceptually related.
-
-
-
